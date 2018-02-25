@@ -96,7 +96,7 @@ export default {
     width: 100%;
   }
   .photo-un {
-    background-image: url(~/static/textile/samjeremy2.jpg);
+    background-image: url(~/static/textile/samjeremycropped.jpg);
   }
   .photo-deux {
     background-image: url(~/static/textile/textile.jpg);
