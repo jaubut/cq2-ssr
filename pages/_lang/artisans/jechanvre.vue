@@ -5,8 +5,8 @@
     <Bloc class="height-normal photo-deux"> </Bloc>
     <Bloc class="height-normal">
       <Texte class="align-right">
-        <h2> Mouvement propulsé par Chanvre Québec. </h2>
-        <p>« Nous avons créé le projet jechanvre dans le but final de stimuler l’innovation dans le domaine des vêtements en chanvre. 100% des profits réalisés sont réinvestis pour produire de nouvelles collections. C’est l’opportunité pour chacun d’exprimer sa solidarité pour la plante. » </p>
+        <h2>Mouvement propulsé par Chanvre Québec.</h2>
+        <p>« Nous avons créé le projet jechanvre dans le but final de stimuler l’innovation dans le domaine des vêtements en chanvre. 100% des profits réalisés sont réinvestis pour produire de nouvelles collections. C’est l’opportunité pour chacun d’exprimer sa solidarité pour la plante. »</p>
       </Texte>
      </Bloc>
      <Bloc class="height-normal">
@@ -85,6 +85,6 @@ export default {
     background-image: url(~/static/jechanvre/cantin2.jpg);
   }
   .photo-sept {
-    background-image: url(~/static/textile/samjeremy2.jpg);
+    background-image: url(~/static/textile/samjeremycropped.jpg);
   }
 </style>

@@ -85,7 +85,7 @@ export default {
   background-image: url(~/static/alimentation/graine_2.jpg);
 }
 .photo-six {
-  background-image: url(~/static/alimentation/priseoil.jpg);
+  background-image: url(~/static/alimentation/oilspoon.jpg);
 }
 .photo-sept {
   background-image: url(~/static/alimentation/energy.png);
