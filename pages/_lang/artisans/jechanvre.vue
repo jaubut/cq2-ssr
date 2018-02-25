@@ -39,7 +39,7 @@
         <router-link to="#">Le verdict</router-link>
       </BigTexte>
     </Bloc>
-    <Bloc class="height-normal beige" >
+    <Bloc class="height-normal beige">
       <Texte>
         <h2>La mission</h2>
         <p> Notre objectif est de propulser de nouveaux produits sur le marché en collaboration avec différentes marques.</p>
