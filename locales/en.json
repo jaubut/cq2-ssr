@@ -1,0 +1,12 @@
+{
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "english": "english version",
+    "french": "french version"
+  },
+  "index": {
+    "allo": "Hi, im english.",
+    "title": "Home"
+  }
+}

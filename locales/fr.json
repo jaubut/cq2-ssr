@@ -1,0 +1,12 @@
+{
+  "links": {
+    "home": "Accueil",
+    "about": "Ã propos",
+    "english": "Version Anglaise",
+    "french": "Version FranÃ§aise"
+  },
+  "index": {
+    "allo": "Allo je suis francais",
+    "title": "Accueil"
+  }
+}
