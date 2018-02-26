@@ -58,10 +58,7 @@
 </template>
 <script>
 export default {
-  name: 'alimentation',
-  metaInfo: {
-    title: 'Alimentation'
-  }
+  name: 'alimentation'
 }
 </script>
 <style scoped>

@@ -24,10 +24,7 @@
 </template>
 
 <script>
-import { mixin as onClickOutside } from 'vue-on-click-outside'
-
 export default {
-  mixins: [onClickOutside],
   props: ['etoile'],
   data () {
     return {

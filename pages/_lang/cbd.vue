@@ -68,10 +68,7 @@
 </template>
 <script>
 export default {
-  name: 'soins',
-  metaInfo: {
-    title: 'Soins'
-  }
+  name: 'soins'
 }
 </script>
 <style scoped>

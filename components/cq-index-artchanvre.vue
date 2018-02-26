@@ -13,6 +13,6 @@ export default {
 </script>
 <style scoped>
   .photo {
-    background-image: url(../static/artchanvre/antho-5.png)!important;
+    background-image: url(~/static/artchanvre/antho-5.png)!important;
   }
 </style>

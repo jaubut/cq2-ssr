@@ -8,9 +8,6 @@
 
 <script>
   export default {
-    metaInfo: {
-      title: 'Erreur 404'
-    }
   }
 </script>
 

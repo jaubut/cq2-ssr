@@ -50,10 +50,7 @@
 </template>
 <script>
 export default {
-  name: 'LeChanvre',
-  metaInfo: {
-    title: 'Le Chanvre'
-  }
+  name: 'LeChanvre'
 }
 </script>
 <style scoped>
