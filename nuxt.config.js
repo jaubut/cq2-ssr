@@ -65,11 +65,30 @@ module.exports = {
           disable: false
       }
     }
-  }
+  },
+  sitemap: {
+    generate: true, // Enable me when using nuxt generate
+  },
+  'google-analytics': {
+    id: 'UA-82844671-4'
+  },
   modules: [
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
-    '@nuxtjs/router'
+    '@nuxtjs/router',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/localtunnel'
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: '47827843',
+        webvisor: true,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      }
+    ]
   ],
   plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
 }
