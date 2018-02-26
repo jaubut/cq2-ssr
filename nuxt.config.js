@@ -27,6 +27,10 @@ module.exports = {
   css: [
     '~/css/main.css'
   ],
+  manifest: {
+    name: 'Chanvre du Québec',
+    lang: 'fr'
+  },
   /*
   ** Customize the progress bar color
   */
@@ -53,7 +57,18 @@ module.exports = {
   router: {
     middleware: 'i18n'
   },
+  oneSignal: {
+    init: {
+      appId: 'c04579cb-2c32-4739-9fee-ae7590e736ff',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+          disable: false
+      }
+    }
+  }
   modules: [
+    '@nuxtjs/onesignal',
+    '@nuxtjs/pwa',
     '@nuxtjs/router'
   ],
   plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
