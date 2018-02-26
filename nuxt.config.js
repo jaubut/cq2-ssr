@@ -21,16 +21,12 @@ module.exports = {
     ],
     script: [
       { src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' },
-      { src: ' https://connect.facebook.net/en_US/all.js' }
+      { src: 'https://connect.facebook.net/en_US/all.js' }
     ]
   },
   css: [
     '~/css/main.css'
   ],
-  manifest: {
-    name: 'Chanvre du Québec',
-    lang: 'fr'
-  },
   /*
   ** Customize the progress bar color
   */
@@ -54,31 +50,13 @@ module.exports = {
       }
     }
   },
-  router: {
-    middleware: 'i18n'
-  },
-  oneSignal: {
-    init: {
-      appId: 'c04579cb-2c32-4739-9fee-ae7590e736ff',
-      allowLocalhostAsSecureOrigin: true,
-      welcomeNotification: {
-          disable: false
-      }
-    }
-  },
-  sitemap: {
-    generate: true, // Enable me when using nuxt generate
-  },
-  'google-analytics': {
-    id: 'UA-82844671-4'
-  },
   modules: [
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/router',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/localtunnel'
+    ['@nuxtjs/google-analytics', { ua: 'UA-82844671-4' }],
+    '@nuxtjs/localtunnel',
     [
       '@nuxtjs/yandex-metrika',
       {
@@ -90,5 +68,28 @@ module.exports = {
       }
     ]
   ],
+  router: {
+    middleware: 'i18n'
+  },
+  manifest: {
+    name: 'Chanvre du Québec',
+    lang: 'fr',
+    description: 'Chanvre du Québec, on offre les québécois la meilleur info sur le chanvre en leur faisant découvrir des entreprises du chanvre dici.',
+    theme_color: '#707a73',
+    ogTitle: 'Chanvre du Québec',
+    ogDescription: 'Chanvre du Québec, on offre les québécois la meilleur info sur le chanvre en leur faisant découvrir des entreprises du chanvre dici.'
+  },
+  oneSignal: {
+    init: {
+      appId: 'c04579cb-2c32-4739-9fee-ae7590e736ff',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+          disable: true
+      }
+    }
+  },
+  sitemap: {
+    generate: true
+  },
   plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
 }

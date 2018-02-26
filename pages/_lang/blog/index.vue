@@ -15,7 +15,7 @@
         </div>
       </Texte>
     </Bloc>
-    <BlocPost v-for="post in orderPosts" :key="post.fields.title" :post="post">
+    <BlocPost v-for="post in posts" :key="post.fields.title" :post="post">
     </BlocPost>
   </div>
 </template>
@@ -25,7 +25,6 @@ import {createClient} from '@/plugins/contentful'
 import BlocPost from '@/components/cq-blog-post'
 
 const client = createClient()
-var _ = require('lodash')
 
 export default {
   name: 'Index',
@@ -34,36 +33,18 @@ export default {
   },
   data () {
     return {
-      posts: [],
       filter: null
     }
   },
-  computed: {
-    orderPosts: function () {
-      if (this.filter === null) {
-        return this.posts
-      } else {
-        return _.filter(this.post, (fields) => _.includes(this.filter, fields.tags))
+  asyncData ({ env, params }) {
+    return client.getEntries({
+      'content_type': 'blogPost',
+      order: '-sys.createdAt'
+    }).then(entries => {
+      return {
+        posts: entries.items
       }
-    }
-  },
-  created () {
-    this.fetchData()
-  },
-  watch: {
-    'lang': 'fetchData'
-  },
-  methods: {
-    fetchData () {
-      return client.getEntries({
-        'content_type': 'blogPost',
-        order: '-sys.createdAt'
-      })
-        .then(response => {
-          this.posts = response.items
-          return response
-        })
-    }
+    })
   }
 }
 </script>
