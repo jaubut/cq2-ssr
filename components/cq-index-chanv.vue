@@ -13,6 +13,6 @@ export default {
 </script>
 <style scoped>
   .photo {
-    background-image: url(../static/onepagechanv/exfoliant.png)!important;
+    background-image: url(~/static/onepagechanv/exfoliant.png)!important;
   }
 </style>

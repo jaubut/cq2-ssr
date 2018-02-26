@@ -2,7 +2,7 @@
   <div id="cqFooter">
     <div class="logo">
       <nuxt-link to="/">
-        <img src="../assets/logo-round.svg" alt="Chanvre Québec Logo">
+        <img src="~/assets/logo-round.svg" alt="Chanvre Québec Logo">
       </nuxt-link>
     </div>
     <div class="container">
