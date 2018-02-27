@@ -1,5 +1,8 @@
 const config = require('./.contentful.json')
 
+const {createClient} = require('./plugins/contentful')
+const client = createClient()
+
 module.exports = {
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
@@ -67,6 +70,21 @@ module.exports = {
       }
     ]
   ],
+  generate: {
+    routes: function ({ env, params }) {
+      return client.getEntries({
+        'content_type': 'blogPost',
+        order: '-sys.createdAt'
+      }).then(entries => {
+        return entries.items.map((post) => {
+          return {
+            route: '/blog/' +post.fields.tags[0] + '/' +post.fields.slug,
+            payload: entries.items
+          }
+        }) 
+      })
+    }
+  },
   router: {
     middleware: 'i18n'
   },
