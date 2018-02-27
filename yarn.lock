@@ -121,10 +121,6 @@
     "@nuxtjs/meta" "^2.0.2"
     "@nuxtjs/workbox" "^2.1.1"
 
-"@nuxtjs/router@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/router/-/router-1.0.1.tgz#0cd305ab994e701d4e117e677472206d6835f8e7"
-
 "@nuxtjs/sitemap@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.0.3.tgz#41f5a4ab4775414cebb521ac6bdf16f6edcf2650"

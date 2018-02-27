@@ -17,7 +17,6 @@
     "@nuxtjs/localtunnel": "^1.0.1",
     "@nuxtjs/onesignal": "^2.0.0",
     "@nuxtjs/pwa": "^2.0.5",
-    "@nuxtjs/router": "^1.0.1",
     "@nuxtjs/sitemap": "^0.0.3",
     "@nuxtjs/yandex-metrika": "^0.0.5",
     "axios": "^0.18.0",
