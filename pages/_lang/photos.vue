@@ -19,7 +19,6 @@ const url = 'https://api.unsplash.com/photos/random'
 const config = {
   params: {
     client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
-    access_token: '091343ce13c8ae780065ecb3b13dc903475dd22cb78a05503c2e0c69c5e98044',
     per_page: 24,
     order_by: 'popular',
     collections: 1656484,
