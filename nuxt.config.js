@@ -1,5 +1,8 @@
 const config = require('./.contentful.json')
 
+import {createClient} from '@/plugins/contentful'
+const client = createClient()
+
 module.exports = {
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
