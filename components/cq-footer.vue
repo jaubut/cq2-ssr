@@ -12,22 +12,22 @@
         </div>
         <transition name="fade">
           <div v-show="essentiels">
-            <nuxt-link to="/">
+            <nuxt-link to="/lechanvre">
               <p><strong>Le chanvre c'est quoi ?</strong></p>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link to="/alimentation">
               <p>Alimentation</p>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link to="/construction">
               <p>Construction</p>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link to="/textile">
               <p>Textile</p>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link to="/soinscorporels">
               <p>Soins corporels</p>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link to="/cbd">
               <p>CBD</p>
             </nuxt-link>
           </div>
@@ -39,7 +39,7 @@
         </div>
         <transition name="fade">
           <div v-show="contacter">
-            <nuxt-link to="/">
+            <nuxt-link to="/apropos">
               <p>L'équipe</p>
             </nuxt-link>
             <a href="mailto:allo@chanvrequebec.com">
@@ -55,7 +55,7 @@
         </div>
         <transition name="fade">
           <div v-show="chanvreici">
-            <nuxt-link to="/">
+            <nuxt-link to="/lesmarques">
               <p>Voir tous les marques d'ici</p>
             </nuxt-link>
             <p>Si vous voulez vous aussi être affiché, <br /><a href="mailto:allo@chanvrequebec.com"><span>écrivez-nous ici.</span></a></p>
@@ -68,7 +68,7 @@
         </div>
         <transition name="fade">
           <div v-show="blog">
-            <nuxt-link to="/">
+            <nuxt-link to="/blog">
               <p>Voir tous les articles</p>
             </nuxt-link>
           </div>
