@@ -23,7 +23,7 @@
   }
   #cqTexte h4 {
     font-size: 7vw !important;
-    line-height: 2vw !important;
+    line-height: 6vw !important;
     font-weight: 800 !important;
     z-index: 2 !important;
     padding: 0;

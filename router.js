@@ -14,7 +14,6 @@ import VotreMarque from '@/pages/artisans/votremarque'
 import Blog from '@/pages/blog/index'
 import Slug from '@/pages/blog/_slug'
 import Tag from '@/pages/tags/_tag'
-import Notfound from '@/pages/notfound'
 import Alimentation from '@/pages/alimentation'
 import CBD from '@/pages/cbd'
 import Construction from '@/pages/construction'
@@ -28,12 +27,6 @@ export function createRouter() {
   return new Router({
     mode: 'history',
     routes: [
-      {
-        path: '*',
-        name: '404',
-        component: Notfound,
-        props: true
-      },
       {
         path: '/',
         component: Index,
