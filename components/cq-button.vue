@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: href }" target="_blank">
+  <router-link :to="{ name: href }">
     <button :class="caca">
       <p><slot></slot></p>
     </button>
