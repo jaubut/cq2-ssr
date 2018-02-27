@@ -70,7 +70,10 @@ module.exports = {
   ],
   generate: {
     routes: [
-      '/'    ]
+      '/',
+      '/construction',
+      '/textile'
+    ]
   },
   router: {
     middleware: 'i18n'
