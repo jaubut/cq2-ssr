@@ -78,10 +78,7 @@ module.exports = {
   manifest: {
     name: 'Chanvre du Québec',
     lang: 'fr',
-    description: 'Chanvre du Québec, on offre les québécois la meilleur info sur le chanvre en leur faisant découvrir des entreprises du chanvre dici.',
-    theme_color: '#707a73',
-    ogTitle: 'Chanvre du Québec',
-    ogDescription: 'Chanvre du Québec, on offre les québécois la meilleur info sur le chanvre en leur faisant découvrir des entreprises du chanvre dici.'
+    theme_color: '#707a73'
   },
   oneSignal: {
     init: {
