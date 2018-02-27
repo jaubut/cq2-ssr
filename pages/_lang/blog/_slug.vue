@@ -41,6 +41,17 @@ export default {
       monthNames: ['janvier', 'février', 'mars', 'avril', 'may', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
     }
   },
+  head () {
+    return {
+      title: this.post.fields.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.fields.description },
+        { hid: 'og:image', property: 'og:image', content: this.post.fields.heroImage.fields.file.url },
+        { hid: 'og:description', property: 'og:description', content: this.post.fields.description },
+        { hid: 'og:title', property: 'og:title', content: this.post.fields.title, }
+      ]
+    }
+  },
   asyncData ({ env, params }) {
     return client.getEntries({
       'content_type': 'blogPost',

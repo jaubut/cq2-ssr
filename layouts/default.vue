@@ -32,6 +32,16 @@ export default {
     cqFooter,
     cqMenu
   },
+  head () {
+    return {
+      titleTemplate: '%s | Chanvre du Québec!',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.' },
+        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { property: 'fb:app_id', content: '1515670032095765' }
+      ]
+    }
+  },
   methods: {
     ...mapMutations({
       close: 'menu/close',

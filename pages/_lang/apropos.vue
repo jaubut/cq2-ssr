@@ -72,35 +72,38 @@ export default {
   name: 'Apropos',
   data () {
     return {
-      persons: [],
-      experts: []
+      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur l\'organisation du chanvre au québec tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      title: 'Apropos'
     }
   },
-  created () {
-    this.fetchData()
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
   },
-  watch: {
-    'lang': 'fetchData'
-  },
-  methods: {
-    fetchData () {
+  asyncData ({ env, params }) {
+    return Promise.all([
       client.getEntries({
         'content_type': 'author',
         order: '-sys.createdAt'
-      })
-        .then(response => {
-          this.persons = response.items
-          return response
-        })
+      }),
       client.getEntries({
         'content_type': 'expert',
         order: '-sys.createdAt'
       })
-        .then(response => {
-          this.experts = response.items
-          return response
-        })
-    }
+    ]).then(([entries, experts]) => {
+      return {
+        persons: entries.items,
+        experts: experts.items
+      }
+    })
+    .catch(console.error)
   }
 }
 </script>

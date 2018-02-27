@@ -100,8 +100,14 @@ export default {
     Acteur,
     Article
   },
-  head() {
-    return { title: this.$t('index.title') }
+  head () {
+    return {
+      title: 'Accueil',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.' },
+        { property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' }
+      ]
+    }
   },
   asyncData ({ env, params }) {
     return Promise.all([
