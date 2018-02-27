@@ -55,7 +55,24 @@
 </template>
 <script>
 export default {
-  name: 'jeChanvre'
+  name: 'jeChanvre',
+  data () {
+    return {
+      description: 'Je chanvre est notre initiative pour mener au monde des innovations en chanvre.',
+      title: 'Je chanvre'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: '/textile/samjeremycropped.jpg' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

@@ -83,7 +83,24 @@
 </template>
 <script>
 export default {
-  name: 'Crocx'
+  name: 'Crocx',
+  data () {
+    return {
+      description: 'Crocx offre des produits pour animaux spécialisés. Une nourriture optimale pour vos animaux.',
+      title: 'Crocx'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: '/crocx/background2.png' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

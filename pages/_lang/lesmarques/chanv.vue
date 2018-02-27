@@ -79,7 +79,24 @@
 </template>
 <script>
 export default {
-  name: 'ChanvCo'
+  name: 'ChanvCo',
+  data () {
+    return {
+      description: 'Chanv est une entreprise qui opère dans le domaine des soins corporels depuis 2004. Elle est l\'experte des produits pour la peau.',
+      title: 'Chanv'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: '/onepagechanv/header.png' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

@@ -66,7 +66,24 @@
 </template>
     <script>
 export default {
-  name: 'artduchanvre'
+  name: 'artduchanvre',
+  data () {
+    return {
+      description: 'Art du chanvre est une entreprise oeuvrant dans la construction en béton de chanvre et se spécialise dans les finitions à la chaux et la création d\'intérieur qui se démarque par leur caractère réfléchie.',
+      title: 'Art du Chanvre'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: '/artchanvre/finition.png' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

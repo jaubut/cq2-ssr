@@ -39,7 +39,24 @@
 </template>
 <script>
 export default {
-  name: 'ChanvCo'
+  name: 'ChanvCo',
+  data () {
+    return {
+      description: 'Vous aussi, afficher votre marque sur chanvre du québec. Ensemble nous formons une famille.',
+      title: 'Votre marque'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: '/textile/samjeremycropped.jpg' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

@@ -67,9 +67,6 @@ module.exports = {
       }
     ]
   ],
-  generate: {
-    fallback: true
-  },
   router: {
     middleware: 'i18n',
     scrollBehavior: function (to, from, savedPosition) {
