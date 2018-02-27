@@ -16,7 +16,7 @@
       </div>
       <router-link to="/blog" class="journal-chanvre">
         <div class="journal-chanvre">
-          <img src="../assets/logo-journalchanvre.svg" alt="logo journal du chanvre">
+          <img src="~/assets/logo-journalchanvre.svg" alt="logo journal du chanvre">
         </div>
       </router-link>
       <router-link class="article-photo" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug">
@@ -150,7 +150,10 @@ export default {
   @media screen and (max-width: 468px) {
     .journal-chanvre img {
       margin-top: 0;
-      max-height: 75%;
+      max-width: 40vw;
+    }
+    .article-back {
+      height: 85vh !important;
     }
   }
 </style>

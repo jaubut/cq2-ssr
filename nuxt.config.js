@@ -55,7 +55,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-analytics', { ua: 'UA-82844671-4' }],
-    '@nuxtjs/localtunnel',
+    ['@nuxtjs/localtunnel', { subdomain: 'chanvreduquebec' }],
     [
       '@nuxtjs/yandex-metrika',
       {

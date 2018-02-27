@@ -1,12 +1,12 @@
 <template>
   <Bloc :style="{'background-image': 'url(' + photo.urls.regular + '?utm_source=d6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf&utm_medium=referral)' }">
     <div @mouseover="openHover" @mouseleave="closeHover" class="grid-photo">
-      <div v-if="$route.name === 'Index'" class="slot"><slot></slot></div>
-      <a class="link-download" :href="photo.links.download_location + '?utm_source=d6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf&utm_medium=referral'"></a>
+      <div v-if="$route.path === '/'" class="slot"><slot></slot></div>
+      <a target="_blank" class="link-download" :href="photo.links.download_location + '?utm_source=@chanvrequebec&utm_medium=referral'"></a>
       <transition name="fade">
         <div v-if="hover" class="info-user">
-          <a :href="photo.user.links.html + '?utm_source=d6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf&utm_medium=referral'">
-            <img :src="photo.user.profile_image.small + '?utm_source=d6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf&utm_medium=referral'" alt="">
+          <a target="_blank" :href="photo.user.links.html + '?utm_source=@chanvrequebec&utm_medium=referral'">
+            <img :src="photo.user.profile_image.small + '?utm_source=@chanvrequebec&utm_medium=referral'" alt="">
             <p>{{ photo.user.name }}</p>
           </a>
         </div>

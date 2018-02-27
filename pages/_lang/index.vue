@@ -16,7 +16,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>4</span>
-        <router-link to="/lesmarques">Les marques d'ici</router-link>
+        <router-link to="/lesmarques">Les marques<span><i class="fas fa-heart"></i></span></router-link>
       </BigTexte>
     </Bloc>
     <Chanv/>
@@ -139,5 +139,10 @@ export default {
     grid-auto-rows: auto;
     grid-gap: 10px;
     width: 100%;
+  }
+  .collab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

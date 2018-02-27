@@ -8,7 +8,7 @@
   --burgandy: #CB5A44;
 }
 html, body {
-  background-image: url(../assets/background.svg);
+  background-image: url(~/assets/background.svg);
   background-repeat: repeat-y;
   background-size: 100%;
   margin: 0;
@@ -117,6 +117,7 @@ a:hover {
 .post-single p {
   font-size: 1rem;
   width: 60vw;
+  text-align: left;
 }
 .post-single blockquote p {
   font-size: 2rem;

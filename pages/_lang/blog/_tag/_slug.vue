@@ -1,14 +1,15 @@
 <template>
   <div id="Slug">
     <Bloc class="bloc span-2 no-padding" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')'}">
-      <Texte class="white">
+      <Texte link="#" class="white">
         <h1>{{ post.fields.title }}</h1>
         <p>{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</p>
-        <div class="fb-share-button" :data-href="'https://chanvreduquebec.org' + $route.path" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Partager</a></div>
+        <small class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</small>
       </Texte>
+      <div class="fb-share-button" :data-href="'https://chanvreduquebec.org' + $route.path" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Partager</a></div>
     </Bloc>
     <div class="body">
-      <h3 style="text-align: justify;">{{ post.fields.description }}</h3>
+      <h3 style="text-align: left;">{{ post.fields.description }}</h3>
       <VueMarkdown class="post-single">{{ post.fields.body }}</VueMarkdown>
     </div>
     <Bloc class="bloc hash">
@@ -111,13 +112,13 @@ export default {
   width: 80%;
   height: auto;
 }
-#Slug .post-single {
+.post-single {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  text-align: justify;
-  padding: 0 5%;
+  text-align: center;
+  width: 65vw;
 }
 #Slug .hastag {
   border: 2px white solid;
@@ -135,6 +136,7 @@ export default {
 }
 #Slug .hastag h3 {
   font-size: 1.5vw !important;
+  width: initial;
 }
 @media screen and (max-width: 468px) {
   #Slug .hastag h3 {
@@ -144,9 +146,20 @@ export default {
 #Slug .hash {
   flex-flow: row wrap !important;
 }
+.author-top {
+  text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  padding-left: 35px;
+  padding-bottom: 5px;
+}
 @media screen and (max-width: 468px) {
   #Slug .hash {
     flex-flow: column wrap !important;
+  }
+  .author-top {
+    padding-left: 15px;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="person">
     <img :src="person.fields.author[0].fields.image.fields.file.url" :alt="person.fields.author[0].fields.name">
     <h3>{{ person.fields.author[0].fields.name }}</h3>
-    <p>{{ person.fields.author[0].fields.shortBio }}</p>
+    <p style="text-align: center;">{{ person.fields.author[0].fields.shortBio }}</p>
     <p v-if="person.fields.twitter != undefined" class="follow-social">vous pouvez suivre {{ person.fields.author[0].fields.name }} sur <span><a target="_blank" :href="'https://twitter.com/'+person.fields.author[0].fields.twitter"><i class="fab fa-twitter"></i></a></span></p>
   </div>
 </template>

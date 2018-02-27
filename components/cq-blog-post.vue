@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')'}">
-    <div @mouseover="openHover" @mouseleave="closeHover" class="grid-photo">
+    <div v-if="w > 468" @mouseover="openHover" @mouseleave="closeHover" class="grid-photo">
       <router-link class="link-download" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug"></router-link>
       <transition name="fade">
         <div v-for="author in post.fields.author" :key="author.fields.name" v-if="hover" class="info-user">
@@ -21,6 +21,27 @@
         </div>
       </transition>
     </div>
+    <div v-else class="grid-photo">
+      <router-link class="link-download" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug"></router-link>
+      <transition name="fade">
+        <div v-for="author in post.fields.author" :key="author.fields.name" class="info-user">
+          <a href="#">
+            <img :src="author.fields.image.fields.file.url" :alt="author.fields.name">
+            <p class="shadow-text">{{ author.fields.name }}</p>
+          </a>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div class="views shadow-text">
+          <span>{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</span>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div class="title shadow-text">
+          <h1>{{ post.fields.title }}</h1>
+        </div>
+      </transition>
+    </div>
   </Bloc>   
 </template>
 
@@ -31,10 +52,14 @@ export default {
   props: ['post'],
   data () {
     return {
+      w: null,
       modal: false,
       hover: false,
       monthNames: ['janvier', 'février', 'mars', 'avril', 'may', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
     }
+  },
+  mounted () {
+    this.w = window.innerWidth
   },
   methods: {
     openHover () {
@@ -42,9 +67,6 @@ export default {
     },
     closeHover () {
       this.hover = false
-    },
-    closeModal () {
-      this.modal = false
     },
     truncate (text, clamp) {
       return text.slice(0, stop) + (stop < text.length ? clamp || '...' : '')

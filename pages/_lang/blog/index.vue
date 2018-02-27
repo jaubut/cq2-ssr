@@ -1,7 +1,7 @@
 <template>
   <div id="Index">
     <Bloc class="span-2">
-      <Texte>
+      <Texte link="#" >
         <h2>bienvenue sur le blog</h2>
         <p>Le meilleur contenu sur le chanvre au Québec.</p>
         <div class="tag-list">
