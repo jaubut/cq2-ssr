@@ -5,7 +5,7 @@
       <Texte>
         <h2>En voir d'autres</h2>
       </Texte>
-      <button @click="fetchData"><p>Voir +</p></button> 
+      <button @click="asyncData"><p>Voir +</p></button> 
     </Bloc>
   </div>
 </template>
@@ -16,44 +16,25 @@ import BlocPhoto from '@/components/cq-bloc-photos'
 
 const url = 'https://api.unsplash.com/photos/random'
 
+const config = {
+  params: {
+    client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
+    per_page: 24,
+    order_by: 'popular',
+    collections: 1656484,
+    count: 30
+  }
+}
 export default {
   components: {
     BlocPhoto
   },
-  data () {
-    return {
-      photos: [],
-      perPage: 24,
-      query: 'chanvre',
-      collection: 1656484
-    }
+  asyncData () {
+    return axios.get(url, config)
+    .then((res) => {
+      return { photos: res.data }
+    })
   },
-  methods: {
-    fetchData () {
-      const config = {
-        params: {
-          client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
-          per_page: this.perPage,
-          order_by: 'popular',
-          collections: this.collection,
-          count: 30
-        }
-      }
-      axios.get(url, config)
-        .then(response => {
-          this.photos = response.data
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    },
-    chanvre () {
-      this.query = 'hemp'
-    }
-  },
-  created () {
-    this.fetchData()
-  }
 }
 </script>
 
