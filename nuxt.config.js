@@ -70,8 +70,7 @@ module.exports = {
   ],
   generate: {
     routes: [
-      '/'
-    ]
+      '/'    ]
   },
   router: {
     middleware: 'i18n'

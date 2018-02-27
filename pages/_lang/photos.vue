@@ -34,7 +34,7 @@ export default {
     .then((res) => {
       return { photos: res.data }
     })
-  },
+  }
 }
 </script>
 

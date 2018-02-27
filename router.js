@@ -40,6 +40,11 @@ export function createRouter() {
         name: 'Index'
       },
       {
+        path: '/fr',
+        component: Index,
+        name: 'IndexFr'
+      },
+      {
         path: '/alimentation',
         name: 'Alimentation',
         component: Alimentation,

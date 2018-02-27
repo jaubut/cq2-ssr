@@ -1,6 +1,6 @@
 <template>
   <Bloc class="beige article-back span-v">
-    <div v-for="post in posts.slice(0, 1)" :key="post.fields.id" class="grid-article">
+    <div class="grid-article">
       <div class="article-date"><p>{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</p></div>
       <div class="article-number">
         <p>0{{ post.fields.id }}</p>
@@ -37,27 +37,14 @@ const client = createClient()
 
 var stop = 100
 export default {
-  name: 'Sept',
+  name: 'Index-article',
+  props: ['post'],
   data () {
     return {
-      posts: [],
       monthNames: ['janvier', 'février', 'mars', 'avril', 'may', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
     }
   },
-  created () {
-    this.fetchData()
-  },
   methods: {
-    fetchData () {
-      client.getEntries({
-        'content_type': 'blogPost',
-        order: '-sys.createdAt'
-      })
-        .then(response => {
-          this.posts = response.items
-          return response
-        })
-    },
     truncate (text, clamp) {
       return text.slice(0, stop) + (stop < text.length ? clamp || '...' : '')
     }

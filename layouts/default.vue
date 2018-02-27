@@ -6,8 +6,8 @@
       </router-link>
       <img @click="trigger" class="burger" src="../assets/burger.svg" alt="burger">
       <div class="lang">
-        <span>fr</span>
-        <span>en</span>
+        <router-link v-if="$i18n.locale === 'en'" :to="`/fr` + $route.fullPath" exact><span>fr</span></router-link>
+        <router-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact><span>en</span></router-link>
       </div>
     </header>
     <transition name="fade">

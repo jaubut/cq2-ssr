@@ -27,7 +27,7 @@
         <h4>L'actualité</h4>
       </BigTexte>
     </Bloc>
-    <Article/>
+    <Article :post="post" />
     <Acteur :etoile="etoile"></Acteur>
     <NewsLetter/>
     <Bloc class="span-2 align-left overflow-yes whitebg">
@@ -73,6 +73,16 @@ import {createClient} from '@/plugins/contentful'
 const client = createClient()
 const url = 'https://api.unsplash.com/photos/random'
 
+const config = {
+  params: {
+    client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
+    per_page: 1,
+    order_by: 'popular',
+    collections: 1656484,
+    count: 1
+  }
+}
+
 export default {
   components: {
     Facebook,
@@ -93,44 +103,25 @@ export default {
   head() {
     return { title: this.$t('index.title') }
   },
-  created () {
-    this.fetchData()
-  },
-  data () {
-    return {
-      photos: []
-    }
-  },
   asyncData ({ env, params }) {
-    return client.getEntries({
-      'content_type': 'etoile',
-      order: '-sys.createdAt'
-    }).then(entries => {
+    return Promise.all([
+      client.getEntries({
+        'content_type': 'etoile',
+        order: '-sys.createdAt'
+      }),
+      client.getEntries({
+        'content_type': 'blogPost',
+        order: '-sys.createdAt'
+      }),
+      axios.get(url, config)
+    ]).then(([entries, posts, res]) => {
       return {
-        etoile: entries.items[0]
+        etoile: entries.items[0],
+        post: posts.items[0],
+        photos: res.data
       }
     })
     .catch(console.error)
-  },
-  methods: {
-    fetchData () {
-      const config = {
-        params: {
-          client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
-          per_page: 1,
-          order_by: 'popular',
-          collections: 1656484,
-          count: 1
-        }
-      }
-      axios.get(url, config)
-        .then(response => {
-          this.photos = response.data
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    }
   }
 }
 </script>
