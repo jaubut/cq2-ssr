@@ -53,7 +53,6 @@ module.exports = {
   modules: [
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
-    '@nuxtjs/router',
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-analytics', { ua: 'UA-82844671-4' }],
     '@nuxtjs/localtunnel',
@@ -68,13 +67,6 @@ module.exports = {
       }
     ]
   ],
-  generate: {
-    routes: [
-      '/',
-      '/construction',
-      '/textile'
-    ]
-  },
   router: {
     middleware: 'i18n'
   },
