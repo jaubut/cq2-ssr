@@ -37,7 +37,6 @@ export default {
   },
   data () {
     return {
-      relatedposts: [],
       monthNames: ['janvier', 'février', 'mars', 'avril', 'may', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
     }
   },

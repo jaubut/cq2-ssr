@@ -28,7 +28,7 @@
       </BigTexte>
     </Bloc>
     <Article/>
-    <Acteur v-for="etoile in etoiles.slice(0, 1)" :key="etoile.fields.name" :etoile="etoile"></Acteur>
+    <Acteur :etoile="etoile"></Acteur>
     <NewsLetter/>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
@@ -98,26 +98,28 @@ export default {
   },
   data () {
     return {
-      photos: [],
-      etoiles: []
+      photos: []
     }
+  },
+  asyncData ({ env, params }) {
+    return client.getEntries({
+      'content_type': 'etoile',
+      order: '-sys.createdAt'
+    }).then(entries => {
+      return {
+        etoile: entries.items[0]
+      }
+    })
+    .catch(console.error)
   },
   methods: {
     fetchData () {
-      return client.getEntries({
-        'content_type': 'etoile',
-        order: '-sys.createdAt'
-      })
-        .then(response => {
-          this.etoiles = response.items
-          return response
-        })
       const config = {
         params: {
           client_id: 'd6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf',
           per_page: 1,
           order_by: 'popular',
-          query: 'chanvre',
+          collections: 1656484,
           count: 1
         }
       }
