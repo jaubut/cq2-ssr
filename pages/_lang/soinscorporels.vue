@@ -51,7 +51,7 @@
         <h2>Une marque d'ici</h2>
         <p>Chanv est une gamme de soins corporels qui existe depuis 2004</p>
       </Texte>
-      <CqButton to="/marques/chanv">Découvrez Chanv</CqButton>
+      <CqButton href="/lesmarques/chanv">Découvrez Chanv</CqButton>
     </Bloc>
   </div>
 </template>

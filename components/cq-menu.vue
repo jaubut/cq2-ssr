@@ -25,7 +25,7 @@
       <h2>Textile</h2>
       <p>Tissus en chanvre</p>
     </nuxt-link>
-    <nuxt-link to="/soinscorpo">
+    <nuxt-link to="/soinscorporels">
       <h2>Soins corporels</h2>
       <p>Huile de chanvre</p>
     </nuxt-link>
