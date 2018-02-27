@@ -28,6 +28,7 @@ const client = createClient()
 
 export default {
   name: 'Index',
+  scrollToTop: true,
   components: {
     BlocPost
   },

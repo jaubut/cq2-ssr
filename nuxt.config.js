@@ -94,7 +94,14 @@ module.exports = {
     }
   },
   sitemap: {
-    generate: true
+    generate: true,
+    hostname: 'https://chanvreduquebec.org',
+    routes ({ env, params }) {
+      return client.getEntries({
+        'content_type': 'blogPost',
+        'fields.slug': params.slug
+      }).then(entries => entries.items.map(post => '/blog/'+post.fields.tags[0]+'/'+post.fields.slug))
+    }
   },
   plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
 }

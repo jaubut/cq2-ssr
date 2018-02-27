@@ -31,6 +31,7 @@ const client = createClient()
 
 export default {
   name: 'Slug',
+  scrollToTop: true,
   components: {
     Person,
     VueMarkdown

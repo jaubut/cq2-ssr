@@ -17,6 +17,7 @@ const client = createClient()
 
 export default {
   name: 'Tag',
+  scrollToTop: true,
   components: {
     BlocPost
   },
