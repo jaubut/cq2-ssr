@@ -1,8 +1,5 @@
 const config = require('./.contentful.json')
 
-import {createClient} from '@/plugins/contentful'
-const client = createClient()
-
 module.exports = {
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
@@ -98,13 +95,7 @@ module.exports = {
   },
   sitemap: {
     generate: true,
-    hostname: 'https://chanvreduquebec.org',
-    routes ({ env, params }) {
-      return client.getEntries({
-        'content_type': 'blogPost',
-        'fields.slug': params.slug
-      }).then(entries => entries.items.map(post => '/blog/'+post.fields.tags[0]+'/'+post.fields.slug))
-    }
+    hostname: 'https://chanvreduquebec.org'
   },
   plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
 }
