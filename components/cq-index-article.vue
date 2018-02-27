@@ -14,7 +14,7 @@
       <div class="article-tag">
         <p v-for="tag in (post.fields.tags).slice(0, 2)" :key="tag">{{ tag }}/</p>
       </div>
-      <router-link :to="{ name: 'Blog' }" class="journal-chanvre">
+      <router-link to="/blog" class="journal-chanvre">
         <div class="journal-chanvre">
           <img src="../assets/logo-journalchanvre.svg" alt="logo journal du chanvre">
         </div>

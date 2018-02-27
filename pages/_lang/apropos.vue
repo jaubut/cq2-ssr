@@ -1,26 +1,26 @@
 <template>
   <div id="Apropos">
     <Bloc class="span-2">
-      <Texte>
+      <Texte link="#">
         <h2>Chanvre Québec</h2>
         <p>“Seuls ceux qui sont assez fous pour penser qu'ils peuvent changer le monde y parviennent” - <strong>Steve Jobs.</strong></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal beige">
-      <Texte>
+      <Texte link="#">
         <h2>Notre mission</h2>
         <p>Faire découvrir le chanvre d'ici et d'ailleurs.</p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-ame"></Bloc>
     <Bloc class="height-normal">
-      <Texte>
+      <Texte link="#">
         <h2>Qui sommes-nous?</h2>
         <p>Un organisme à but non-lucratif, fondé par de jeunes visionnaires, qui a pour objectif d'offrir des solutions saines et durables aux défis d’aujourd’hui. Par-dessus tout, nous sommes passionnés par notre mission de promouvoir une plante qui nous permet de reconnecter avec notre environnement.</p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
-      <Texte>
+      <Texte link="#">
         <h2>Notre engagement</h2>
         <ul> 
         <li> Être la référence en informations </li> 
@@ -36,7 +36,7 @@
     </Bloc>
     <template v-for="person in persons">
       <Bloc :key="person.title" class="height-normal">
-        <Texte>
+        <Texte link="#">
           <h2>{{ person.fields.name }}</h2>
           <p>{{ person.fields.title }}</p>   
           <p>{{ person.fields.shortBio }}</p>
@@ -53,7 +53,7 @@
     </Bloc>
     <template v-for="expert in experts">
       <Bloc :key="expert.title" class="height-normal">
-        <Texte>
+        <Texte link="#">
           <h2>{{ expert.fields.name }}</h2>
           <p>{{ expert.fields.shortBio }}</p>
           <p v-if="expert.fields.twitter != undefined" class="follow-social">you can follow {{ expert.fields.name }} on <span><a target="_blank" :href="'https://twitter.com/'+expert.fields.twitter"><i class="fab fa-twitter"></i></a></span></p>
@@ -69,7 +69,7 @@ import {createClient} from '@/plugins/contentful'
 const client = createClient()
 
 export default {
-  name: 'Apropos',
+  name: 'apropos',
   data () {
     return {
       description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur l\'organisation du chanvre au québec tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',

@@ -1,8 +1,8 @@
 <template>
   <div id="Texte">
-    <router-link :to="{ name: link }">
+    <nuxt-link :to="link">
       <slot></slot>
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 <script>

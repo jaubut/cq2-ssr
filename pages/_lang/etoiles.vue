@@ -1,7 +1,7 @@
 <template>
   <div id="etoiles">
     <Bloc class="span-3 beige">
-      <Texte>
+      <Texte link="#">
         <h2>Les étoiles</h2>
         <p>Le temple de la renommé du chanvre.</p>
       </Texte>

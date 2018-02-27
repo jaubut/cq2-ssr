@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal photo">
-    <Texte link="Apropos"> 
+    <Texte link="/apropos"> 
       <h2> Notre mission </h2>
       <p>Faire découvrir le chanvre d'ici et d'ailleurs.</p>
     </Texte>

@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal dark photo">
-    <Texte link="Chanv">
+    <Texte link="/lesmarques/chanv">
       <h2>Chanv</h2>
       <p class="center"> <strong>Soins corporels, depuis 2004</strong></p>
     </Texte>

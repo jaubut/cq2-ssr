@@ -1,10 +1,10 @@
 <template>
   <Bloc class="green height-normal">
-    <Texte link="Apropos">
+    <Texte link="/apropos">
       <h2>Chanvre Québec</h2>
       <p class="center">On parle de chanvre.</p>
     </Texte>
-    <CqButton caca="color-beige" href="Apropos">À propos</CqButton>
+    <CqButton caca="color-beige" href="/apropos">À propos</CqButton>
   </Bloc>
 </template>
 <script>

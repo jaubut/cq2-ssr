@@ -1,7 +1,7 @@
 <template>
   <div id="Artisans">
     <Bloc class="span-2 beige">
-      <Texte>
+      <Texte link="#">
         <h2>Les marques d'ici</h2>
         <p>Voici le chanvre du Québec.</p>
       </Texte>
@@ -19,29 +19,43 @@
         <h2>{{ artisan.title }}</h2>
         <p>{{ artisan.description }}</p>
       </Texte>
-      <img :src="artisan.img" alt="">
+      <img class="img-marques" :src="artisan.img" alt="">
     </Bloc>
   </div>
 </template>
 <script>
 var _ = require('lodash')
+import { mapState } from 'vuex'
 
 export default {
   name: 'Artisans',
   data () {
     return {
-      filter: null
+      filter: null,
+      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      title: 'Les marques'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
+      ]
     }
   },
   computed: {
-    artisans () {
-      return this.$store.state.artisans.artisans
-    },
+    ...mapState({
+      selectArtisans: state => state.artisans.artisans
+    }),
     orderArtisans: function () {
       if (this.filter === null) {
-        return this.artisans
+        return this.selectArtisans
       } else {
-        return _.filter(this.artisans, { 'group': this.filter })
+        return _.filter(this.selectArtisans, { 'group': this.filter })
       }
     }
   }
@@ -79,5 +93,9 @@ export default {
   :target {
     border: 1px solid rgba(79, 93, 86, 0.9) !important;
     color: rgba(79, 93, 86, 0.9) !important;
+  }
+  .img-marques {
+    height: 150px !important;
+    width: auto !important;
   }
 </style>

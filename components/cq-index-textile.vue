@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="Textile">
+    <Texte link="/textile">
       <h2>Textile</h2>
       <p class="center">Confort et durabilité.</p>
     </Texte>

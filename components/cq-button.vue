@@ -1,9 +1,9 @@
 <template>
-  <router-link :to="{ name: href }">
+  <nuxt-link :to="href">
     <button :class="caca">
       <p><slot></slot></p>
     </button>
-  </router-link>
+  </nuxt-link>
 </template>
 <script>
 export default {

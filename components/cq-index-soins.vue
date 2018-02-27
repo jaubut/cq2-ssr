@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="Soins">
+    <Texte link="/soinscorporels">
       <h2>Soins corporels</h2>
       <p class="center">L'huile végétale par excellence en cosmétique.</p>
     </Texte>

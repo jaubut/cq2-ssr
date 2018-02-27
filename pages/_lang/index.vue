@@ -16,7 +16,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>4</span>
-        <router-link to="/marques">Les marques d'ici</router-link>
+        <router-link to="/lesmarques">Les marques d'ici</router-link>
       </BigTexte>
     </Bloc>
     <Chanv/>
@@ -38,7 +38,7 @@
     </Bloc>
     <Facebook/>
     <BlocPhoto class="height-normal" v-for="photo in photos" :key="photo.id" :photo="photo">
-      <Texte class="white" link="Photos">
+      <Texte class="white" link="/photos">
         <h2>Nos photos préférées</h2>
         <p>Toutes ces magnifiques photos sont hébergés sur unsplash.com <br>et libre de droit.</p>
         <div class="collab">

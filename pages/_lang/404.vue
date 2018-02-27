@@ -2,7 +2,7 @@
   <div id="notfound">
     <h1>404</h1>
     <h2>Ce lien n'existe pas.</h2>
-    <p>Retourner à <router-link class="hyperlien" to="/">l'accueil.</router-link></p>
+    <p>Retourner à <nuxt-link class="hyperlien" to="/">l'accueil.</nuxt-link></p>
   </div>
 </template>
 

@@ -1,50 +1,50 @@
 <template>
   <div id="cqMenu">
     <button @mouseover="autoScroll" class="next"><i class="fas fa-fast-forward"></i></button> 
-    <router-link to="/apropos">
+    <nuxt-link to="/apropos">
       <h2>À propos</h2>
       <p>L'équipe et sa mission</p>
-    </router-link>
-    <router-link :to="{ name: LeChanvre }">
+    </nuxt-link>
+    <nuxt-link to="/lechanvre">
       <h2>Le chanvre</h2>
       <p>information sur la plante</p>
-    </router-link>
-    <router-link to="/marques">
+    </nuxt-link>
+    <nuxt-link to="/lesmarques">
       <h2>Les marques d'ici</h2>
       <p>Les entreprises du chanvre</p>
-    </router-link>
-    <router-link to="/blog">
+    </nuxt-link>
+    <nuxt-link to="blog">
       <h2>Le blogue</h2>
       <p>Information & opinion</p>
-    </router-link>    
-    <router-link :to="{ name: Construction }">
+    </nuxt-link>    
+    <nuxt-link to="/construction">
       <h2>Construction</h2>
       <p>Maison en chanvre</p>
-    </router-link>
-    <router-link to="{ name: Textile }">
+    </nuxt-link>
+    <nuxt-link to="textile">
       <h2>Textile</h2>
       <p>Tissus en chanvre</p>
-    </router-link>
-    <router-link :to="{ name: Soins }">
+    </nuxt-link>
+    <nuxt-link to="/soinscorpo">
       <h2>Soins corporels</h2>
       <p>Huile de chanvre</p>
-    </router-link>
-     <router-link :to="{ name: Alimentation }">
+    </nuxt-link>
+     <nuxt-link to="/alimentation">
       <h2>Alimentation</h2>
       <p>Section alimentation</p>
-    </router-link>
-     <router-link :to="{ name: CBD }">
+    </nuxt-link>
+     <nuxt-link to="/cbd">
       <h2>Médecine</h2>
       <p>Informations sur le CBD</p>
-    </router-link>
-    <router-link to="/photos">
+    </nuxt-link>
+    <nuxt-link to="/photos">
       <h2>Photos</h2>
       <p>La gallerie du chanvre</p>
-    </router-link>
-    <router-link to="/etoiles">
+    </nuxt-link>
+    <nuxt-link to="/etoiles">
       <h2>Étoiles</h2>
       <p>Le temple de la renommé</p>
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 

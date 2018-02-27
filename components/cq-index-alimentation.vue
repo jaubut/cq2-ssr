@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="Alimentation">
+    <Texte link="/alimentation">
       <h2>Alimentation</h2>
       <p class="center">Le super aliment.</p>
     </Texte>

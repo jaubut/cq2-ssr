@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="Construction">
+    <Texte link="/construction">
       <h2>Construction</h2>
       <p class="center">Un gage de durabilité.</p>
     </Texte>

@@ -2,7 +2,7 @@
   <div id="photos">
     <BlocPhoto v-for="photo in photos" :key="photo.id" :photo="photo"></BlocPhoto>
     <Bloc>
-      <Texte>
+      <Texte link="#">
         <h2>En voir d'autres</h2>
       </Texte>
       <button @click="asyncData"><p>Voir +</p></button> 

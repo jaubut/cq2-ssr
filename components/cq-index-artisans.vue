@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal photo-artiste">
-    <router-link class="texte-artiste" :to="{ name: 'Etoile' }">
+    <nuxt-link class="texte-artiste" to="/etoiles">
       <div class="text-container">
         <h3>L'acteur du moment</h3>
         <h2>{{ etoile.fields.name }}</h2>
@@ -8,7 +8,7 @@
       </div>
       <div class="photo-mois" :style="{ 'background-image': 'url(' + etoile.fields.photo.fields.file.url + ')' }"></div>
       <p class="little">{{ etoile.fields.date }}</p>
-    </router-link>
+    </nuxt-link>
   </Bloc>
 </template>
 

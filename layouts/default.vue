@@ -1,13 +1,13 @@
 <template>
   <div>
     <header>
-      <router-link class="logo" to="/">
+      <nuxt-link class="logo" to="/">
         <img class="logo" src="~/assets/logo-round.svg" alt="logo, chanvre quebec">
-      </router-link>
+      </nuxt-link>
       <img @click="trigger" class="burger" src="../assets/burger.svg" alt="burger">
       <div class="lang">
-        <router-link v-if="$i18n.locale === 'fr'" :to="`/en` + $route.fullPath" exact><span>en</span></router-link>
-        <router-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact><span>fr</span></router-link>
+        <nuxt-link v-if="$i18n.locale === 'fr'" :to="`/en` + $route.fullPath" exact><span>en</span></nuxt-link>
+        <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact><span>fr</span></nuxt-link>
       </div>
     </header>
     <transition name="fade">
@@ -100,16 +100,13 @@ export default {
     margin: 0 2% 5% 2%;
     transition: all 0.5s ease-in-out;
   }
-  main .active {
+  .active {
     transform: translateY(calc(40vh + 75px));
   }
 
   @media screen and (min-width: 468px) {
     header .logo {
       height: 125px;
-    }
-    .active {
-      transform: translateY(calc(40vh + 75px));
     }
   }
 </style>

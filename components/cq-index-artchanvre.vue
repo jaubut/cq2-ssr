@@ -1,6 +1,6 @@
 <template>
   <Bloc class="height-normal dark photo">
-    <Texte link="ArtduChanvre">
+    <Texte link="/lesmarques/artduchanvre">
       <h2>Art du <br> Chanvre</h2>
       <p class="center"> <strong>Construction en chanvre</strong></p>
     </Texte>

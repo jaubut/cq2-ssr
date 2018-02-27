@@ -67,8 +67,14 @@ module.exports = {
       }
     ]
   ],
+  generate: {
+    fallback: true
+  },
   router: {
-    middleware: 'i18n'
+    middleware: 'i18n',
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
   },
   manifest: {
     name: 'Chanvre du Québec',
@@ -88,5 +94,5 @@ module.exports = {
     generate: true,
     hostname: 'https://chanvreduquebec.org'
   },
-  plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js']
+  plugins: ['~/plugins/i18n.js', '~/plugins/cqbloc.js', '~/plugins/cqtexte.js', '~/plugins/facebookSDK.js', '~/plugins/cqbutton.js', '~/plugins/cqbigtexte.js', '~/plugins/contentful.js', '~/plugins/vueclickoutside.js', '~/plugins/cqoutbutton.js', '~/plugins/cqinterbutton.js']
 }
