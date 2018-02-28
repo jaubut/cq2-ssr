@@ -74,7 +74,7 @@ module.exports = {
       .then((entries) => {
         return [
           // map entries to URLs
-          ...entries.items.map(entry => `/blog/${entry.fields.slug}`)
+          ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`)
         ]
       })
     }
