@@ -1,10 +1,7 @@
-const config = require('./.contentful.json')
+const {createClient} = require('./plugins/contentful')
+const cdaClient = createClient()
 
 module.exports = {
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN
-  },
   /*
   ** Headers of the page
   */
@@ -55,7 +52,6 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-analytics', { ua: 'UA-82844671-4' }],
-    ['@nuxtjs/localtunnel', { subdomain: 'chanvreduquebec' }],
     [
       '@nuxtjs/yandex-metrika',
       {
@@ -67,6 +63,22 @@ module.exports = {
       }
     ]
   ],
+  generate: {
+    routes () {
+      return Promise.all([
+        // get all blog posts
+        cdaClient.getEntries({
+          'content_type': 'blogPost'
+        })
+      ])
+      .then((entries) => {
+        return [
+          // map entries to URLs
+          ...entries.items.map(entry => `/blog/${entry.fields.slug}`)
+        ]
+      })
+    }
+  },
   router: {
     middleware: 'i18n',
     scrollBehavior: function (to, from, savedPosition) {
