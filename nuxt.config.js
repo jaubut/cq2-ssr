@@ -65,15 +65,10 @@ module.exports = {
   ],
   generate: {
     routes () {
-      return Promise.all([
-        // get all blog posts
-        cdaClient.getEntries({
-          'content_type': 'blogPost'
-        })
-      ])
-      .then((entries) => {
+      return cdaClient.getEntries({
+        'content_type': 'blogPost'
+      }).then(entries => {
         return [
-          // map entries to URLs
           ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`)
         ]
       })
