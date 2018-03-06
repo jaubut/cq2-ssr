@@ -1,47 +1,47 @@
 <template>
   <div id="cqMenu">
     <button @mouseover="autoScroll" class="next"><i class="fas fa-fast-forward"></i></button> 
-    <nuxt-link to="/apropos">
+    <nuxt-link :to="$i18n.path('apropos')">
       <h2>À propos</h2>
       <p>L'équipe et sa mission</p>
     </nuxt-link>
-    <nuxt-link to="/lechanvre">
+    <nuxt-link :to="$i18n.path('lechanvre')">
       <h2>Le chanvre</h2>
       <p>information sur la plante</p>
     </nuxt-link>
-    <nuxt-link to="/lesmarques">
+    <nuxt-link :to="$i18n.path('lesmarques')">
       <h2>Les marques d'ici</h2>
       <p>Les entreprises du chanvre</p>
     </nuxt-link>
-    <nuxt-link to="blog">
+    <nuxt-link :to="$i18n.path('blog')">
       <h2>Le blogue</h2>
       <p>Information & opinion</p>
     </nuxt-link>    
-    <nuxt-link to="/construction">
+    <nuxt-link :to="$i18n.path('construction')">
       <h2>Construction</h2>
       <p>Maison en chanvre</p>
     </nuxt-link>
-    <nuxt-link to="textile">
+    <nuxt-link :to="$i18n.path('textile')">
       <h2>Textile</h2>
       <p>Tissus en chanvre</p>
     </nuxt-link>
-    <nuxt-link to="/soinscorporels">
+    <nuxt-link :to="$i18n.path('soinscorporels')">
       <h2>Soins corporels</h2>
       <p>Huile de chanvre</p>
     </nuxt-link>
-     <nuxt-link to="/alimentation">
+     <nuxt-link :to="$i18n.path('alimentation')">
       <h2>Alimentation</h2>
       <p>Section alimentation</p>
     </nuxt-link>
-     <nuxt-link to="/cbd">
+     <nuxt-link :to="$i18n.path('cbd')">
       <h2>Médecine</h2>
       <p>Informations sur le CBD</p>
     </nuxt-link>
-    <nuxt-link to="/photos">
+    <nuxt-link :to="$i18n.path('photos')">
       <h2>Photos</h2>
       <p>La gallerie du chanvre</p>
     </nuxt-link>
-    <nuxt-link to="/etoiles">
+    <nuxt-link :to="$i18n.path('etoiles')">
       <h2>Étoiles</h2>
       <p>Le temple de la renommé</p>
     </nuxt-link>

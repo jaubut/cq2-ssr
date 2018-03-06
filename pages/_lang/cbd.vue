@@ -2,67 +2,67 @@
   <div id="soins">
     <Bloc class="beige span-2">
       <Texte link="#">
-        <h2>Une plante médicinale</h2>
-        <p>La plante de chanvre contient plus de 70 différents cannabinoïdes avec des effets pharmacologiques différents. Le composé le plus populaire est sans aucun doute le tetrahydrocannabinol (THC). Toutefois, c’est le Cannabidiol (CBD), un composé non-psychoactif, qui pourrait bien bouleverser le monde des soins de santé dans les prochaines années.</p>
+        <h2 v-html="$t('cbd.cbd-1')"></h2>
+        <p v-html="$t('cbd.cbd-2')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>Le corps humain</h2>
-        <p>Beaucoup de gens ignorent que le corps humain est doté de récepteurs à cannabinoïdes (système endocannabinoïde) et qu’il produit naturellement ses propres molécules. C’est donc dire que nous étions conçus pour recevoir les effets de ces molécules. </p>
+        <h2 v-html="$t('cbd.cbd-3')"></h2>
+        <p v-html="$t('cbd.cbd-4')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-un"></Bloc>
     <Bloc class="height-normal photo-deux"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>Provenance du CBD. </h2>
-        <p>L'huile de CBD est extraite de la tige de cultivars de chanvre spécifiquement sélectionnés.  C’est une molécule qui est produite totalement indépendamment du THC. C’est donc dire que l’on peut prélever du CBD sur une plante ne contenant pas de THC.</p>
+        <h2 v-html="$t('cbd.cbd-5')"></h2>
+        <p v-html="$t('cbd.cbd-6')"></p>
       </Texte>
     </Bloc>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
-          <h4>Les avantages</h4>
+          <h4 v-html="$t('cbd.cbd-7')"></h4>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2>1. Santé mentale</h2>
-        <p>À l’opposé complètement du THC, les recherches cliniques et précliniques ont montré que le CBD produit des effets antipsychotiques (réduisant les troubles liés aux psychoses) et même anxiolytiques (réduisant l’anxiété). En somme, les études affichent des propriétés thérapeutiques prometteuses pour le traitement des psychoses liées à la schizophrénie. </p>
+        <h2 v-html="$t('cbd.cbd-8')"></h2>
+        <p v-html="$t('cbd.cbd-9')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-trois"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>2. Stabilité émotionnelle</h2>
-        <p>Entre autres, le CBD peut moduler le traitement de la mémoire émotionnelle et diminuer les symptômes associés aux troubles de la mémoire émotionnelle tels que le trouble de stress post-traumatique. On note également une augmentation notable de la qualité de vie des patients atteints par la maladie de Parkinson avec l’usage de CBD. </p>
+        <h2 v-html="$t('cbd.cbd-10')"></h2>
+        <p v-html="$t('cbd.cbd-11')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>3. Santé physique </h2>
-        <p>Le CBD est un puissant anticonvulsant et anti-inflammatoire naturel. En d’autres mots, la molécule s’est avérée fortement utile dans le soulagement de douleurs musculaires et spasmes violents, d’où sa popularité grandissante chez les athlètes de sports de combat et dans l’entraînement physique. </p>
+        <h2 v-html="$t('cbd.cbd-12')"></h2>
+        <p v-html="$t('cbd.cbd-13')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-quattre"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>4. Bien plus encore </h2>
-        <p>Puisque le CBD est une molécule relativement nouvelle dans le monde de la recherche, de nombreux bienfaits pour la santé demeurent non démontrés par la preuve scientifique, même si de nombreux utilisateurs en témoignent. Parmi eux la longue liste, en voici un échantillon : réduction des problèmes de peau (psoriasis), du taux de sucre dans le sang, des blocages artériels, des crises d’épilepsie, de la dépendance au tabac, du déficit d’attention, des nausées, etc.  </p>
+        <h2 v-html="$t('cbd.cbd-14')"></h2>
+        <p v-html="$t('cbd.cbd-15')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal span-2 beige">
       <Texte link="#">
-        <h2>Précaution: </h2>
-        <p>Il faut faire extrêmement attention avec les produits qui se retrouveront sur le marché. D’abord, il pourrait y avoir un manque au niveau de la réglementation et de l’étiquetage des produits de CBD (une infime proportion pourrait recevoir la mention « source de CBD » tout de même.) Aussi, il faut savoir que toutes les applications de CBD ne s’équivalent pas (injection, oral, combustion …). Nous vous conseillons de faire vos recherches et de consulter un professionnel de la santé. </p>
+        <h2 v-html="$t('cbd.cbd-16')"></h2>
+        <p v-html="$t('cbd.cbd-17')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal span-2">
       <Texte link="#">
-        <h2>Sources</h2>
-          <a href="https://www.nature.com/articles/npp201693"><p>1. Santé mentale et stabilité émotionnelle</p></a> 
-          <a href="https://www.nature.com/articles/nri1602"><p>2. Santé physique</p></a>
+        <h2 v-html="$t('cbd.cbd-18')"></h2>
       </Texte>
+      <a href="https://www.nature.com/articles/npp201693"><p>{{ $t('cbd.cbd-19') }}</p></a> 
+      <a href="https://www.nature.com/articles/nri1602"><p>{{ $t('cbd.cbd-20') }}</p></a>
     </Bloc>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <nuxt-link class="logo" to="/">
+      <nuxt-link class="logo" :to="$i18n.path('')">
         <img class="logo" src="~/assets/logo-round.svg" alt="logo, chanvre quebec">
       </nuxt-link>
       <img @click="trigger" class="burger" src="../assets/burger.svg" alt="burger">

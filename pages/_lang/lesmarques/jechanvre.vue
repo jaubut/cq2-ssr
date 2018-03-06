@@ -2,32 +2,32 @@
   <div id="jechanvre">
     <Bloc class="height-normal span-2 photo-un">
     </Bloc>
-    <Bloc class="height-normal photo-deux"> </Bloc>
+    <Bloc class="height-normal photo-deux"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#" class="align-right">
-        <h2>Mouvement propulsé par Chanvre Québec.</h2>
-        <p>« Nous avons créé le projet jechanvre dans le but final de stimuler l’innovation dans le domaine des vêtements en chanvre. 100% des profits réalisés sont réinvestis pour produire de nouvelles collections. C’est l’opportunité pour chacun d’exprimer sa solidarité pour la plante. »</p>
+        <h2 v-html="$t('jechanvre.jechanvre-1')"></h2>
+        <p v-html="$t('jechanvre.jechanvre-2')"></p>
       </Texte>
      </Bloc>
      <Bloc class="height-normal">
       <Texte link="#">
-        <h2> La fondation </h2>
-        <p>Le projet a vu le jour en 2016 lorsqu’une équipe d’étudiant du Cégep a voulu représenter l’industrie du chanvre à une compétition interécole. Nous leur avons donc « designer » des chandails « jechanvre » pour qu’ils puissent exprimer ce message à leur foire.  Une belle équipe de motivés qui a remporté 4 prix sur 6 (un record)! </p>
+        <h2 v-html="$t('jechanvre.jechanvre-3')"></h2>
+        <p v-html="$t('jechanvre.jechanvre-4')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-trois">
-      <CqOutButton href="https://www.jechanvre.io">Visitez jechanvre</CqOutButton>
+      <CqOutButton href="https://www.jechanvre.io">{{ $t('jechanvre.jechanvre-5') }}</CqOutButton>
     </Bloc>
     <Bloc class="span-2 align-left overflow-yes whitebg no-padding">
       <BigTexte>
         <span>3</span>
-        <router-link to="#">Les produits</router-link>
+        <router-link to="#">{{ $t('jechanvre.jechanvre-6') }}</router-link>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>Casquettes en chanvre</h2>
-        <p class="justify"> Un mélange « tri-blend » unique qui promet un gage de polyvalence, de confort et de durabilité. 100% des profits de cette collection sont réinvestis pour produire une ligne “made in Canada”.  </p>
+        <h2 v-html="$t('jechanvre.jechanvre-7')"></h2>
+        <p class="justify" v-html="$t('jechanvre.jechanvre-8')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-quattre"></Bloc>
@@ -36,20 +36,20 @@
     <Bloc class="span-2 align-left overflow-yes whitebg no-padding">
       <BigTexte>
         <span></span>
-        <router-link to="#">Le verdict</router-link>
+        <router-link to="#">{{ $t('jechanvre.jechanvre-9') }}</router-link>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2>La mission</h2>
-        <p> Notre objectif est de propulser de nouveaux produits sur le marché en collaboration avec différentes marques.</p>
+        <h2 v-html="$t('jechanvre.jechanvre-10')"></h2>
+        <p v-html="$t('jechanvre.jechanvre-11')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-sept">
       <Texte link="#">
-        <h2>Jugez par vous-mêmes!</h2>
+        <h2 v-html="$t('jechanvre.jechanvre-12')"></h2>
       </Texte>
-      <CqOutButton href="https://www.jechanvre.io">Visitez jechanvre</CqOutButton>
+      <CqOutButton href="https://www.jechanvre.io">{{ $t('jechanvre.jechanvre-13') }}</CqOutButton>
     </Bloc>
   </div>
 </template>
