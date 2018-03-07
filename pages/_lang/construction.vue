@@ -2,103 +2,106 @@
   <div id="construction">
     <Bloc class="span-2 beige" >
       <Texte link="#" class="align-left">
-        <h2>Construction en chanvre</h2>
-        <p>Un gage de durabilité</p>
+        <h2 v-html="$t('construction.title')"></h2>
+        <p v-html="$t('construction.description')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-un"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#" class="align-right">
-        <h2>Le mur de béton de chanvre</h2>
-        <p>C’est le cœur de la tige de chanvre (chènevotte) qui est utilisé comme un isolant poreux. On le combine avec la chaux aérienne (liant naturel), l’eau et la terre cuite broyée pour obtenir le fameux « béton de chanvre ». Le béton de chanvre enveloppe la structure du bâtiment et remplace le système d’isolation de la maison.</p>
+        <h2 v-html="$t('construction.mur')"></h2>
+        <p v-html="$t('construction.mur-desc')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#" class="align-right">
-        <h2>Finition à la chaux</h2>
-        <p>Pour préserver le caractère vivant du béton de chanvre, celui-ci doit être enduit d’une finition à la chaux (intérieur et extérieur). Offrant par la même occasion un effet de profondeur et de pureté au design intérieur.</p>
+        <h2 v-html="$t('construction.finition')"></h2>
+        <p v-html="$t('construction.finition-desc')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-deux"></Bloc>
     <Bloc class="height-normal photo-trois"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <blockquote>« Construire en chanvre va bien au-delà du besoin vital de se loger et élève la construction vers une vision globale de l'architecture et du design durable»</blockquote>
-        <p class="author">- Anthony Néron</p>
+        <blockquote v-html="$t('construction.blockquote-antho')"></blockquote>
+        <p class="author" v-html="$t('construction.blockquote-name')"></p>
       </Texte>
-      <InterButton class="dark" href="/lesmarques/artduchanvre">Art du Chanvre</InterButton>
+      <InterButton class="dark" href="/lesmarques/artduchanvre">{{ $t('construction.artduchanvre') }}</InterButton>
     </Bloc>
     <Bloc class="height-normal span-2">
       <Texte link="#">
-        <h2>Les avantages de l’habitation en chanvre:</h2>
-        <p>La maison en chanvre incarne l’idéal de l’habitation écologique: confortable, durable et adaptée au climat. Il existe aujourd’hui plus d’une centaine de réalisations en chanvre à travers le Québec, découvrez pourquoi.</p>
+        <h2 v-html="$t('construction.avantage')"></h2>
+        <p v-html="$t('construction.avantage-1')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-quattre">
       <Texte link="#" class="align-left">
-        <h2>1.Efficacité énergétique</h2>
-        <p class="justify">Le béton de chanvre, enduit avec un fini naturel, a l’avantage d’agir comme une masse thermique très efficace. Les maisons en chanvre sont ainsi tempérées, on profite d’une température ambiante de 21 degrés durant toute l’année sans être énergivore.</p>
+        <h2 v-html="$t('construction.avantage-2')"></h2>
+        <p class="justify" v-html="$t('construction.avantage-3')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-cinq">
       <Texte link="#">
-        <h2>2. Durabilité hors-pair</h2>
-        <p class="justify">Le béton de chanvre va continuer de se pétrifier avec le temps, comme la pierre, afin de se solidifier. C’est un mur ininflammable qui ne peut pas être attaqué par la vermine et qui permet d’intervenir plus rapidement en cas de dégât d’eau.</p>
+        <h2 v-html="$t('construction.avantage-4')"></h2>
+        <p class="justify" v-html="$t('construction.avantage-5')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-six">
       <Texte link="#">
-        <h2>3. Facteur écologique</h2>
-        <p class="justify">Au Québec, le béton de chanvre est composé à 100% d’ingrédients naturels et présente un bilan carbone négatif! Des études ont démontré qu’une maison en chanvre de taille moyenne est en mesure de séquestrer jusqu’à 6.25 tonnes de CO2 à l’intérieur même des murs.</p>
+        <h2 v-html="$t('construction.avantage-6')"></h2>
+        <p class="justify" v-html="$t('construction.avantage-7')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-sept">
       <Texte link="#">
-        <h2>4. Qualité de l'air</h2>
-        <p>Les maisons actuelles sont très bien isolées. Le problème est justement qu’elles ne permettent pas un échange d’air, ce qui se reflète par une pollution de l’air ambiante. Pour sa part, le mur en chanvre respire et permet donc un échange d’air. </p>
+        <h2 v-html="$t('construction.avantage-8')"></h2>
+        <p v-html="$t('construction.avantage-9')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-huit">
       <Texte link="#">
-        <h2>5. Confort global</h2>
-        <p>Le contrôle hygrométrique permet au mur de béton de chanvre de réguler intuitivement l’humidité relative dans l’air. Également, on profite d’une excellente isolation acoustique. </p>
+        <h2 v-html="$t('construction.avantage-10')"></h2>
+        <p v-html="$t('construction.avantage-11')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-neuf">
       <Texte link="#">
-        <h2>6. Design & Ambiance</h2>
-        <p>Avec sa finition à la chaux et ses murs composés de végétaux, il y a véritablement une sensation unique qui est ressentie dans l’habitation en chanvre. C'est un climat paisible et zen.</p>
+        <h2 v-html="$t('construction.avantage-12')"></h2>
+        <p v-html="$t('construction.avantage-13')"></p>
+      </Texte>
+    </Bloc>
+    <Bloc class="height-normal">
+      <Texte class="burgandy" link="#">
+        <h2>{{ $t('construction.avantage-14') }}</h2>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>Les méthodes pour intégrer le chanvre à l’habitation.</h2>
+        <h2 v-html="$t('construction.technique-1')"></h2>
+        <p v-html="$t('construction.technique-2')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>1.</h2>
-        <p><strong>Le chanvre coffré</strong> consiste à couler la maison sur place, une enveloppe monolithique. Inspiré du béton romain, il n’y a pas de joints (faiblesses) dans ce type de construction. On compacte le mélange (de béton de chanvre) dans le coffrage.</p>
+        <h2 v-html="$t('construction.technique-3')"></h2>
+        <p v-html="$t('construction.technique-4')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>2.</h2>
-        <p><strong>Les blocs de chanvre</strong> pré-séchés découlent du désir de réduire la main-d’œuvre et le temps de séchage sur les chantiers. On reproduit le concept du béton de chanvre sous la forme de blocs moulés et pré-séchés que l’on assemble avec un mortier.</p>
+        <h2 v-html="$t('construction.technique-5')"></h2>
+        <p v-html="$t('construction.technique-6')"></p>
       </Texte>
-    </Bloc>
-    <Bloc class="height-normal">
-      <Texte link="#">
-        <h2>3.</h2>
-        <p><strong>La laine de chanvre,</strong> issue de la fibre de la plante, est utilisée pour remplacer la laine synthétique dans les murs traditionnels. Cette solution d’isolation en chanvre est simple et démontrée, quoi qu’elle ne dispose pas des avantages du béton de chanvre (mentionnés précédemment). <router-link class="hyperlien" to="/blog/construction/comment-construire-en-chanvre"><p>Lire notre article complet sur les méthodes de construction en chanvre.</p></router-link>  </p>
-      </Texte>
+      <router-link class="hyperlien" to="/blog/construction/comment-construire-en-chanvre">
+        <p v-html="$t('construction.technique-7')"></p>
+      </router-link>
     </Bloc>
     <Bloc class="height-normal span-2 photo-dix">
       <Texte link="#">
-        <h2> Crédit photo</h2>
-        <p>Toutes les photos ont été prises sur des réalisations de cet artisan Québecois. </p>
+        <h2 v-html="$t('construction.credit-1')"></h2>
+        <p v-html="$t('construction.credit-2')"></p>
       </Texte>
-      <CqOutButton href="https://www.artduchanvre.com">Visitez Artdu<br>chanvre</CqOutButton>
+      <CqOutButton href="https://www.artduchanvre.com">{{ $t('construction.credit-3') }}</CqOutButton>
     </Bloc>
   </div>
 </template>

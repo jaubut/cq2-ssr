@@ -20,6 +20,9 @@ export default {
   .white {
     color: white !important;
   }
+  .burgandy {
+    color: #CB5A44;
+  }
   .center {
     text-align: center;
   }

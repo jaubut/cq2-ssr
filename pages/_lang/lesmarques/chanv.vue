@@ -2,26 +2,26 @@
   <div id="ChanvCo">
     <Bloc class="height-normal span-2 photo-back">
       <Texte link="#" class="align-left">
-        <h2>La marque Chanv</h2>
+        <h2 v-html="$t('chanv.chanv-1')"></h2>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2> La fondation </h2>
-        <p>En 2004, une herboriste, thérapeute et cosmétologue qualifiée du nom de Manon Letarte innove dans le domaine des soins corporels en lançant la gamme chanv. Elle a eu le coup de foudre pour ce qu’elle considère encore aujourd’hui comme la meilleure huile végétale pour la peau: l’huile de chanvre. </p>
+        <h2 v-html="$t('chanv.chanv-2')"></h2>
+        <p v-html="$t('chanv.chanv-3')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-deux"></Bloc>
     <Bloc class="beige height-normal">
       <Texte link="#" class="align-right">
-        <h2>À propos</h2>
-        <p>Chanv. est une gamme de soins corporels à base d’huiles essentielles et de plantes médicinales de très haute qualité. Les produits sont faits à la main et sans agents préservatifs. <span><a class="hyperlien" href="https://chanv.co">Voir leur site</a></span></p>
+        <h2 v-html="$t('chanv.chanv-4')"></h2>
+        <p v-html="$t('chanv.chanv-5')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#" class="align-right">
-        <h2>« Ne mettez pas sur votre peau ce que vous ne mettriez pas dans votre bouche »</h2>
-        <p>C'est la philosophie qui a toujours guidée l'entreprise. La peau est une cellule vivante qui se doit d’être nourrie, tout comme le système digestif, pour lui permettre de bien fonctionner.</p>
+        <h2 v-html="$t('chanv.chanv-6')"></h2>
+        <p v-html="$t('chanv.chanv-7')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal span-2" style="padding: 0;">
@@ -33,47 +33,47 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span></span>
-        <router-link to="#">Nos coups de coeur:</router-link>
+        <router-link to="#">{{ $t('chanv.chanv-8') }}</router-link>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2>Crème peau sensible</h2>
-        <p class="justify">En un mot, cette crème est : réconfortante. C’est un choix sûr autant pour la peau sensible que pour la peau sèche ou mâture. Petit conseil : c’est aussi le cadeau parfait pour faire plaisir à son ou sa bien-aimé(e)! </p>
+        <h2 v-html="$t('chanv.chanv-9')"></h2>
+        <p class="justify" v-html="$t('chanv.chanv-10')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-trois"></Bloc>
     <Bloc class="height-normal photo-quattre"></Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#" class="align-left">
-        <h2>Sérum Coup d'éclat</h2>
-        <p class="justify">Le moins qu’on puisse dire, c’est que le sérum porte bien son nom. La peau paraît clairement plus énergisée tout juste après l’application! Le sérum, c’est un élixir aux mille et une vertus, littéralement. </p>
+        <h2 v-html="$t('chanv.chanv-11')"></h2>
+        <p class="justify" v-html="$t('chanv.chanv-12')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2>Huile corporelle bain & massages</h2>
-        <p>Une solution simple, hyper efficace et polyvalente qui combine les bienfaits de l’huile de chanvre et de l’huile essentielle de lavande. Ah oui, la bouteille est seulement 20$, un vrai « deal » pour un produit de cette qualité! </p>
+        <h2 v-html="$t('chanv.chanv-13')"></h2>
+        <p v-html="$t('chanv.chanv-14')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-cinq"></Bloc>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span></span>
-        <router-link to="#">Le verdict</router-link>
+        <router-link to="#">{{ $t('chanv.chanv-15') }}</router-link>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2>Sommaire</h2>
-        <p> La qualité des huiles végétales utilisées dans les produits est phénoménale. À notre avis, le rendement qualité/prix est excellent. Toutefois, il faut s’attendre à débourser un peu plus que la moyenne pour profiter de cette gamme de produits. On doit également s’assurer d’utiliser les produits dans un délai de 18 mois (sans agents préservatifs).</p>
+        <h2 v-html="$t('chanv.chanv-16')"></h2>
+        <p v-html="$t('chanv.chanv-17')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2>Jugez par vous-même!</h2>
+        <h2 v-html="$t('chanv.chanv-18')"></h2>
       </Texte>
-      <CqOutButton href="https://www.chanv.co">Visitez Chanv</CqOutButton>
+      <CqOutButton href="https://www.chanv.co">{{ $t('chanv.chanv-19') }}</CqOutButton>
     </Bloc>
   </div>
 </template>
