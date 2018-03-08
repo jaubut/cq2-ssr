@@ -89,6 +89,9 @@ export default {
       title: 'Textile'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

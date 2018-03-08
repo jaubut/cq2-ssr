@@ -26,6 +26,9 @@ export default {
       description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre avec nos tags tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.$route.params.tag,

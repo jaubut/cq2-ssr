@@ -109,6 +109,9 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   asyncData ({ env, params }) {
     return Promise.all([
       client.getEntries({

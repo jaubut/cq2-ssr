@@ -86,6 +86,9 @@ export default {
       title: 'Chanv'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

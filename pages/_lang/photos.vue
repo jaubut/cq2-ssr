@@ -35,6 +35,9 @@ export default {
       title: 'Photos'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

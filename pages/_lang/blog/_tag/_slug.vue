@@ -6,7 +6,12 @@
         <p>{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</p>
         <small class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</small>
       </Texte>
-      <div class="fb-share-button" :data-href="'https://chanvreduquebec.org' + $route.path" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Partager</a></div>
+      <div class="fb-share-button" 
+        :data-href="'https://chanvreduquebec.org' + $route.path"
+        data-layout="button_count"
+        data-size="small" 
+        data-mobile-iframe="true">
+      </div>
     </Bloc>
     <div class="body">
       <h3 style="text-align: left;">{{ post.fields.description }}</h3>
@@ -52,6 +57,9 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.post.fields.title, }
       ]
     }
+  },
+  mounted () {
+    this.$initFbSDK()
   },
   asyncData ({ env, params }) {
     return client.getEntries({

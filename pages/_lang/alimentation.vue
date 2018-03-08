@@ -65,6 +65,9 @@ export default {
       title: 'Alimentation'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

@@ -36,6 +36,9 @@ export default {
       title: 'Les marques'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

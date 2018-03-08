@@ -1,0 +1,2 @@
+headers = [
+  {for = "/*", values = {X-Frame-Options = "ALLOW-FROM https://www.facebook.com"}}]

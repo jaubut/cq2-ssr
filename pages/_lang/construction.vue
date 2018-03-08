@@ -114,6 +114,9 @@ export default {
       title: 'Construction'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

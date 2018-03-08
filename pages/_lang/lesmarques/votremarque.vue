@@ -46,6 +46,9 @@ export default {
       title: 'Votre marque'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

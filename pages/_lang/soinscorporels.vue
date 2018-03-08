@@ -64,6 +64,9 @@ export default {
       title: 'Soins Corporels'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

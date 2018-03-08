@@ -18,7 +18,7 @@ module.exports = {
     ],
     script: [
       { src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' },
-      { src: 'https://connect.facebook.net/en_US/all.js' }
+      { src: 'https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v2.12&appId=1515670032095765&autoLogAppEvents=1' }
     ]
   },
   css: [

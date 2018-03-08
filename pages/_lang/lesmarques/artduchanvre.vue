@@ -72,6 +72,9 @@ export default {
       title: 'Art du Chanvre'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

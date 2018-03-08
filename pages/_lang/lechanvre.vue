@@ -57,6 +57,9 @@ export default {
       title: 'Le chanvre'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

@@ -90,6 +90,9 @@ export default {
       title: 'Crocx'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,

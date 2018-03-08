@@ -50,6 +50,9 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   asyncData ({ env, params }) {
     return client.getEntries({
       'content_type': 'blogPost',

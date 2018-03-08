@@ -75,6 +75,9 @@ export default {
       title: 'CBD'
     }
   },
+  mounted () {
+    this.$initFbSDK()
+  },
   head () {
     return {
       title: this.title,
