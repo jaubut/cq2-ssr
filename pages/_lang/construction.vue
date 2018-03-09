@@ -71,7 +71,7 @@
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
-      <Texte class="burgandy" link="#">
+      <Texte link="#">
         <h2>{{ $t('construction.avantage-14') }}</h2>
       </Texte>
     </Bloc>

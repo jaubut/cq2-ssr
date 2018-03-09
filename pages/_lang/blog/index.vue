@@ -1,19 +1,11 @@
 <template>
   <div id="Index">
-    <Bloc class="span-2">
-      <Texte link="#" >
-        <h2>bienvenue sur le blog</h2>
-        <p>Le meilleur contenu sur le chanvre au Québec.</p>
-        <div class="tag-list">
-          <span @click="filter = null">Tout</span>
-          <span @click="filter = 'general'">Général</span>
-          <span @click="filter = 'alimentation'">Alimentation</span>
-          <span @click="filter = 'construction'">Construction</span>
-          <span @click="filter = 'soinscorporels'">Soins Corporels</span>
-          <span @click="filter = 'textile'">Textile</span>
-          <span @click="filter = 'cbd'">CBD</span>
-        </div>
-      </Texte>
+    <Bloc class="span-2 align-left no-padding overflow-yes whitebg">
+      <BigTexte>
+          <span>{{ blogCount }}</span>
+          <h4>Le blog</h4>
+      </BigTexte>
+      <p>Le meilleur contenu sur le chanvre au Québec.</p>
     </Bloc>
     <BlocPost v-for="post in posts" :key="post.fields.title" :post="post">
     </BlocPost>
@@ -52,6 +44,11 @@ export default {
   },
   mounted () {
     this.$initFbSDK()
+  },
+  computed: {
+    blogCount: function() {
+      return this.posts.length
+    }
   },
   asyncData ({ env, params }) {
     return client.getEntries({

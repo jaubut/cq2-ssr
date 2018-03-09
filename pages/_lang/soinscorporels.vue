@@ -21,37 +21,38 @@
     <Bloc class="height-normal photo-deux"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2 v-html="$t('soins.soins-5')"></h2>
-        <p v-html="$t('soins.soins-6')"></p>
+        <h2 v-html="$t('soins.soins-6')"></h2>
+        <p v-html="$t('soins.soins-7')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal beige">
       <Texte link="#">
-        <h2 v-html="$t('soins.soins-7')"></h2>
-        <p v-html="$t('soins.soins-8')"></p>
+        <h2 v-html="$t('soins.soins-8')"></h2>
+        <p v-html="$t('soins.soins-9')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal photo-trois"></Bloc>
     <Bloc class="height-normal photo-quattre"></Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2 v-html="$t('soins.soins-9')"></h2>
-        <p v-html="$t('soins.soins-10')"></p>
+        <h2 v-html="$t('soins.soins-10')"></h2>
+        <p v-html="$t('soins.soins-11')"></p>
       </Texte>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
-        <h2 v-html="$t('soins.soins-11')"></h2>
-        <p v-html="$t('soins.soins-12')"></p>
+        <h2 v-html="$t('soins.soins-12')"></h2>
+        <p v-html="$t('soins.soins-13')"></p>
       </Texte>
+      <router-link class='hyperlien' to='/blog/general/dossier-huiledechanvre'><p>{{ $t('soins.soins-14') }}</p></router-link>
     </Bloc>
     <Bloc class="height-normal photo-cinq"></Bloc>
     <Bloc class="span-2 beige">
       <Texte link="#">
-        <h2 v-html="$t('soins.soins-13')"></h2>
-        <p v-html="$t('soins.soins-14')"></p>
+        <h2 v-html="$t('soins.soins-15')"></h2>
+        <p v-html="$t('soins.soins-16')"></p>
       </Texte>
-      <CqButton href="/lesmarques/chanv"></CqButton>
+      <CqButton href="/lesmarques/chanv">{{ $t('soins.soins-17') }}</CqButton>
     </Bloc>
   </div>
 </template>

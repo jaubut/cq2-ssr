@@ -1,8 +1,9 @@
 <template>
   <div id="Texte">
-    <nuxt-link :to="link">
+    <nuxt-link :to="link" v-if="link !== '#'">
       <slot></slot>
     </nuxt-link>
+    <slot v-else></slot>
   </div>
 </template>
 <script>
