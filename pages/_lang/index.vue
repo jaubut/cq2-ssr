@@ -16,7 +16,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>4</span>
-        <router-link to="/lesmarques">Les marques<span><i class="fas fa-heart"></i></span></router-link>
+        <router-link to="/lesmarques">Les marques d'ici</router-link>
       </BigTexte>
     </Bloc>
     <Chanv/>
