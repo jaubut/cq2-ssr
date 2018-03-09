@@ -19,11 +19,6 @@
       </transition>
     </main>
     <cqFooter/>
-    <div class="fb-customerchat"
-      page_id="1515670032095765"
-      logged_in_greeting="hello"
-      logged_out_greeting="bye">
-    </div>
   </div>
 </template>
 
@@ -44,7 +39,24 @@ export default {
         { hid: 'description', name: 'description', content: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.' },
         { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
         { property: 'fb:app_id', content: '1515670032095765' }
+      ],
+      let canonical = `https://chanvreduquebec.org${this.$route.path}`
+      if (this.$store.state.locale !== 'fr') {
+        canonical = `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}`
+      }
+      let link = [
+        { rel: 'canonical', href: canonical },
+        { rel: 'alternate', hreflang: 'en', href: `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}` }
       ]
+      link.forEach((l) => {
+        if (l.href.slice(-1) !== '/') {
+          l.href = l.href + '/'
+        }
+      })
+      return {
+        htmlAttrs: { lang: this.$store.state.locale },
+        link
+      }
     }
   },
   methods: {
