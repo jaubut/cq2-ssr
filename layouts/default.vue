@@ -33,6 +33,19 @@ export default {
     cqMenu
   },
   head () {
+    let canonical = `https://chanvreduquebec.org${this.$route.path}`
+    if (this.$store.state.locale !== 'fr') {
+      canonical = `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}`
+    }
+    let link = [
+      { rel: 'canonical', href: canonical },
+      { rel: 'alternate', hreflang: 'en', href: `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}` }
+    ]
+    link.forEach((l) => {
+      if (l.href.slice(-1) !== '/') {
+        l.href = l.href + '/'
+      }
+    })
     return {
       titleTemplate: '%s | Chanvre du Québec',
       meta: [
@@ -40,23 +53,8 @@ export default {
         { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
         { property: 'fb:app_id', content: '1515670032095765' }
       ],
-      let canonical = `https://chanvreduquebec.org${this.$route.path}`
-      if (this.$store.state.locale !== 'fr') {
-        canonical = `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}`
-      }
-      let link = [
-        { rel: 'canonical', href: canonical },
-        { rel: 'alternate', hreflang: 'en', href: `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}` }
-      ]
-      link.forEach((l) => {
-        if (l.href.slice(-1) !== '/') {
-          l.href = l.href + '/'
-        }
-      })
-      return {
-        htmlAttrs: { lang: this.$store.state.locale },
-        link
-      }
+      htmlAttrs: { lang: this.$store.state.locale },
+      link
     }
   },
   methods: {
