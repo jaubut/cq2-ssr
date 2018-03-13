@@ -3,7 +3,7 @@
     <Bloc class="bloc span-2 no-padding" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')'}">
       <Texte link="#" class="white">
         <h1>{{ post.fields.title }}</h1>
-        <p>{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</p>
+        <p><time :datetime="post.fields.publishDate">{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</time></p>
         <small class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</small>
       </Texte>
       <div class="fb-share-button" 

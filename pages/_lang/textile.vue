@@ -96,6 +96,7 @@ export default {
     return {
       title: this.title,
       meta: [
+        { hid: 'keywords', name: 'keywords', content: 'chanvre, textile, chanvre textile, hemp, hemp textile, tissus, tissus résistant, tissus naturel' },
         { hid: 'description', name: 'description', content: this.description },
         { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
         { hid: 'og:description', property: 'og:description', content: this.description },
