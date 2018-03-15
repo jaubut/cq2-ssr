@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal dark photo">
-    <Texte link="/lesmarques/chanv">
+    <Texte link="lesmarques/chanv">
       <h2>Chanv</h2>
-      <p class="center"> <strong>Soins corporels, depuis 2004</strong></p>
+      <p class="center"> <strong>{{ $t('chan.chan-1') }}</strong></p>
     </Texte>
   </Bloc>
 </template>

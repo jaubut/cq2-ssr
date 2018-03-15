@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal photo">
-    <Texte link="/apropos"> 
-      <h2> Notre mission </h2>
-      <p>Faire découvrir le chanvre d'ici et d'ailleurs.</p>
+    <Texte link="apropos"> 
+      <h2 v-html="$t('mission.mission-1')"></h2>
+      <p v-html="$t('mission.mission-2')"></p>
     </Texte>
   </Bloc>
 </template>

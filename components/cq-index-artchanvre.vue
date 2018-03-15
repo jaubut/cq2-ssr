@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal dark photo">
-    <Texte link="/lesmarques/artduchanvre">
+    <Texte link="lesmarques/artduchanvre">
       <h2>Art du <br> Chanvre</h2>
-      <p class="center"> <strong>Construction en chanvre</strong></p>
+      <p class="center"> <strong>{{ $t('art.art-1') }}</strong></p>
     </Texte>
   </Bloc>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal span-2">
-    <Texte link="/lechanvre">
-      <h2>Chanvre du Québec</h2>
-      <p> <strong>Le chanvre</strong> est une des plus anciennes plantes cultivées par l’homme. De nature duoïque, elle fait partie de la famille des cannabinaces. On l’utilise partout dans le monde pour son grain, sa fibre, sa tige et ses feuilles. </p>
+    <Texte link="lechanvre">
+      <h2 v-html="$t('intro.intro-1')"></h2>
+      <p v-html="$t('intro.intro-2')"></p>
     </Texte>
   </Bloc>
 </template>

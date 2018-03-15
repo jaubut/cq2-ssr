@@ -1,6 +1,6 @@
 <template>
   <div id="Texte">
-    <nuxt-link :to="link" v-if="link !== '#'">
+    <nuxt-link :to="$i18n.path(link)" v-if="link !== '#'">
       <slot></slot>
     </nuxt-link>
     <slot v-else></slot>

@@ -2,7 +2,7 @@
   <Bloc class="height-normal photo-artiste">
     <nuxt-link class="texte-artiste" to="/etoiles">
       <div class="text-container">
-        <h3>L'acteur du moment</h3>
+        <h3 v-html="$t('acteur.acteur-1')"></h3>
         <h2>{{ etoile.fields.name }}</h2>
         <p>{{ etoile.fields.compagny }}</p>
       </div>

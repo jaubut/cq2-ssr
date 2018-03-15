@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="/construction">
+    <Texte link="construction">
       <h2>Construction</h2>
-      <p class="center">Un gage de durabilité.</p>
+      <p class="center" v-html="$t('const.const-1')"></p>
     </Texte>
     <img class="img-index-quattre" src="~/static/artchanvre/index.png" alt="">
   </Bloc>

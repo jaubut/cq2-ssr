@@ -6,8 +6,75 @@
     "french": "french version"
   },
   "index": {
-    "allo": "Hi, im english.",
-    "title": "Home"
+    "index-1": "Essentials",
+    "index-2": "Hemp brands",
+    "index-3": "News",
+    "index-4": "Medias",
+    "index-5": "Our best shots",
+    "index-6": "All theses wonderful pictures are host on unsplash.com <br>and free to use.",
+    "index-7": "Hemp Quebec"
+  },
+  "footer": {
+    "footer-1": "Our essentials",
+    "footer-2": "What is hemp ?",
+    "footer-3": "Food",
+    "footer-4": "Construction",
+    "footer-5": "Textile",
+    "footer-6": "Skin care ",
+    "footer-7": "CBD",
+    "footer-8": "About us",
+    "footer-9": "Team",
+    "footer-10": "Open Hours: <span>9am - 5pm</span>",
+    "footer-11": "Discover local hemp",
+    "footer-12": "See all the local brands",
+    "footer-13": "If you are looking to be advertise, <br /><a href='mailto:allo@chanvrequebec.com'><span>write to us right here.</span></a>",
+    "footer-14": "blog",
+    "footer-15": "Read all the articles",
+    "footer-16": "Help us with a coffee"
+  },
+  "intro": {
+    "intro-1": "Hemp of Quebec",
+    "intro-2": "<strong>Hemp</strong> is one of the oldest plants grown by humans. It is part of the cannabinaceous family, and is used around the world for its grain, fiber, stalk and leaves."
+  },
+  "cq": {
+    "cq-1": "Hemp Quebec",
+    "cq-2": "We talk about hemp.",
+    "cq-3": "About us"
+  },
+  "mission": {
+    "mission-1": "Our mission",
+    "mission-2": "Share and promote the power of hemp."
+  },
+  "const": {
+    "const-1": "A guarantee of sustainability."
+  }, 
+  "text": {
+    "text-1": "The strongest natural fiber"
+  }, 
+  "soin": {
+    "soin-1": "Skincare",
+    "soin-2": "The most effective natural oil used in cosmetics."
+  }, 
+  "ali": {
+    "ali-1": "Food",
+    "ali-2": "A superfood"
+  }, 
+  "chan": {
+    "chan-1": "Skincare, since 2004"
+  }, 
+  "art": {
+    "art-1": "Hemp construction"
+  }, 
+  "acteur": {
+    "acteur-1": "Trending activist"
+  },
+  "lettre": {
+    "lettre-1": "Newsletter",
+    "lettre-2": "We talk about hemp and it's free !",
+    "lettre-3": "Sign up"
+  },
+  "facebook": {
+    "facebook-1": "Follow us !"
   },
   "construction": {
     "title": "Hemp Construction",

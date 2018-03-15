@@ -1,10 +1,10 @@
 <template>
   <Bloc class="green height-normal">
-    <Texte link="/apropos">
-      <h2>Chanvre Québec</h2>
-      <p class="center">On parle de chanvre.</p>
+    <Texte link="apropos">
+      <h2 v-html="$t('cq.cq-1')"></h2>
+      <p class="center" v-html="$t('cq.cq-2')"></p>
     </Texte>
-    <CqButton caca="color-beige" href="/apropos">À propos</CqButton>
+    <CqButton caca="color-beige" href="/apropos">{{ $t('cq.cq-3') }}</CqButton>
   </Bloc>
 </template>
 <script>

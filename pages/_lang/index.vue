@@ -6,7 +6,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg no-padding">
       <BigTexte>
         <span>5</span>
-        <h4>Les essentiels</h4>
+        <h4 v-html="$t('index.index-1')"></h4>
       </BigTexte>
     </Bloc>
     <Construction/>
@@ -16,7 +16,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>4</span>
-        <router-link to="/lesmarques">Les marques d'ici</router-link>
+        <router-link :to="$i18n.path('lesmarques')">{{ $t('index.index-2') }}</router-link>
       </BigTexte>
     </Bloc>
     <Chanv/>
@@ -24,7 +24,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>2</span>
-        <h4>L'actualité</h4>
+        <h4 v-html="$t('index.index-3')"></h4>
       </BigTexte>
     </Bloc>
     <Article :post="post" />
@@ -33,18 +33,18 @@
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span></span>
-        <h4>Médias</h4>
+        <h4 v-html="$t('index.index-4')"></h4>
       </BigTexte>
     </Bloc>
     <Facebook/>
     <BlocPhoto class="height-normal" v-for="photo in photos" :key="photo.id" :photo="photo">
-      <Texte class="white" link="/photos">
-        <h2>Nos photos préférées</h2>
-        <p>Toutes ces magnifiques photos sont hébergés sur unsplash.com <br>et libre de droit.</p>
+      <Texte class="white" link="photos">
+        <h2 v-html="$t('index.index-5')"></h2>
+        <p v-html="$t('index.index-6')"></p>
         <div class="collab">
           <span class="button alert-white">Unplash</span>
           <span>X</span>
-          <span class="button alert-white">Chanvre Québec</span>
+          <span class="button alert-white" v-html="$t('index.index-7')"></span>
         </div>
       </Texte>
     </BlocPhoto>

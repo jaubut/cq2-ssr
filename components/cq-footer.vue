@@ -1,82 +1,82 @@
 <template>
   <div id="cqFooter">
     <div class="logo">
-      <nuxt-link to="/">
+      <nuxt-link :to="$i18n.path('index')">
         <img src="~/assets/logo-round.svg" alt="Chanvre Québec Logo">
       </nuxt-link>
     </div>
     <div class="container">
       <div class="text">
         <div class="expand-link" @click="essentiels = !essentiels">
-          <h3>Nos essentiels</h3><i class="fas fa-plus"></i>
+          <h3>{{ $t('footer.footer-1') }}</h3><i class="fas fa-plus"></i>
         </div>
         <transition name="fade">
           <div v-show="essentiels">
-            <nuxt-link to="/lechanvre">
-              <p><strong>Le chanvre c'est quoi ?</strong></p>
+            <nuxt-link :to="$i18n.path('lechanvre')">
+              <p><strong>{{ $t('footer.footer-2') }}</strong></p>
             </nuxt-link>
-            <nuxt-link to="/alimentation">
-              <p>Alimentation</p>
+            <nuxt-link :to="$i18n.path('alimentation')">
+              <p v-html="$t('footer.footer-3')"></p>
             </nuxt-link>
-            <nuxt-link to="/construction">
-              <p>Construction</p>
+            <nuxt-link :to="$i18n.path('construction')">
+              <p v-html="$t('footer.footer-4')"></p>
             </nuxt-link>
-            <nuxt-link to="/textile">
-              <p>Textile</p>
+            <nuxt-link :to="$i18n.path('textile')">
+              <p v-html="$t('footer.footer-5')"></p>
             </nuxt-link>
-            <nuxt-link to="/soinscorporels">
-              <p>Soins corporels</p>
+            <nuxt-link :to="$i18n.path('soinscorporels')">
+              <p v-html="$t('footer.footer-6')"></p>
             </nuxt-link>
-            <nuxt-link to="/cbd">
-              <p>CBD</p>
+            <nuxt-link :to="$i18n.path('cbd')">
+              <p v-html="$t('footer.footer-7')"></p>
             </nuxt-link>
           </div>
         </transition>
       </div>
       <div class="text">
         <div class="expand-link" @click="contacter = !contacter">
-          <h3>À propos</h3><i class="fas fa-plus"></i>
+          <h3>{{ $t('footer.footer-8') }}</h3><i class="fas fa-plus"></i>
         </div>
         <transition name="fade">
           <div v-show="contacter">
-            <nuxt-link to="/apropos">
-              <p>L'équipe</p>
+            <nuxt-link :to="$i18n.path('apropos')">
+              <p v-html="$t('footer.footer-9')"></p>
             </nuxt-link>
             <a href="mailto:allo@chanvrequebec.com">
               <p>allo@chanvrequebec.com</p>
             </a>
-            <p>Heure d'ouverture: <span>9h - 17h</span></p>
+            <p v-html="$t('footer.footer-10')"></p>
           </div>
         </transition>
       </div>
       <div class="text">
         <div class="expand-link" @click="chanvreici = !chanvreici">
-          <h3>Découvrir le chanvre d'ici</h3><i class="fas fa-plus"></i><span class="button beta">beta</span>
+          <h3>{{ $t('footer.footer-11') }}</h3><i class="fas fa-plus"></i><span class="button beta">beta</span>
         </div>
         <transition name="fade">
           <div v-show="chanvreici">
-            <nuxt-link to="/lesmarques">
-              <p>Voir tous les marques d'ici</p>
+            <nuxt-link :to="$i18n.path('lesmarques')">
+              <p v-html="$t('footer.footer-12')"></p>
             </nuxt-link>
-            <p>Si vous voulez vous aussi être affiché, <br /><a href="mailto:allo@chanvrequebec.com"><span>écrivez-nous ici.</span></a></p>
+            <p v-html="$t('footer.footer-13')"></p>
           </div>
         </transition>
       </div>
       <div class="text">
         <div class="expand-link" @click="blog = !blog">
-          <h3>Le blog</h3><i class="fas fa-plus"></i>
+          <h3>{{ $t('footer.footer-14') }}</h3><i class="fas fa-plus"></i>
         </div>
         <transition name="fade">
           <div v-show="blog">
-            <nuxt-link to="/blog">
-              <p>Voir tous les articles</p>
+            <nuxt-link :to="$i18n.path('blog')">
+              <p v-html="$t('footer.footer-15')"></p>
             </nuxt-link>
           </div>
         </transition>
       </div>
     </div>
     <div class="buy-me-coffee">
-      <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/chanvreduquebec"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt=""><span style="margin-left: 5px">Encouragez-nous avec un café</span></a>
+      <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/chanvreduquebec"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt=""><span style="margin-left: 5px">{{ $t('footer.footer-16') }}</span></a>
     </div>
     <div class="base-footer">
       <p class="text-base">2018-2019 Open source under the MIT License ©</p>

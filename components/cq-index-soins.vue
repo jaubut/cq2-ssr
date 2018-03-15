@@ -1,8 +1,8 @@
 <template>
   <Bloc class="height-normal">
-    <Texte link="/soinscorporels">
-      <h2>Soins corporels</h2>
-      <p class="center">L'huile végétale par excellence en cosmétique.</p>
+    <Texte link="soinscorporels">
+      <h2 v-html="$t('soin.soin-1')"></h2>
+      <p class="center" v-html="$t('soin.soin-2')"></p>
     </Texte>
     <img class="img-index-quattre" src="~/static/soinscorporel/index.png" alt="">
   </Bloc>

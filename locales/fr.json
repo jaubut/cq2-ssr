@@ -6,8 +6,75 @@
     "french": "Version FranÃ§aise"
   },
   "index": {
-    "allo": "Allo je suis francais",
-    "title": "Accueil"
+    "index-1": "Les essentiels",
+    "index-2": "Les marques d'ici",
+    "index-3": "L'actualité",
+    "index-4": "Médias",
+    "index-5": "Nos photos préférées",
+    "index-6": "Toutes ces magnifiques photos sont hébergés sur unsplash.com <br>et libre de droit.",
+    "index-7": "Chanvre Québec"
+  },
+  "footer": {
+    "footer-1": "Nos essentiels",
+    "footer-2": "Le chanvre c'est quoi ?",
+    "footer-3": "Alimentation",
+    "footer-4": "Construction",
+    "footer-5": "Textile",
+    "footer-6": "Soins corporels",
+    "footer-7": "CBD",
+    "footer-8": "À propos",
+    "footer-9": "L'équipe",
+    "footer-10": "Heure d'ouverture: <span>9h - 17h</span>",
+    "footer-11": "Découvrir le chanvre d'ici",
+    "footer-12": "Voir tous les marques d'ici",
+    "footer-13": "Si vous voulez vous aussi être affiché, <br /><a href='mailto:allo@chanvrequebec.com'><span>écrivez-nous ici.</span></a>",
+    "footer-14": "Le blog",
+    "footer-15": "Voir tous les articles",
+    "footer-16": "Encouragez-nous avec un café"
+  },
+  "intro": {
+    "intro-1": "Chanvre du Québec",
+    "intro-2": "<strong>Le chanvre</strong> est une des plus anciennes plantes cultivées par l’homme. De nature duoïque, elle fait partie de la famille des cannabinaces. On l’utilise partout dans le monde pour son grain, sa fibre, sa tige et ses feuilles."
+  },
+  "cq": {
+    "cq-1": "Chanvre Québec",
+    "cq-2": "On parle de chanvre.",
+    "cq-3": "À propos"
+  },
+  "mission": {
+    "mission-1": "Notre mission",
+    "mission-2": "Faire découvrir le chanvre d'ici et d'ailleurs."
+  },
+  "const": {
+    "const-1": "Un gage de durabilité."
+  }, 
+  "text": {
+    "text-1": "Confort et durabilité."
+  }, 
+  "soin": {
+    "soin-1": "Soins corporels",
+    "soin-2": "L'huile végétale par excellence en cosmétique."
+  }, 
+  "ali": {
+    "ali-1": "Alimentation",
+    "ali-2": "Le super aliment."
+  }, 
+  "chan": {
+    "chan-1": "Soins corporels, depuis 2004"
+  }, 
+  "art": {
+    "art-1": "Construction en chanvre"
+  }, 
+  "acteur": {
+    "acteur-1": "L'acteur du moment"
+  },
+  "lettre": {
+    "lettre-1": "La lettre de nouvelle.",
+    "lettre-2": "On parle de chanvre et c'est gratuit!",
+    "lettre-3": "Abonnez-vous"
+  },
+  "facebook": {
+    "facebook-1": "Suivez-nous !"
   },
   "construction": {
     "title": "Le mur de béton de chanvre",
