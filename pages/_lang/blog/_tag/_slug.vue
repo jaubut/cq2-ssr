@@ -7,7 +7,7 @@
         <small class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</small>
       </Texte>
       <div class="fb-share-button" 
-        :data-href="'https://chanvreduquebec.org' + $route.path"
+        :data-href="'https://chanvrequebec.com' + $route.path"
         data-layout="button_count"
         data-size="small" 
         data-mobile-iframe="true">
