@@ -100,12 +100,20 @@ export default {
     Acteur,
     Article
   },
+  data () {
+    return {
+      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      title: 'Accueil'
+    }
+  },
   head () {
     return {
-      title: 'Accueil',
+      title: this.title,
       meta: [
-        { hid: 'description', name: 'description', content: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.' },
-        { property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' }
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: 'https://chanvrequebec.com/img/background-social-media.png' },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:title', property: 'og:title', content: this.title }
       ]
     }
   },
