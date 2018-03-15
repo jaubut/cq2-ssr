@@ -37,7 +37,7 @@
   }
   @media screen and (max-width: 468px) {
     #cqTexte a {
-      font-size: 10vw !important;
+      font-size: xx-large !important;
       line-height: 1vw !important;
       font-weight: 800 !important;
       z-index: 2 !important;

@@ -4,7 +4,7 @@
       <Texte link="#" class="align-left">
         <h2 v-html="$t('crocx.crocx-1')"></h2>
       </Texte>
-      <CqButton href="https://www.crocx.co">{{ $t('crocx.crocx-2') }}</CqButton>
+      <CqOutButton href="https://www.crocx.co">{{ $t('crocx.crocx-2') }}</CqOutButton>
     </Bloc>
     <Bloc class="height-normal">
       <Texte link="#">
