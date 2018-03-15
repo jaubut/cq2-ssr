@@ -77,8 +77,12 @@ module.exports = {
   },
   router: {
     middleware: 'i18n',
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
+    scrollBehavior (to, from, savedPosition) {
+      if (to.hash) {
+        return {
+          selector: to.hash
+        }
+      }
     }
   },
   manifest: {

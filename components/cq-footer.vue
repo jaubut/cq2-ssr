@@ -75,9 +75,14 @@
         </transition>
       </div>
     </div>
-    <div class="buy-me-coffee">
+    <div id="formshit" class="buy-me-coffee">
       <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/chanvreduquebec"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt=""><span style="margin-left: 5px">{{ $t('footer.footer-16') }}</span></a>
     </div>
+    <form v-if="$i18n.locale === 'fr'" class="newsletter" action="https://chanvrequebec.us14.list-manage.com/subscribe/post?u=9572de6ab8b677f9efe10c408&amp;id=d088a85c93" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <input type="email" value="email" name="EMAIL" class="required email" id="mce-EMAIL">
+      <input type="text" value="prénom" name="FNAME" class="" id="mce-FNAME">
+      <input class="submit" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+    </form>
     <div class="base-footer">
       <p class="text-base">2018-2019 Open source under the MIT License ©</p>
       <div class="social" style="font-size: 1em; color: #4F5D56;">
@@ -214,6 +219,32 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 5%;
+}
+#cqFooter .newsletter {
+  grid-area: 3/2/4/3;
+  text-align: center;
+  padding-bottom: 150px;
+}
+#cqFooter input {
+  text-align: center;
+  height: 25px;
+  border: none;
+  background: rgba(0, 0, 0, .2);
+  margin: 15px;
+  border-radius: 5px;
+  font-family: "Barlow", sans-serif;
+}
+label {
+  font-family: "Barlow", sans-serif;
+  font-size: 0.9rem;
+}
+.submit {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  background: #4F5D56 !important;
+  color: white;
+  margin: 15px;
 }
 #cqFooter .social {
   display: flex;

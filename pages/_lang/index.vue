@@ -21,15 +21,15 @@
     </Bloc>
     <Chanv/>
     <ArtduChanvre/>
-    <Bloc class="span-2 align-left overflow-yes whitebg">
+    <Bloc v-if="$i18n.locale === 'fr'" class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span>2</span>
         <h4 v-html="$t('index.index-3')"></h4>
       </BigTexte>
     </Bloc>
-    <Article :post="post" />
-    <Acteur :etoile="etoile"></Acteur>
-    <NewsLetter/>
+    <Article v-if="$i18n.locale === 'fr'" :post="post" />
+    <Acteur v-if="$i18n.locale === 'fr'" :etoile="etoile"></Acteur>
+    <NewsLetter v-if="$i18n.locale === 'fr'"/>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span></span>

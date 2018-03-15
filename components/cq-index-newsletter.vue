@@ -4,12 +4,12 @@
       <h2 v-html="$t('lettre.lettre-1')"></h2>
       <p class="center" v-html="$t('lettre.lettre-2')"></p>
     </Texte>
-    <CqButton caca="color-beige" href="#newsletter">{{ $t('lettre.lettre-3') }}</CqButton>
+    <CqButton caca="color-beige" href="/#formshit">{{ $t('lettre.lettre-3') }}</CqButton>
   </Bloc>
 </template>
 <script>
 export default {
-  name: 'Deux'
+
 }
 </script>
 <style scoped>
