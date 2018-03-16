@@ -62,6 +62,13 @@ module.exports = {
         trackLinks:true,
         accurateTrackBounce:true
       }
+    ],
+    [
+      'nuxt-facebook-pixel-module',
+      {
+        track: 'PageView',
+        pixelId: '235742233559499'
+      }
     ]
   ],
   generate: {
