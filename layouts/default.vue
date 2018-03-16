@@ -33,13 +33,13 @@ export default {
     cqMenu
   },
   head () {
-    let canonical = `https://chanvreduquebec.org${this.$route.path}`
+    let canonical = `https://chanvrequebec.com${this.$route.path}`
     if (this.$store.state.locale !== 'fr') {
-      canonical = `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}`
+      canonical = `https://chanvrequebec.com/${this.$store.state.locale}${this.$route.path}`
     }
     let link = [
       { rel: 'canonical', href: canonical },
-      { rel: 'alternate', hreflang: 'en', href: `https://chanvreduquebec.org/${this.$store.state.locale}${this.$route.path}` }
+      { rel: 'alternate', hreflang: 'en', href: `https://chanvrequebec.com/${this.$store.state.locale}${this.$route.path}` }
     ]
     link.forEach((l) => {
       if (l.href.slice(-1) !== '/') {
