@@ -19,23 +19,6 @@
       </transition>
     </main>
     <cqFooter/>
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat"
-      page_id="1541184722867648"
-      theme_color="#707a73"
-      logged_in_greeting="Salut! Comment ça va?"
-      logged_out_greeting="Salut! Comment ça va?">
-    </div>
   </div>
 </template>
 
