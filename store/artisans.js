@@ -5,7 +5,7 @@ export const state = () => ({
       title: 'Chanv',
       description: 'Soins corporel en symbiose avec la nature.',
       img: '/onepagechanv/chanvlogo.png',
-      routerName: '/lesmarques/chanv',
+      routerName: 'lesmarques/chanv',
       group: 'Soins',
       bgColor: false
     },
@@ -14,7 +14,7 @@ export const state = () => ({
       title: 'Crocx',
       description: 'Nature apprivoisée, plaisir indompté.',
       img: '/crocx/crocxlogo.png',
-      routerName: '/lesmarques/crocx',
+      routerName: 'lesmarques/crocx',
       group: 'FeedStock',
       bgColor: false
     },
@@ -23,7 +23,7 @@ export const state = () => ({
       title: 'Jechanvre',
       description: 'Exprimer la passion du chanvre.',
       img: '/jechanvre/jechanvre.png',
-      routerName: '/lesmarques/jechanvre',
+      routerName: 'lesmarques/jechanvre',
       group: 'Textile',
       bgColor: false
     },
@@ -32,7 +32,7 @@ export const state = () => ({
       title: 'Art du Chanvre',
       description: 'Construction et design durable.',
       img: '/artchanvre/ArtduChanvre.png',
-      routerName: '/lesmarques/artduchanvre',
+      routerName: 'lesmarques/artduchanvre',
       group: 'Construction',
       bgColor: false
     },
@@ -41,7 +41,7 @@ export const state = () => ({
       title: 'Votre marque',
       description: 'Affichez-vous!',
       img: '/lechanvre/bb2.jpg',
-      routerName: '/lesmarques/votremarque',
+      routerName: 'lesmarques/votremarque',
       group: 'all',
       bgColor: false
     }
