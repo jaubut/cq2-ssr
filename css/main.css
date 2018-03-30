@@ -119,9 +119,13 @@ a:hover {
   width: 60vw;
   text-align: left;
 }
-.post-single h3, h2 {
-  padding: 50px;
-  color: var(--purple);
+.post-single h2 {
+  padding: 50px !important;
+  color: var(--purple) !important;
+}
+.post-single h3 {
+  padding: 50px !important;
+  color: var(--purple) !important;
 }
 .post-single blockquote p {
   font-size: 2rem;
