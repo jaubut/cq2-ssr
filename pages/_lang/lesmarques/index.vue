@@ -14,12 +14,11 @@
         <span class="target" @click="filter = 'Textile'">Textile</span>
       </div>
     </Bloc>
-    <Bloc class="height-normal" :class="{ beige: artisan.bgColor  }" v-for="artisan in orderArtisans" :key="artisan.title">
+    <Bloc class="height-normal dark photo" :style="{'background-image': 'url(' + artisan.img + ')'}" v-for="artisan in orderArtisans" :key="artisan.title">
       <Texte :link="artisan.routerName">
         <h2>{{ artisan.title }}</h2>
-        <p>{{ artisan.description }}</p>
+        <p class="center"> <strong>{{ artisan.description }}</strong></p>
       </Texte>
-      <img class="img-marques" :src="artisan.img" alt="">
     </Bloc>
   </div>
 </template>

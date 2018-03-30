@@ -38,9 +38,11 @@ npm manifest:
       "axios": "^0.18.0",
       "contentful": "^5.1.3",
       "nuxt": "^1.0.0",
+      "nuxt-facebook-pixel-module": "^1.0.0",
       "vue-i18n": "^7.4.2",
       "vue-markdown": "^2.2.4",
-      "vue-on-click-outside": "^1.0.3"
+      "vue-on-click-outside": "^1.0.3",
+      "vuesax": "^3.0.2"
     },
     "devDependencies": {
       "babel-eslint": "^8.2.1",
@@ -243,6 +245,10 @@ Lockfile:
     version "5.4.1"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.4.1.tgz#fdc58d9d17f4a4e98d102ded826a9b9759125102"
   
+  agentkeepalive@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-2.2.0.tgz#c5d1bd4b129008f1163f236f86e5faea2026e2ef"
+  
   ajv-keywords@^2.1.0:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
@@ -274,6 +280,35 @@ Lockfile:
       fast-deep-equal "^1.0.0"
       fast-json-stable-stringify "^2.0.0"
       json-schema-traverse "^0.3.0"
+  
+  algoliasearch-helper@^2.21.1:
+    version "2.24.0"
+    resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-2.24.0.tgz#6ebf91683a82799bc4019ee1ad92d0ad0f41167b"
+    dependencies:
+      events "^1.1.0"
+      lodash "^4.13.1"
+      qs "^6.2.1"
+      util "^0.10.3"
+  
+  algoliasearch@^3.18.1, algoliasearch@^3.25.1:
+    version "3.26.0"
+    resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.26.0.tgz#5059cfe4b049ae1a1b9b7c25f5dbd3e75db6126a"
+    dependencies:
+      agentkeepalive "^2.2.0"
+      debug "^2.6.8"
+      envify "^4.0.0"
+      es6-promise "^4.1.0"
+      events "^1.1.0"
+      foreach "^2.0.5"
+      global "^4.3.2"
+      inherits "^2.0.1"
+      isarray "^2.0.1"
+      load-script "^1.0.0"
+      object-keys "^1.0.11"
+      querystring-es3 "^0.2.1"
+      reduce "^1.0.1"
+      semver "^5.1.0"
+      tunnel-agent "^0.6.0"
   
   align-text@^0.1.1, align-text@^0.1.3:
     version "0.1.4"
@@ -1502,6 +1537,14 @@ Lockfile:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   
+  clipboard@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.0.tgz#4661dc972fb72a4c4770b8db78aa9b1caef52b50"
+    dependencies:
+      good-listener "^1.2.2"
+      select "^1.1.2"
+      tiny-emitter "^2.0.0"
+  
   cliui@^2.1.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -2064,6 +2107,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   
+  delegate@^3.1.2:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+  
   delegates@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -2235,6 +2282,13 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
   
+  envify@^4.0.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/envify/-/envify-4.1.0.tgz#f39ad3db9d6801b4e6b478b61028d3f0b6819f7e"
+    dependencies:
+      esprima "^4.0.0"
+      through "~2.3.4"
+  
   errno@^0.1.3, errno@^0.1.4:
     version "0.1.7"
     resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
@@ -2283,7 +2337,7 @@ Lockfile:
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
   
-  es6-promise@^4.2.4:
+  es6-promise@^4.1.0, es6-promise@^4.2.4:
     version "4.2.4"
     resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
   
@@ -2313,7 +2367,7 @@ Lockfile:
       es6-iterator "^2.0.1"
       es6-symbol "^3.1.1"
   
-  escape-html@~1.0.3:
+  escape-html@^1.0.3, escape-html@~1.0.3:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   
@@ -2456,7 +2510,7 @@ Lockfile:
       d "1"
       es5-ext "~0.10.14"
   
-  events@^1.0.0:
+  events@^1.0.0, events@^1.1.0:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
   
@@ -2937,7 +2991,7 @@ Lockfile:
       once "^1.3.0"
       path-is-absolute "^1.0.0"
   
-  global@~4.3.0:
+  global@^4.3.2, global@~4.3.0:
     version "4.3.2"
     resolved "https://registry.yarnpkg.com/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
     dependencies:
@@ -2962,6 +3016,12 @@ Lockfile:
       object-assign "^4.0.1"
       pify "^2.0.0"
       pinkie-promise "^2.0.0"
+  
+  good-listener@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+    dependencies:
+      delegate "^3.1.2"
   
   graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
     version "4.1.11"
@@ -3567,6 +3627,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   
+  isarray@^2.0.1:
+    version "2.0.4"
+    resolved "https://registry.yarnpkg.com/isarray/-/isarray-2.0.4.tgz#38e7bcbb0f3ba1b7933c86ba1894ddfc3781bbb7"
+  
   isexe@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
@@ -3613,6 +3677,10 @@ Lockfile:
   jpeg-js@^0.2.0:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.2.0.tgz#53e448ec9d263e683266467e9442d2c5a2ef5482"
+  
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
   js-base64@^2.1.9:
     version "2.4.3"
@@ -3796,6 +3864,10 @@ Lockfile:
       pify "^2.0.0"
       strip-bom "^3.0.0"
   
+  load-script@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+  
   loader-fs-cache@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.1.tgz#56e0bf08bd9708b26a765b68509840c8dec9fdbc"
@@ -3889,7 +3961,7 @@ Lockfile:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   
-  lodash@^4.14.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
+  lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   
@@ -4009,6 +4081,10 @@ Lockfile:
       linkify-it "~1.2.2"
       mdurl "~1.0.1"
       uc.micro "^1.0.1"
+  
+  marked@^0.3.17:
+    version "0.3.19"
+    resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
   
   match-at@^0.1.0:
     version "0.1.1"
@@ -4358,6 +4434,10 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   
+  nuxt-facebook-pixel-module@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/nuxt-facebook-pixel-module/-/nuxt-facebook-pixel-module-1.0.0.tgz#dbdf40b8a15802f4fc2e6655d2b57a49f6bc3f5b"
+  
   nuxt@^1.0.0:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.3.0.tgz#a862818aa39e8a8c2b60ede73cba4ff8628f1a5d"
@@ -4445,7 +4525,7 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.2.0.tgz#e96af0e96981996a1d47f88ead8f74f1ebc4422b"
   
-  object-keys@^1.0.11, object-keys@^1.0.8:
+  object-keys@^1.0.11, object-keys@^1.0.8, object-keys@~1.0.0:
     version "1.0.11"
     resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
   
@@ -5314,6 +5394,10 @@ Lockfile:
       source-map "^0.6.1"
       supports-color "^5.2.0"
   
+  prefixfree@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/prefixfree/-/prefixfree-1.0.0.tgz#82b0edbbac107f2a3e2dc569d6c3df4035cd7910"
+  
   prelude-ls@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -5336,6 +5420,12 @@ Lockfile:
     dependencies:
       renderkid "^2.0.1"
       utila "~0.4"
+  
+  prismjs@^1.12.2:
+    version "1.13.0"
+    resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.13.0.tgz#edcc14a90bbd72a03e5ffd2bab81a04c79a607a6"
+    optionalDependencies:
+      clipboard "^2.0.0"
   
   private@^0.1.6, private@^0.1.7:
     version "0.1.8"
@@ -5425,7 +5515,7 @@ Lockfile:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   
-  qs@6.5.1, qs@^6.5.1, qs@~6.5.1:
+  qs@6.5.1, qs@^6.2.1, qs@^6.5.1, qs@~6.5.1:
     version "6.5.1"
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
   
@@ -5440,7 +5530,7 @@ Lockfile:
       object-assign "^4.1.0"
       strict-uri-encode "^1.0.0"
   
-  querystring-es3@^0.2.0:
+  querystring-es3@^0.2.0, querystring-es3@^0.2.1:
     version "0.2.1"
     resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
   
@@ -5565,6 +5655,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
     dependencies:
       balanced-match "^0.4.2"
+  
+  reduce@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/reduce/-/reduce-1.0.1.tgz#14fa2e5ff1fc560703a020cbb5fbaab691565804"
+    dependencies:
+      object-keys "~1.0.0"
   
   regenerate@^1.2.1:
     version "1.3.3"
@@ -5835,7 +5931,11 @@ Lockfile:
       ajv "^6.1.0"
       ajv-keywords "^3.1.0"
   
-  "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.5.0:
+  select@^1.1.2:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+  
+  "semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
     version "5.5.0"
     resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
   
@@ -6343,7 +6443,7 @@ Lockfile:
       readable-stream "^2.1.5"
       xtend "~4.0.1"
   
-  through@^2.3.6:
+  through@^2.3.6, through@~2.3.4:
     version "2.3.8"
     resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   
@@ -6352,6 +6452,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.6.tgz#241e76927d9ca05f4d959819022f5b3664b64bae"
     dependencies:
       setimmediate "^1.0.4"
+  
+  tiny-emitter@^2.0.0:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
   
   tinycolor2@^1.1.2:
     version "1.4.1"
@@ -6712,6 +6816,18 @@ Lockfile:
     version "7.4.2"
     resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.4.2.tgz#ef954f80898bb3609f132f77d51a7053379e03b2"
   
+  vue-i18n@^7.6.0:
+    version "7.6.0"
+    resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.6.0.tgz#8745807756f6ca5090fd85629e9cab99b1c6e442"
+  
+  vue-instantsearch@^1.5.1:
+    version "1.5.2"
+    resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-1.5.2.tgz#4c673ff6135197af0b30ce7b1e010263993af3d1"
+    dependencies:
+      algoliasearch "^3.18.1"
+      algoliasearch-helper "^2.21.1"
+      escape-html "^1.0.3"
+  
   vue-loader@13.7.0:
     version "13.7.0"
     resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.7.0.tgz#4d6a35b169c2a0a488842fb95c85052105fa9729"
@@ -6798,6 +6914,26 @@ Lockfile:
   vue@^2.5.13:
     version "2.5.13"
     resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
+  
+  vue@^2.5.2:
+    version "2.5.16"
+    resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+  
+  vuesax@^3.0.2:
+    version "3.0.2"
+    resolved "https://registry.yarnpkg.com/vuesax/-/vuesax-3.0.2.tgz#72df71d66a29867bb00d730c5464a59b331f4a2b"
+    dependencies:
+      algoliasearch "^3.25.1"
+      highlight.js "^9.12.0"
+      jquery "^3.3.1"
+      marked "^0.3.17"
+      prefixfree "^1.0.0"
+      prismjs "^1.12.2"
+      vue "^2.5.2"
+      vue-i18n "^7.6.0"
+      vue-instantsearch "^1.5.1"
+      vue-router "^3.0.1"
+      vuex "^3.0.1"
   
   vuex@^3.0.1:
     version "3.0.1"
@@ -7074,7 +7210,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 127
+  Exit code: 1
   Command: sh
   Arguments: -c nuxt
   Directory: /Users/jeremieaubut/github/cq2-ssr
