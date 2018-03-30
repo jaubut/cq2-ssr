@@ -109,7 +109,7 @@ export default {
   }
 }
 #Slug .body h3 {
-  padding-bottom: 50px;
+  padding: 50px;
   text-align: center;
   color: #4F5D56;
   font-size: 2rem;
