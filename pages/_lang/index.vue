@@ -129,11 +129,13 @@ export default {
       client.getEntries({
         'content_type': 'blogPost',
         order: '-sys.createdAt'
-      })
-    ]).then(([entries, posts]) => {
+      }),
+      axios.get(url, config)
+    ]).then(([entries, posts, res]) => {
       return {
         etoile: entries.items[0],
-        post: posts.items[0]
+        post: posts.items[0],
+        photos: res.data
       }
     })
     .catch(console.error)
