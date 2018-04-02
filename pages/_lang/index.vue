@@ -72,6 +72,7 @@ import {createClient} from '@/plugins/contentful'
 
 const client = createClient()
 const url = 'https://api.unsplash.com/photos/random'
+const url_air = 'https://api.airtable.com/v0/app0yxn9b11rdmbd8'
 
 const config = {
   params: {
@@ -80,6 +81,12 @@ const config = {
     order_by: 'popular',
     collections: 1656484,
     count: 1
+  }
+}
+
+const configAir = {
+  headers: {
+    'Authorization': 'Bearer keyYpAgTFas9oMW80'
   }
 }
 
