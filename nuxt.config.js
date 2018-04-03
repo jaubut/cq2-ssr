@@ -83,14 +83,7 @@ module.exports = {
     }
   },
   router: {
-    middleware: 'i18n',
-    scrollBehavior (to, from, savedPosition) {
-      if (to.hash) {
-        return {
-          selector: to.hash
-        }
-      }
-    }
+    middleware: 'i18n'
   },
   manifest: {
     name: 'Chanvre du Québec',

@@ -1,8 +1,8 @@
 <template>
   <div id="etoiles">
-    <Bloc class="span-v" :style="{ 'background-image': 'url(' + etoile.fields.photo.fields.file.url + ')' }">
+    <Bloc class="span-2" :style="{ 'background-image': 'url(' + etoile.fields.photo.fields.file.url + ')' }">
     </Bloc>
-    <Bloc class="span-v">
+    <Bloc class="span-2">
       <Texte>
         <h2>{{ etoile.fields.name }}</h2>
         <p>{{ etoile.fields.text }}</p>
