@@ -82,7 +82,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:image', property: 'og:image', content: '/jechanvre/amelie.jpg' },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:title', property: 'og:title', content: this.title }
       ]

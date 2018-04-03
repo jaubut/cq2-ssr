@@ -1,14 +1,7 @@
 <template>
   <Bloc class="photo" :style="{ 'background-image': 'url(' + etoile.fields.photo.fields.file.url + ')' }"> 
     <div @click="modal = !modal" v-on-click-outside="closeModal" @mouseover="openHover" @mouseleave="closeHover" class="grid-photo">
-      <transition name="fade">
-        <div v-if="modal" class="slot">
-          <h2>{{ etoile.fields.name }}</h2>
-          <p>{{ etoile.fields.text }}</p>
-          <i class="far fa-times-circle"></i>
-        </div>
-      </transition>
-      <a class="link-download"></a>
+      <nuxt-link :to="'etoiles/'+etoile.fields.slug" class="link-download"></nuxt-link>
       <transition name="fade">
         <div v-if="hover" class="info-user">
           <p>{{ etoile.fields.name }}</p>
