@@ -82,7 +82,7 @@ export default {
   name: 'ChanvCo',
   data () {
     return {
-      description: 'Chanv est une entreprise qui opère dans le domaine des soins corporels depuis 2004. Elle est l\'experte des produits pour la peau.',
+      description: 'Chanv fabrique des soins corporels dotés des meilleures huiles essentielles et plantes médicinales, dont l’huile de chanvre.  Découvrez notre compte rendu de cette marque québécoise.',
       title: 'Chanv'
     }
   },

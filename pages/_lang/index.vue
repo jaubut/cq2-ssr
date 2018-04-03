@@ -109,7 +109,7 @@ export default {
   },
   data () {
     return {
-      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      description: 'Obtenez l’information pertinente entourant le chanvre du Québec. Consultez nos sections d’informations, photos et vidéos exclusives, marques locales, entrevues et bien plus!',
       title: 'Accueil'
     }
   },
@@ -118,7 +118,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://chanvrequebec.com/img/background-social-media.png' },
+        { hid: 'og:image', property: 'og:image', content: '/img/background-social-media.png' },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:title', property: 'og:title', content: this.title }
       ]

@@ -110,7 +110,7 @@ export default {
   name: 'construction',
   data () {
     return {
-      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre en construction tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      description: 'Découvrez l’habitation en chanvre : confortable, durable et adapté au climat québécois.  Obtenez toute l’information entourant les méthodes pour l’intégrer à votre maison !',
       title: 'Construction'
     }
   },
@@ -122,7 +122,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:image', property: 'og:image', content: '/artchanvre/finition.png' },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:title', property: 'og:title', content: this.title }
       ]

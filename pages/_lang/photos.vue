@@ -43,7 +43,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:image', property: 'og:image', content: 'https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjIwMTc1fQ&amp;s=49c47f21b36ba537cf4dbdc9eaec423a?utm_source=d6b82f23cda09babcf74c2b38e342b3f246be679e7b5a55f642b552ff55d9bdf&amp;utm_medium=referral&quot' },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:title', property: 'og:title', content: this.title }
       ]

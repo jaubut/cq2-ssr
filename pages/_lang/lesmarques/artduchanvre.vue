@@ -68,7 +68,7 @@ export default {
   name: 'artduchanvre',
   data () {
     return {
-      description: 'Art du chanvre est une entreprise oeuvrant dans la construction en béton de chanvre et se spécialise dans les finitions à la chaux et la création d\'intérieur qui se démarque par leur caractère réfléchie.',
+      description: 'Art du chanvre réalise des maisons en chanvre au design et à l’efficacité incomparable. Découvrez notre compte rendu de cet artisan québécois.',
       title: 'Art du Chanvre'
     }
   },

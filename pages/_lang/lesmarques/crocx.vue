@@ -86,7 +86,7 @@ export default {
   name: 'Crocx',
   data () {
     return {
-      description: 'Crocx offre des produits pour animaux spécialisés. Une nourriture optimale pour vos animaux.',
+      description: 'Crocx fabrique des produits à base de chanvre pour les animaux. Découvrez notre compte rendu de cette marque québécoise.',
       title: 'Crocx'
     }
   },

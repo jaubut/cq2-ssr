@@ -61,7 +61,7 @@ export default {
   name: 'alimentation',
   data () {
     return {
-      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur le chanvre en alimentation tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      description: 'Découvrez les bienfaits nutritifs du chanvre et comment l’intégrer dans votre alimentation. Graines de chanvre, farine de chanvre et huile de chanvre.',
       title: 'Alimentation'
     }
   },
@@ -73,7 +73,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://cq2.imgix.net/img/background-social-media.png?w=320&h=320&' },
+        { hid: 'og:image', property: 'og:image', content: '/alimentation/graineecale.png' },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:title', property: 'og:title', content: this.title }
       ]

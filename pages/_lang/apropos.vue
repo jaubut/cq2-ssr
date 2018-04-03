@@ -73,7 +73,7 @@ export default {
   name: 'apropos',
   data () {
     return {
-      description: 'Obtenez un service qui vous aide à trouver des informations pertinentes sur l\'organisation du chanvre au québec tout en vous connectant aux entreprises québécoises du domaine. Il y a des articles de blogs, des sections d’informations et des profils d’entreprises.',
+      description: 'Découvrez l’équipe derrière Chanvre Québec et la vision qui les anime. La référence en informations pour le chanvre d’ici.',
       title: 'Apropos'
     }
   },

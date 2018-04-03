@@ -58,7 +58,7 @@ export default {
   name: 'jeChanvre',
   data () {
     return {
-      description: 'Je chanvre est notre initiative pour mener au monde des innovations en chanvre.',
+      description: 'Découvrez ce projet innovant qui a pour objectif de stimuler l’innovation dans le domaine du textile de chanvre. 100% des profits réalisés sont réinvestis dans l’industrie.',
       title: 'Je chanvre'
     }
   },
