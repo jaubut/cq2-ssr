@@ -1,6 +1,12 @@
 <template>
   <div id="etoiles">
     <Bloc class="span-2" :style="{ 'background-image': 'url(' + etoile.fields.photo.fields.file.url + ')' }">
+      <div class="fb-share-button" 
+        :data-href="'https://chanvrequebec.com' + $route.path"
+        data-layout="button_count"
+        data-size="small" 
+        data-mobile-iframe="true">
+      </div>
     </Bloc>
     <Bloc class="span-2">
       <Texte>
@@ -52,6 +58,10 @@ export default {
     grid-auto-rows: calc(100vh/2);
     grid-gap: 10px;
     width: 100%;
+  }
+  .fb-share-button {
+    position: absolute;
+    top: 50vh;
   }
   @media screen and (max-width: 468px) {
     #etoiles {
