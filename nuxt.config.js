@@ -77,13 +77,13 @@ module.exports = {
         cdaClient.getEntries({
           'content_type': 'blogPost'
         }),
-        cdaClient.getEtoiles({
+        cdaClient.getEntries({
           'content_type': 'etoile'
         })
     ]).then(([entries, etoiles]) => {
         return [
           ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`),
-          ...entries.items.map(entry => `/etoiles/${entry.fields.name}`)
+          ...etoiles.items.map(entry => `/etoiles/${entry.fields.name}`)
         ]
       })
     }
