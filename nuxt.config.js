@@ -83,7 +83,7 @@ module.exports = {
     ]).then(([entries, etoiles]) => {
         return [
           ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`),
-          ...etoiles.items.map(entry => `/etoiles/${entry.fields.name}`)
+          ...etoiles.items.map(entry => `/etoiles/${entry.fields.slug}`)
         ]
       })
     }
