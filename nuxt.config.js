@@ -73,11 +73,17 @@ module.exports = {
   ],
   generate: {
     routes () {
-      return cdaClient.getEntries({
-        'content_type': 'blogPost'
-      }).then(entries => {
+      return Promise.all([
+        cdaClient.getEntries({
+          'content_type': 'blogPost'
+        }),
+        cdaClient.getEtoiles({
+          'content_type': 'etoile'
+        })
+    ]).then(([entries, etoiles]) => {
         return [
-          ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`)
+          ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`),
+          ...entries.items.map(entry => `/etoiles/${entry.fields.name}`)
         ]
       })
     }
