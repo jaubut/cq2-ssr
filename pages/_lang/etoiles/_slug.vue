@@ -9,10 +9,11 @@
       </div>
     </Bloc>
     <Bloc class="span-2">
-      <Texte>
+      <Texte link="#">
         <h2>{{ etoile.fields.name }}</h2>
         <p>{{ etoile.fields.text }}</p>
       </Texte>
+      <p @click="nextEtoile">next</p>
     </Bloc>
   </div>
 </template>
@@ -27,7 +28,7 @@ export default {
     return {
       title: this.etoile.fields.name,
       meta: [
-        { hid: 'description', name: 'description', content: this.etoile.fields.name },
+        { hid: 'description', name: 'description', content: this.etoile.fields.text },
         { hid: 'og:image', property: 'og:image', content: this.etoile.fields.photo.fields.file.url },
         { hid: 'og:description', property: 'og:description', content: this.etoile.fields.text },
         { hid: 'og:title', property: 'og:title', content: this.etoile.fields.name }

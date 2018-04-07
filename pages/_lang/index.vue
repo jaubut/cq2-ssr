@@ -107,8 +107,24 @@ export default {
     Acteur,
     Article
   },
+  methods: {
+    getData: function () {
+      axios({
+        url: this.apiUrl + this.base,
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`
+        }
+      }).then((res) => {
+        this.records = res.data.records;
+      });
+    }
+  },
   data () {
     return {
+      apiUrl: 'https://api.airtable.com/v0/',
+      apiKey: 'keyYpAgTFas9oMW80',
+      base: 'app0yxn9b11rdmbd8',
+      records: [],
       description: 'Obtenez l’information pertinente entourant le chanvre du Québec. Consultez nos sections d’informations, photos et vidéos exclusives, marques locales, entrevues et bien plus!',
       title: 'Accueil'
     }
@@ -126,6 +142,7 @@ export default {
   },
   mounted () {
     this.$initFbSDK()
+    this.getData()
   },
   asyncData ({ env, params }) {
     return Promise.all([
