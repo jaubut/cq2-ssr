@@ -18,6 +18,9 @@ export default {
     padding: 5% 2%;
     text-align: center;
   }
+  h1 {
+    font-size: 4rem;
+  }
   .white {
     color: white !important;
   }

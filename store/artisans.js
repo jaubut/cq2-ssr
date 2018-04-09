@@ -37,11 +37,20 @@ export const state = () => ({
       bgColor: false
     },
     {
-      id: 5,
+      id: 6,
       title: 'Votre marque',
       description: 'Affichez-vous!',
       img: '/lechanvre/bb2.jpg',
       routerName: 'lesmarques/votremarque',
+      group: 'all',
+      bgColor: false
+    },
+    {
+      id: 5,
+      title: 'Hemprove',
+      description: 'Hemprove your life with CBD products.',
+      img: '/hemprove/hemprove1.png',
+      routerName: 'lesmarques/hemprove',
       group: 'all',
       bgColor: false
     }
