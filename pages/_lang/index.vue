@@ -108,23 +108,28 @@ export default {
     Article
   },
   methods: {
-    getData: function () {
-      axios({
-        url: this.apiUrl + this.base,
-        headers: {
-          'Authorization': `Bearer ${this.apiKey}`
+    loadItems: function() {
+      // Init variables
+      var self = this
+      var app_id = "appIYyKKaH2wBjn9U";
+      var app_key = "keyYpAgTFas9oMW80"; // Read Only Key! :D
+      this.items = []
+      axios.get(
+        "https://api.airtable.com/v0/" + app_id + "/Table%201", {
+          headers: {
+            Authorization: "Bearer " + app_key
+          }
         }
-      }).then((res) => {
-        this.records = res.data.records;
-      });
+      ).then(function(response) {
+        self.items = response.data.records
+      }).catch(function(error) {
+        console.log(error)
+      })
     }
   },
   data () {
     return {
-      apiUrl: 'https://api.airtable.com/v0/',
-      apiKey: 'keyYpAgTFas9oMW80',
-      base: 'app0yxn9b11rdmbd8',
-      records: [],
+      items: [],
       description: 'Obtenez l’information pertinente entourant le chanvre du Québec. Consultez nos sections d’informations, photos et vidéos exclusives, marques locales, entrevues et bien plus!',
       title: 'Accueil'
     }
@@ -142,7 +147,7 @@ export default {
   },
   mounted () {
     this.$initFbSDK()
-    this.getData()
+    this.loadItems()
   },
   asyncData ({ env, params }) {
     return Promise.all([
