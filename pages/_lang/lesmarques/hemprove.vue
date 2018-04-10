@@ -26,7 +26,7 @@
     <Bloc class="span-2 align-left overflow-yes whitebg no-padding">
       <BigTexte>
         <span></span>
-        <router-link to="#">{{ $t('jechanvre.jechanvre-9') }}</router-link>
+        <router-link to="#">{{ $t('hemprove.hemprove-10') }}</router-link>
       </BigTexte>
     </Bloc>
     <Bloc class="height-normal beige">
@@ -84,7 +84,7 @@ export default {
     background-image: url(~/static/hemprove/hemprove2.jpg);
   }
   .photo-trois {
-    background-image: url(~/static/hemprove/hemprove4.jpg);
+    background-image: url(~/static/hemprove/hemprove4.png);
   }
   .photo-quattre {
     background-image: url(~/static/jechanvre/cantin.jpg);
