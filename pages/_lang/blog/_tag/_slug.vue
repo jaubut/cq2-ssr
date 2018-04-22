@@ -2,12 +2,12 @@
   <div id="Slug">
     <Bloc class="bloc span-2 no-padding" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')'}">
       <Texte link="#" class="white">
-        <h1>{{ post.fields.title }}</h1>
         <p><time :datetime="post.fields.publishDate">{{ ( new Date(post.fields.publishDate)).getDate() }} {{ monthNames[( new Date(post.fields.publishDate)).getMonth()] }}</time></p>
-        <small class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</small>
+        <h1>{{ post.fields.title }}</h1>
+        <p class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</p>
       </Texte>
       <div class="fb-share-button" 
-        :data-href="'https://chanvrequebec.com' + $route.path"
+        :data-href="'https://chanvrequebec.com/blog/' + post.fields.slug"
         data-layout="button_count"
         data-size="small" 
         data-mobile-iframe="true">
@@ -155,19 +155,12 @@ export default {
   flex-flow: row wrap !important;
 }
 .author-top {
-  text-align: left;
-  position: absolute;
-  left: 0;
-  bottom: 30%;
-  padding-left: 35px;
-  padding-bottom: 5px;
+  opacity: 0.7;
+  font-size: 0.8rem;
 }
 @media screen and (max-width: 468px) {
   #Slug .hash {
     flex-flow: column wrap !important;
-  }
-  .author-top {
-    padding-left: 15px;
   }
 }
 </style>
