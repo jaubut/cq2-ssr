@@ -19,7 +19,7 @@
           <img src="~/assets/logo-journalchanvre.svg" alt="logo journal du chanvre">
         </div>
       </router-link>
-      <router-link class="article-photo" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug">
+      <router-link class="article-photo" :to="'/blog/'+post.fields.slug">
         <div class="article-photo" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')' }">
         </div>
       </router-link>
