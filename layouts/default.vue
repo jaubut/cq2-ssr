@@ -34,7 +34,7 @@ export default {
   },
   head () {
     let canonical = `https://chanvrequebec.com${this.$route.path}`
-    if (this.$store.state.locale !== 'fr') {
+    if (this.$store.state.locale !== 'en') {
       canonical = `https://chanvrequebec.com/${this.$store.state.locale}${this.$route.path}`
     }
     let link = [

@@ -64,7 +64,7 @@ export default {
     max-height: 100%;
   }
   .height-little {
-    height: auto;
+    max-height: 30vh;
   }
   .height-long {
     overflow: scroll !important;

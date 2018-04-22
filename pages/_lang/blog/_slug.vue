@@ -17,12 +17,12 @@
       <h3 style="text-align: left;">{{ post.fields.description }}</h3>
       <VueMarkdown class="post-single">{{ post.fields.body }}</VueMarkdown>
     </div>
-    <Bloc class="bloc hash">
+    <Bloc class="bloc hash height-little">
       <div v-for="tag in post.fields.tags" :key="tag" class="tag">
         <router-link :to="'../../tags/'+ tag"><button class="hastag"><h3>{{ tag }}</h3></button></router-link>
       </div>
     </Bloc>
-    <Bloc class="bloc">
+    <Bloc class="bloc hash height-little">
       <Person :person="post"></Person>
     </Bloc>
   </div>
