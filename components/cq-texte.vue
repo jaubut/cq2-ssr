@@ -46,4 +46,9 @@ export default {
   a:hover {
     color: inherit;
   }
+  @media screen and (max-width: 468px) {
+    h1 {
+      font-size: x-large; 
+    }   
+  }
 </style>
