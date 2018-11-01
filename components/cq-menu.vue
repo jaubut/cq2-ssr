@@ -33,10 +33,12 @@
       <h2>Alimentation</h2>
       <p>Section alimentation</p>
     </nuxt-link>
+    <!-- out for now  
      <nuxt-link :to="$i18n.path('cbd')">
       <h2>Médecine</h2>
       <p>Informations sur le CBD</p>
     </nuxt-link>
+    -->
     <nuxt-link :to="$i18n.path('photos')">
       <h2>Photos</h2>
       <p>La gallerie du chanvre</p>

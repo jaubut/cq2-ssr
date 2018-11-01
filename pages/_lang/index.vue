@@ -48,6 +48,17 @@
         </div>
       </Texte>
     </BlocPhoto>
+    <!-- Place <div> tag where you want the feed to appear -->
+    <div id="curator-feed"></div>
+    <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+    <script type="text/javascript">
+    /* curator-feed */
+    (function(){
+    var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+    i.src = "https://cdn.curator.io/published/4b797c45-f0d1-4d6c-9ed1-42ed58465ebd.js";
+    e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+    })();
+    </script>
   </div>
 </template>
 
@@ -184,5 +195,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #curator-feed {
+    width: 100%;
   }
 </style>
