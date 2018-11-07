@@ -6,7 +6,7 @@ export const state = () => ({
       description: 'Chanvre, simplifié.',
       img: '/bonvivant/bonvivant_texture.png',
       routerName: 'lesmarques/bonvivant',
-      group: 'alimentation',
+      group: 'Alimentation',
       bgColor: false
     },
     {
