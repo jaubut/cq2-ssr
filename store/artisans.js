@@ -53,6 +53,15 @@ export const state = () => ({
       routerName: 'lesmarques/hemprove',
       group: 'all',
       bgColor: false
+    },
+    {
+      id: 6,
+      title: 'Bon vivant',
+      description: 'Chanvre, simplifié.',
+      img: '/hemprove/hemprove1.png',
+      routerName: 'lesmarques/bonvivant',
+      group: 'alimentation',
+      bgColor: false
     }
   ]
 })

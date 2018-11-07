@@ -205,7 +205,6 @@ export default {
 @media (min-width: 468px) {
   #cqFooter .base-footer {
     justify-content: flex-end;
-    padding: 0;
   }
   #cqFooter input {
     padding: 9px;
@@ -216,7 +215,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
 }
 #cqFooter .newsletter {
   grid-area: 3/2/4/3;
@@ -260,5 +258,6 @@ label {
   align-self: center;
   margin-right: auto;
   margin-left: 10%;
+  padding: 0;
 }
 </style>
