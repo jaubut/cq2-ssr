@@ -1,6 +1,33 @@
 export const state = () => ({
   artisans: [
     {
+      id: 6,
+      title: 'Bon vivant',
+      description: 'Chanvre, simplifié.',
+      img: '/bonvivant/bonvivant_texture.png',
+      routerName: 'lesmarques/bonvivant',
+      group: 'alimentation',
+      bgColor: false
+    },
+    {
+      id: 4,
+      title: 'Art du Chanvre',
+      description: 'Construction et design durable.',
+      img: '/artchanvre/antho-5.png',
+      routerName: 'lesmarques/artduchanvre',
+      group: 'Construction',
+      bgColor: false
+    },
+    {
+      id: 3,
+      title: 'Jechanvre',
+      description: 'Exprimer la passion du chanvre.',
+      img: '/jechanvre/cantin.jpg',
+      routerName: 'lesmarques/jechanvre',
+      group: 'Textile',
+      bgColor: false
+    },
+    {
       id: 1,
       title: 'Chanv',
       description: 'Soins corporel en symbiose avec la nature.',
@@ -19,33 +46,6 @@ export const state = () => ({
       bgColor: false
     },
     {
-      id: 3,
-      title: 'Jechanvre',
-      description: 'Exprimer la passion du chanvre.',
-      img: '/jechanvre/cantin.jpg',
-      routerName: 'lesmarques/jechanvre',
-      group: 'Textile',
-      bgColor: false
-    },
-    {
-      id: 4,
-      title: 'Art du Chanvre',
-      description: 'Construction et design durable.',
-      img: '/artchanvre/antho-5.png',
-      routerName: 'lesmarques/artduchanvre',
-      group: 'Construction',
-      bgColor: false
-    },
-    {
-      id: 6,
-      title: 'Votre marque',
-      description: 'Affichez-vous!',
-      img: '/lechanvre/bb2.jpg',
-      routerName: 'lesmarques/votremarque',
-      group: 'all',
-      bgColor: false
-    },
-    {
       id: 5,
       title: 'Hemprove',
       description: 'Hemprove your life with CBD products.',
@@ -56,11 +56,11 @@ export const state = () => ({
     },
     {
       id: 6,
-      title: 'Bon vivant',
-      description: 'Chanvre, simplifié.',
-      img: '/hemprove/hemprove1.png',
-      routerName: 'lesmarques/bonvivant',
-      group: 'alimentation',
+      title: 'Votre marque',
+      description: 'Affichez-vous!',
+      img: '/lechanvre/bb2.jpg',
+      routerName: 'lesmarques/votremarque',
+      group: 'all',
       bgColor: false
     }
   ]
