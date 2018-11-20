@@ -73,7 +73,7 @@
       <Texte link="#">
         <h2 v-html="$t('bonvivant.bonvivant-18')"></h2>
       </Texte>
-      <CqOutButton href="https://www.bonvivant.co">{{ $t('bonvivant.bonvivant-19') }}</CqOutButton>
+      <CqOutButton href="https://www.bonvivant.bio">{{ $t('bonvivant.bonvivant-19') }}</CqOutButton>
     </Bloc>
   </div>
 </template>
