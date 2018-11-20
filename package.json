@@ -4,6 +4,11 @@
   "description": "Nuxt.js project",
   "author": "jaubut <jeremie.aubut@gmail.com>",
   "private": true,
+  "config": {
+    "nuxt": {
+      "port": "8000"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

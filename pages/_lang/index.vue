@@ -19,7 +19,7 @@
         <router-link :to="$i18n.path('lesmarques')">{{ $t('index.index-2') }}</router-link>
       </BigTexte>
     </Bloc>
-    <Chanv/>
+    <Bonvivant/>
     <ArtduChanvre/>
     <Bloc v-if="$i18n.locale === 'fr'" class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
@@ -72,7 +72,7 @@ import Alimentation from '@/components/cq-index-alimentation'
 import Soins from '@/components/cq-index-soins'
 import NewsLetter from '@/components/cq-index-newsletter'
 import Construction from '@/components/cq-index-construction'
-import Chanv from '@/components/cq-index-chanv'
+import Bonvivant from '@/components/cq-index-bonvivant'
 import ArtduChanvre from '@/components/cq-index-artchanvre'
 import Acteur from '@/components/cq-index-artisans'
 import Article from '@/components/cq-index-article'
@@ -112,7 +112,7 @@ export default {
     Soins,
     NewsLetter,
     Construction,
-    Chanv,
+    Bonvivant,
     ArtduChanvre,
     BlocPhoto,
     Acteur,

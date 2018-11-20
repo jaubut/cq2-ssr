@@ -62,6 +62,9 @@
   "chan": {
     "chan-1": "Soins corporels, depuis 2004"
   }, 
+  "bonvivan": {
+    "bonvivan-1": "Chanvre, simplifié."
+  },
   "art": {
     "art-1": "Construction en chanvre"
   }, 
@@ -127,7 +130,7 @@
     "utilisation-6": "Huile de chanvre",
     "utilisation-7": "Assurément la meilleure huile végétale pour sa composition en acides gras essentiels dans un ratio parfait. Elle est idéale pour la santé du cœur (hypertension), pour le développement du cerveau et pour prévenir une panoplie de maladies. L'huile de chanvre du québec peut être ajoutée aux salades et aux smoothies, ou en capsules.<router-link class='hyperlien' to='/blog/general/dossier-huiledechanvre'><p>Démystifier l'huile de chanvre</p></router-link>",
     "utilisation-8": "Autres utilités",
-    "utilisation-9": "Pour profiter des bienfaits du chanvre plus facilement, de nombreuses entreprises ont développé de nouveaux produits plus accessibles : lait, beurre, humus, mélange à recettes, isolat de protéines, etc."
+    "utilisation-9": "Pour profiter des bienfaits du chanvre plus facilement, de nombreuses entreprises ont développé de nouveaux produits plus accessibles : lait, beurre, humus, mélange à recettes, isolat de protéines, etc. <br></br>Visitez <strong><a href='https://bonvivant.bio' target='_blank'>Bon vivant</a></strong> pour découvrir un nouveau produit québécois unique et simplifié."
   },
   "soins": {
     "soins-1": "Soins corporels",
