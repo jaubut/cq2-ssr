@@ -1,7 +1,7 @@
 <template>
   <Bloc class="height-normal" :style="{'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')'}">
     <div v-if="w > 468" @mouseover="openHover" @mouseleave="closeHover" class="grid-photo">
-      <router-link class="link-download" :to="'/blog/'+post.fields.slug"></router-link>
+      <router-link class="link-download" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug"></router-link>
       <transition name="fade">
         <div v-for="author in post.fields.author" :key="author.fields.name" v-if="hover" class="info-user">
           <a href="#">
@@ -22,7 +22,7 @@
       </transition>
     </div>
     <div v-else class="grid-photo">
-      <router-link class="link-download" :to="'/blog/'+post.fields.slug"></router-link>
+      <router-link class="link-download" :to="'/blog/'+post.fields.tags[0]+'/'+post.fields.slug"></router-link>
       <transition name="fade">
         <div v-for="author in post.fields.author" :key="author.fields.name" class="info-user">
           <a href="#">
