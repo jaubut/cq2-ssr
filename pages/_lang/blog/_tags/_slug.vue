@@ -7,7 +7,7 @@
         <p class="author-top" v-for="author in post.fields.author" :key="author.fields.name">{{ author.fields.name }}</p>
       </Texte>
       <div class="fb-share-button" 
-        :data-href="'https://chanvrequebec.com/blog/' + post.fields.slug"
+        :data-href="'https://chanvrequebec.com/blog/' + post.fields.tags[0] +'/'+ post.fields.slug"
         data-layout="button_count"
         data-size="small" 
         data-mobile-iframe="true">
@@ -55,7 +55,7 @@ export default {
         { hid: 'og:image', property: 'og:image', content: this.post.fields.heroImage.fields.file.url },
         { hid: 'og:description', property: 'og:description', content: this.post.fields.description },
         { hid: 'og:title', property: 'og:title', content: this.post.fields.title, },
-        { hid: 'og:url', property: 'og:url', content: 'https://chanvrequebec.com/blog/' + this.post.fields.slug }
+        { hid: 'og:url', property: 'og:url', content: 'https://chanvrequebec.com/blog/' + this.post.fields.tags[0] +'/'+ this.post.fields.slug }
       ]
     }
   },

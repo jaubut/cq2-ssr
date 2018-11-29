@@ -82,7 +82,7 @@ module.exports = {
         })
     ]).then(([entries, etoiles]) => {
         return [
-          ...entries.items.map(entry => `/blog/${entry.fields.slug}`),
+          ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`),
           ...etoiles.items.map(entry => `/etoiles/${entry.fields.slug}`)
         ]
       })
@@ -116,7 +116,7 @@ module.exports = {
         'content_type': 'blogPost'
       }).then(entries => {
         return [
-          ...entries.items.map(entry => `/blog/${entry.fields.slug}`)
+          ...entries.items.map(entry => `/blog/${entry.fields.tags[0]}/${entry.fields.slug}`)
         ]
       })
     }

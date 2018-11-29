@@ -48,6 +48,7 @@
         </div>
       </Texte>
     </BlocPhoto>
+    <News v-for="(article, index) in articles" :key="index" :article="article"/>
   </div>
 </template>
 
@@ -65,6 +66,7 @@ import Bonvivant from '@/components/cq-index-bonvivant'
 import ArtduChanvre from '@/components/cq-index-artchanvre'
 import Acteur from '@/components/cq-index-artisans'
 import Article from '@/components/cq-index-article'
+import News from '@/components/cq-index-news'
 
 import axios from 'axios'
 import BlocPhoto from '@/components/cq-bloc-photos'
@@ -105,7 +107,8 @@ export default {
     ArtduChanvre,
     BlocPhoto,
     Acteur,
-    Article
+    Article,
+    News
   },
   methods: {
     loadItems: function() {
@@ -131,7 +134,8 @@ export default {
     return {
       items: [],
       description: 'Obtenez l’information pertinente entourant le chanvre du Québec. Consultez nos sections d’informations, photos et vidéos exclusives, marques locales, entrevues et bien plus!',
-      title: 'Accueil'
+      title: 'Accueil',
+      articles: []
     }
   },
   head () {
@@ -148,6 +152,8 @@ export default {
   mounted () {
     this.$initFbSDK()
     this.loadItems()
+    axios.get("https://newsapi.org/v2/everything?q=chanvre OR hemp&apiKey=aff02644459c44a98afdbf102c19e89d")
+      .then(response => {this.articles = response.data.articles})
   },
   asyncData ({ env, params }) {
     return Promise.all([
