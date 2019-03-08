@@ -13,6 +13,6 @@ export default {
 </script>
 <style scoped>
   .photo {
-    background-image: url(~/static/bonvivant/bonvivant_texture.png)!important;
+    background-image: url(~/static/bonvivant/barre_fond-bois.jpg)!important;
   }
 </style>

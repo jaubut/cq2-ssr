@@ -114,19 +114,19 @@ export default {
     height: 75px; 
   }
   .photo-back {
-    background-image: url(~/static/bonvivant/totebag_bonvivant.jpg);
+    background-image: url(~/static/bonvivant/totebag_barres.jpg);
     color: white;
   }
   .photo-deux {
-    background-image: url(~/static/bonvivant/darko.png);
+    background-image: url(~/static/bonvivant/boite_pc.jpg);
   }
   .photo-trois {
     background-image: url(~/static/bonvivant/barre_fond_vert.jpg);
   }
   .photo-quattre {
-    background-image: url(~/static/bonvivant/bonvivant_bg-rose.png);
+    background-image: url(~/static/bonvivant/boite_bc.jpg);
   }
   .photo-cinq {
-    background-image: url(~/static/bonvivant/laelle_bc.png);
+    background-image: url(~/static/bonvivant/yoga_stretch.jpg);
   }
 </style>
