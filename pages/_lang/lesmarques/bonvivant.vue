@@ -2,7 +2,6 @@
   <div id="bonvivantCo">
     <Bloc class="height-normal span-2 photo-back"> 
       <Texte link="#" class="align-left">
-        <img id="logo" src="../../../static/bonvivant/face-white.png" alt=""> 
         <h2 v-html="$t('bonvivant.bonvivant-1')"></h2>
       </Texte>
     </Bloc>
@@ -115,7 +114,7 @@ export default {
     height: 75px; 
   }
   .photo-back {
-    background-image: url(~/static/bonvivant/bonvivant_texture.png);
+    background-image: url(~/static/bonvivant/totebag_bonvivant.jpg);
     color: white;
   }
   .photo-deux {

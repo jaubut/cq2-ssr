@@ -4,7 +4,7 @@ export const state = () => ({
       id: 6,
       title: 'Bon vivant',
       description: 'Chanvre, simplifié.',
-      img: '/bonvivant/bonvivant_texture.png',
+      img: '/bonvivant/barre_fond-bois.jpg',
       routerName: 'lesmarques/bonvivant',
       group: 'Alimentation',
       bgColor: false
