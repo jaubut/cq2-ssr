@@ -1,6 +1,15 @@
 export const state = () => ({
   artisans: [
     {
+      id: 8,
+      title: 'Sauvage',
+      description: 'Habit chanvre et bambou.',
+      img: '/sauvage/sauvage-1.jpg',
+      routerName: 'lesmarques/sauvage',
+      group: 'Textile',
+      bgColor: false
+    },
+    {
       id: 6,
       title: 'Bon vivant',
       description: 'Chanvre, simplifié.',
@@ -46,16 +55,7 @@ export const state = () => ({
       bgColor: false
     },
     {
-      id: 5,
-      title: 'Hemprove',
-      description: 'Hemprove your life with CBD products.',
-      img: '/hemprove/hemprove1.png',
-      routerName: 'lesmarques/hemprove',
-      group: 'all',
-      bgColor: false
-    },
-    {
-      id: 6,
+      id: 7,
       title: 'Votre marque',
       description: 'Affichez-vous!',
       img: '/lechanvre/bb2.jpg',

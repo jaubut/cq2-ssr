@@ -81,8 +81,8 @@ export default {
   name: 'bonvivantCo',
   data () {
     return {
-      description: 'bonvivant fabrique des soins corporels dotés des meilleures huiles essentielles et plantes médicinales, dont l’huile de bonvivantre.  Découvrez notre compte rendu de cette marque québécoise.',
-      title: 'bonvivant'
+      description: 'Ce slogan est un symbole de rébellion. Pendant 60 ans, la culture du chanvre (hemp) fut injustement criminalisée, ici au Canada et aux États-Unis. On associait le chanvre à la marihuana afin d’en limiter le développement industriel (concurrence à l’industrie pétrochimique et autres). Il est grand temps de rattraper le temps perdu. Avec ce slogan, on se souvient, afin de redéfinir l’avenir.',
+      title: 'Sauvage'
     }
   },
   mounted () {
