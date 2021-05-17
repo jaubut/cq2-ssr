@@ -5,11 +5,10 @@
         <h2 v-html="$t('sauvage.sauvage-1')"></h2>
       </Texte>
     </Bloc>
-    <Bloc class="span-2 align-left overflow-yes whitebg">
-      <BigTexte>
-        <span></span>
-        <router-link to="#">{{ $t('sauvage.sauvage-2') }}</router-link>
-      </BigTexte>
+    <Bloc class="span-2 beige">
+      <Texte link="#">
+        <h2 v-html="$t('sauvage.sauvage-2')"></h2>
+      </Texte>
     </Bloc>
     <Bloc class="height-normal photo-six"></Bloc>
     <Bloc class="height-normal photo-deux"></Bloc>
