@@ -3,7 +3,7 @@
     <Bloc class="span-3 beige">
       <Texte link="#">
         <h2>Les étoiles</h2>
-        <p>Le temple de la renommé du chanvre.</p>
+        <p>La renommé du chanvre.</p>
       </Texte>
     </Bloc>
     <BlocEtoile v-for="etoile in etoiles" :key="etoile.name" :etoile="etoile"></BlocEtoile>
