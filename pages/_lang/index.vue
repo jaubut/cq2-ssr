@@ -27,7 +27,6 @@
         <h4 v-html="$t('index.index-3')"></h4>
       </BigTexte>
     </Bloc>
-    <Article v-if="$i18n.locale === 'fr'" :post="post" />
     <Acteur v-if="$i18n.locale === 'fr'" :etoile="etoile"></Acteur>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
