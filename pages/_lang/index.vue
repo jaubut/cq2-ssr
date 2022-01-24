@@ -29,7 +29,6 @@
     </Bloc>
     <Article v-if="$i18n.locale === 'fr'" :post="post" />
     <Acteur v-if="$i18n.locale === 'fr'" :etoile="etoile"></Acteur>
-    <NewsLetter v-if="$i18n.locale === 'fr'"/>
     <Bloc class="span-2 align-left overflow-yes whitebg">
       <BigTexte>
         <span></span>
