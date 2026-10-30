@@ -9,7 +9,7 @@ const card = (h: string, p: string, href: string, extra: Partial<Block> = {}): B
 const blocks: Block[] = [
   { ...card(t.intro['intro-1'], t.intro['intro-2'], '/lechanvre'), wide: true },
   card(t.mission['mission-1'], t.mission['mission-2'], '/apropos', { photo: '/lechanvre/bb2.jpg' }),
-  { items: [{ t: 'h2', html: t.cq['cq-2'] }], wide: false, links: [{ href: '/apropos', label: t.cq['cq-3'] }] },
+  { items: [{ t: 'h2', html: t.cq['cq-2'] }], wide: false, links: [{ href: '/plante', label: 'Explorer la plante' }] },
   { items: [{ t: 'h4', html: t.index['index-1'] }], wide: true, num: '5' },
   card('Construction', t.const['const-1'], '/construction', { photo: '/artchanvre/antho.png' }),
   card('Textile', t.text['text-1'], '/textile', { img: '/textile/textile.png' }),

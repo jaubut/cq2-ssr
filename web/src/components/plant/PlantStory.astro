@@ -1,0 +1,163 @@
+---
+// « La plante » scroll story. Default render = static stack (no JS / reduced motion);
+// live layout (sticky scene) applies when html.js is set before paint and motion is allowed; the controller only drives the camera. See web/PLAN.md.
+import PlantArt from './PlantArt';
+import { BEATS } from './beats';
+---
+<section class="story" data-story data-beat="0">
+  <div class="scene" aria-hidden="true">
+    <div class="camera"><PlantArt /></div>
+    <svg class="cutaway" viewBox="0 0 120 150" width="120" height="150" focusable="false">
+      <circle class="ring" cx="60" cy="60" r="50" />
+      <circle class="core" cx="60" cy="60" r="30" />
+      <text class="t-core" x="60" y="64" text-anchor="middle">cœur</text>
+      <text class="t-ring" x="60" y="140" text-anchor="middle">écorce</text>
+    </svg>
+  </div>
+  <ol class="steps">
+    {BEATS.map((b, i) => (
+      <li data-beat={i}>
+        <article>
+          {i === 0 ? <h1 set:html={b.title} /> : <h2 set:html={b.title} />}
+          <p set:html={b.body} />
+          {b.links.length > 0 && (
+            <div class="links">{b.links.map((l) => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}</div>
+          )}
+          {i === 0 && <p class="hint" aria-hidden="true">↓ Défiler</p>}
+        </article>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .story { --scene-bg: linear-gradient(#4f5d56 0%, #3b463f 70%, #15190d 100%); background: var(--scene-bg); color: var(--color-ink); }
+  /* ---------- static default (no JS, reduced motion) ---------- */
+  .scene { position: relative; height: 80svh; overflow: hidden; padding-top: 64px; }
+  .camera { height: 100%; }
+  .camera :global(svg.plant) { width: 100%; height: 100%; display: block; }
+  .cutaway { display: none; }
+  .steps { list-style: none; margin: 0; padding: 24px 16px 64px; display: grid; gap: 16px; max-width: 640px; margin-inline: auto; }
+  article { background: var(--color-paper); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 30px rgb(0 0 0 / .18); }
+  h1, h2 { margin: 0; font-weight: 400; line-height: 92%; letter-spacing: -0.04em; font-size: 36px; }
+  h1 { font-size: 44px; }
+  article p { margin: 0; font-size: 16px; line-height: 1.5; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 32px; background: var(--color-ink); color: var(--color-paper); text-decoration: none; }
+  .links a:focus-visible { outline: 3px solid var(--color-clay); outline-offset: 3px; }
+  .hint { display: none; }
+  /* lit / dimmed layers: instant swap, no transitions (PLAN: Codex #5) */
+  .plant :global([data-layer]) { opacity: 1; }
+
+  /* ---------- live mode: JS present (html.js, set before paint) and motion allowed ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html.js) .story { display: grid; grid-template-areas: 'stage'; }
+    :global(html.js) .scene { grid-area: stage; position: sticky; top: 0; height: 100svh; align-self: start; padding: 0; pointer-events: none; z-index: 0; }
+    /* camera box = full plant fitted to the scene height, so scale(z) is unitless; beat-0 framing before JS runs */
+    :global(html.js) .camera {
+      position: absolute; left: 0; top: 0; width: 25svh; height: 100svh; transform-origin: 0 0;
+      transform: translate3d(calc(50vw - 40svh), -252svh, 0) scale(3.2);
+    }
+    :global(html.js) .steps { grid-area: stage; z-index: 1; padding: 0; gap: 0; max-width: none; margin: 0; }
+    :global(html.js) .steps li { min-height: 100svh; display: flex; align-items: flex-end; padding: 0 16px max(16px, env(safe-area-inset-bottom)); }
+    :global(html.js) article { width: 100%; max-width: 440px; margin-inline: auto; }
+    :global(html.js) .hint { display: block; font-size: 12px; letter-spacing: .02em; text-transform: uppercase; color: var(--color-sage); }
+    :global(html.js) .cutaway { display: block; position: absolute; top: 76px; right: 16px; opacity: 0; }
+    :global(html.js) .story:is([data-beat='2'], [data-beat='3']) .cutaway { opacity: 1; }
+    :global(html.js .plant[data-lit] [data-layer]) { opacity: .22; }
+    :global(html.js .plant[data-lit~='soil'] [data-layer='soil']),
+    :global(html.js .plant[data-lit~='roots'] [data-layer='roots']),
+    :global(html.js .plant[data-lit~='stalk-core'] [data-layer='stalk-core']),
+    :global(html.js .plant[data-lit~='stalk-bark'] [data-layer='stalk-bark']),
+    :global(html.js .plant[data-lit~='leaves'] [data-layer='leaves']),
+    :global(html.js .plant[data-lit~='flowers'] [data-layer='flowers']),
+    :global(html.js .plant[data-lit~='seeds'] [data-layer='seeds']) { opacity: 1; }
+    @media (min-width: 992px) {
+      :global(html.js) .camera { transform: translate3d(calc(30vw - 40svh), -234svh, 0) scale(3.2); }
+      :global(html.js) .steps li { align-items: center; justify-content: flex-end; padding: 0 6vw; }
+      :global(html.js) article { margin: 0; }
+      :global(html.js) .cutaway { top: 50%; right: auto; left: calc(30% + 120px); transform: translateY(-50%) scale(1.4); }
+    }
+  }
+  .cutaway .ring { fill: #a8bf6a; stroke: #f8f3eb; stroke-width: 2; }
+  .cutaway .core { fill: #f8f3eb; }
+  .cutaway text { font: 500 12px var(--font-sans); fill: #f8f3eb; }
+  .cutaway .t-core { fill: var(--color-ink); }
+  .story[data-beat='2'] .cutaway .ring { fill: #5d6b45; }
+  .story[data-beat='3'] .cutaway .core { fill: #8c8f84; }
+  .story[data-beat='3'] .cutaway .ring { fill: #f6d987; }
+  .story[data-beat='3'] .cutaway .t-ring, .story[data-beat='2'] .cutaway .t-core { font-weight: 700; }
+  @media (min-width: 992px) { h2 { font-size: 48px; } h1 { font-size: 64px; } }
+</style>
+
+<script>
+  import { BEATS } from './beats';
+
+  const story = document.querySelector<HTMLElement>('[data-story]');
+  const scene = story?.querySelector<HTMLElement>('.scene');
+  const cam = story?.querySelector<HTMLElement>('.camera');
+  const art = story?.querySelector<SVGSVGElement>('svg.plant');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const wide = matchMedia('(min-width: 992px)');
+
+  if (story && scene && cam && art) {
+    const articles = [...story.querySelectorAll<HTMLElement>('.steps article')];
+    let anchors: number[] = [];
+    let W = 0, H = 0, px = 0, py = 0, raf = 0, beat = -1;
+    const clamp = (v: number) => Math.min(1, Math.max(0, v));
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    // All layout reads happen here (init / resize / load), never per frame.
+    const measure = () => {
+      W = scene.clientWidth; H = scene.clientHeight;
+      const line = H * (wide.matches ? 0.5 : 0.78); // "card line" the cards are anchored to
+      [px, py] = wide.matches ? [W * 0.3, H * 0.5] : [W * 0.5, H * 0.32];
+      const max = document.documentElement.scrollHeight - innerHeight;
+      anchors = articles.map((a) => {
+        const r = a.getBoundingClientRect();
+        return Math.min(max, Math.max(0, r.top + scrollY + r.height / 2 - line));
+      });
+    };
+
+    const frame = () => {
+      raf = 0;
+      const y = scrollY;
+      let k = 0;
+      while (k < anchors.length - 2 && y > anchors[k + 1]!) k++;
+      const span = anchors[k + 1]! - anchors[k]!;
+      const t = span > 0 ? clamp((y - anchors[k]!) / span) : 1;
+      const e = t * t * (3 - 2 * t);
+      const A = BEATS[k]!, B = BEATS[k + 1]!;
+      const z = lerp(A.z, B.z, e), u = H / 1600; // camera box: 1 artboard unit = u px at scale 1
+      const tx = px - lerp(A.fx, B.fx, e) * u * z, ty = py - lerp(A.fy, B.fy, e) * u * z;
+      cam.style.transform = `translate3d(${tx}px,${ty}px,0) scale(${z})`;
+      const nb = e < 0.5 ? k : k + 1;
+      if (nb !== beat) {
+        beat = nb;
+        story.dataset.beat = String(nb);
+        art.dataset.lit = BEATS[nb]!.lit.join(' ');
+      }
+    };
+    const tick = () => { if (!raf) raf = requestAnimationFrame(frame); };
+    const relayout = () => { measure(); tick(); };
+
+    const live = () => !reduce.matches;
+    const setLive = () => {
+      if (live()) relayout(); else { cam.style.transform = ''; story.dataset.beat = '6'; delete art.dataset.lit; }
+    };
+
+    addEventListener('scroll', () => { if (live()) tick(); }, { passive: true });
+    addEventListener('resize', () => { if (live()) relayout(); });
+    addEventListener('load', () => { if (live()) relayout(); });
+    addEventListener('pageshow', () => { if (live()) relayout(); });
+    reduce.addEventListener('change', setLive);
+    wide.addEventListener('change', () => live() && relayout());
+    // Keyboard: bring the focused card onto its anchor so focus is never behind the scene and the art matches.
+    story.addEventListener('focusin', (ev) => {
+      if (!live()) return;
+      const i = articles.findIndex((a) => a.contains(ev.target as Node));
+      if (i >= 0) scrollTo({ top: anchors[i]!, behavior: 'instant' });
+    });
+    setLive();
+  }
+</script>

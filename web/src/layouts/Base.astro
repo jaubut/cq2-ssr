@@ -15,6 +15,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 <html lang="fr-CA">
   <head>
     <meta charset="utf-8" />
+    <script is:inline>document.documentElement.classList.add("js")</script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title === 'Chanvre Québec' ? title : `${title} — Chanvre Québec`}</title>
     <meta name="description" content={description} />
