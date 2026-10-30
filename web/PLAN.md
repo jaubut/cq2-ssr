@@ -29,7 +29,7 @@ No "50 000 usages" figure; the copy stays qualitative.
 
 ## Layout (Codex #2, #7, #8)
 **Default (no JS, reduced motion, or init failure): compact static content.** The full plant is shown once and the 7 cards are stacked in normal flow.
-The controller adds `.is-live` to the story only after it initialises and only if `prefers-reduced-motion: no-preference`; it also listens for changes.
+Live mode applies in CSS when `html.js` is set (inline script before first paint) **and** `prefers-reduced-motion: no-preference`; the camera box is sized in `svh` so beat 0's framing is pure CSS before the controller runs.
 
 Live mode:
 ```
@@ -93,7 +93,7 @@ Live mode:
 | 5 | Unsupported compositing claims | **Accepted**: instant highlights, scale ≤ 2, no idle will-change |
 | 6 | svh vs toolbar | **Accepted**: svh geometry, oversized background, clamp |
 | 7 | Focus behind the scene | **Accepted**: z-order contract, pointer-events none, focusin → anchor |
-| 8 | No-JS / reduced-motion contradiction | **Accepted**: static stack is the default; live is opt-in after init |
+| 8 | No-JS / reduced-motion contradiction | **Accepted, amended after measuring**: "switch to live after init" caused CLS 1.06 in Lighthouse. Live layout is now gated by `html.js` (set inline before paint) + `prefers-reduced-motion: no-preference` in CSS; no JS or reduced motion → static stack. CLS → 0.02 |
 | 9 | Core vs bark at two heights | **Accepted**: same stem shot + labelled cutaway |
 | 10 | Art contract doesn't preserve framing | **Accepted**: bands, z-order, focal points; SVG-only v1 |
 | 11 | Verification can't prove perf | **Partly**: can't reach a physical iPhone from here → listed as Jeremie's gate; I provide Chromium traces + Lighthouse |
