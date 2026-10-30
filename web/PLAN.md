@@ -52,7 +52,7 @@ Live mode:
   The camera follows the finger, stops when scrolling stops, and reverses for free. Before `a_0` and after `a_6` it's clamped.
 - **Transform**: `translate3d(tx,ty,0) scale(s)` on `.camera`, where `s = (sceneH/1600)·z`, kept ≤ ~2 on screen. There's no permanent `will-change`.
 - **Highlights**: the nearest anchor sets `data-beat` → **instant** class swap (no opacity transitions on SVG groups in v1).
-- Geometry uses `svh` (stable). The scene background extends beyond the box so toolbar changes never show a gap.
+- Geometry uses `svh` (stable). The scene uses `overflow-y: visible`, so the plant bleeds below it when Safari's toolbar collapses, and the story uses `overflow: clip`. (`100lvh` was tried for the auditor's toolbar finding, but Chrome's mobile emulation turned it into CLS 1.0, so I reverted it.)
 
 ## Accessibility
 - Cards are real content in reading order, each with an `h2` and links ≥ 44px, plus a visible focus ring. The scene is `aria-hidden` with `pointer-events:none` underneath the cards.

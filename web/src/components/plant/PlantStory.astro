@@ -31,7 +31,7 @@ import { BEATS } from './beats';
 </section>
 
 <style>
-  .story { --scene-bg: linear-gradient(#4f5d56 0%, #3b463f 70%, #15190d 100%); background: var(--scene-bg); margin-bottom: -6rem; padding-bottom: 6rem; color: var(--color-ink); }
+  .story { --scene-bg: linear-gradient(#4f5d56 0%, #3b463f 70%, #15190d 100%); background: var(--scene-bg); margin-bottom: -6rem; padding-bottom: 6rem; /* covers Base footer mt-24 */ overflow: clip; color: var(--color-ink); }
   /* ---------- static default (no JS, reduced motion) ---------- */
   .scene { position: relative; height: 80svh; overflow: hidden; padding-top: 64px; }
   .camera { height: 100%; }
@@ -52,11 +52,11 @@ import { BEATS } from './beats';
   /* ---------- live mode: JS present (html.js, set before paint) and motion allowed ---------- */
   @media (prefers-reduced-motion: no-preference) {
     :global(html.js) .story { display: grid; grid-template-areas: 'stage'; }
-    :global(html.js) .scene { grid-area: stage; position: sticky; top: 0; height: 100lvh; align-self: start; padding: 0; pointer-events: none; z-index: 0; }
+    :global(html.js) .scene { grid-area: stage; position: sticky; top: 0; height: 100svh; align-self: start; padding: 0; overflow-x: clip; overflow-y: visible; /* plant bleeds below when Safari's toolbar collapses (lvh > svh) */ pointer-events: none; z-index: 0; }
     /* camera box = full plant fitted to the scene height, so scale(z) is unitless; beat-0 framing before JS runs */
     :global(html.js) .camera {
-      position: absolute; left: 0; top: 0; width: 25lvh; height: 100lvh; transform-origin: 0 0;
-      transform: translate3d(calc(50vw - 40lvh), -252lvh, 0) scale(3.2);
+      position: absolute; left: 0; top: 0; width: 25svh; height: 100svh; transform-origin: 0 0;
+      transform: translate3d(calc(50vw - 40svh), -252svh, 0) scale(3.2);
     }
     :global(html.js) .steps { grid-area: stage; z-index: 1; padding: 0; gap: 0; max-width: none; margin: 0; }
     :global(html.js) .steps li { min-height: 100svh; display: flex; align-items: flex-end; padding: 0 16px max(16px, env(safe-area-inset-bottom)); }
@@ -73,10 +73,11 @@ import { BEATS } from './beats';
     :global(html.js .plant[data-lit~='flowers'] [data-layer='flowers']),
     :global(html.js .plant[data-lit~='seeds'] [data-layer='seeds']) { opacity: 1; }
     @media (min-width: 992px), (orientation: landscape) and (min-width: 640px) {
-      :global(html.js) .camera { transform: translate3d(calc(30vw - 40lvh), -234lvh, 0) scale(3.2); }
+      :global(html.js) .camera { transform: translate3d(calc(30vw - 40svh), -234svh, 0) scale(3.2); }
       :global(html.js) .steps li { align-items: center; justify-content: flex-end; padding: 0 6vw; }
       :global(html.js) article { margin: 0; }
       :global(html.js) .cutaway { top: 50%; right: auto; left: calc(30% + 120px); transform: translateY(-50%) scale(1.4); }
+      @media (max-width: 991px) { :global(html.js) .cutaway { left: 16px; transform: translateY(-50%); } } /* phone landscape: keep it clear of the card */
     }
   }
   .cutaway .ring { fill: #a8bf6a; stroke: #f8f3eb; stroke-width: 2; }
@@ -144,8 +145,8 @@ import { BEATS } from './beats';
     };
 
     addEventListener('scroll', () => { if (live()) tick(); }, { passive: true });
-    let lastW = innerWidth;
-    addEventListener('resize', () => { if (live() && innerWidth !== lastW) { lastW = innerWidth; relayout(); } });
+    // Re-measure only when the scene's real size changes (svh: iOS toolbar moves don't count).
+    new ResizeObserver(() => { if (live()) relayout(); }).observe(scene);
     addEventListener('load', () => { if (live()) relayout(); });
     addEventListener('pageshow', () => { if (live()) relayout(); });
     reduce.addEventListener('change', setLive);
