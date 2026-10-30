@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import content from '../content/pages.json';
+interface Props { title: string; description?: string }
+const { title, description = 'Faire découvrir le chanvre d’ici et d’ailleurs.' } = Astro.props;
+const f = content._t.footer;
+const essentials = [
+  ['/lechanvre', f['footer-2']], ['/alimentation', f['footer-3']], ['/construction', f['footer-4']],
+  ['/textile', f['footer-5']], ['/soinscorporels', f['footer-6']], ['/cbd', f['footer-7']],
+] as const;
+const nav = [['/lechanvre', 'Le chanvre'], ['/lesmarques', 'Les marques'], ['/apropos', 'À propos']] as const;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title === 'Chanvre Québec' ? title : `${title} — Chanvre Québec`}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/img/icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="absolute inset-x-0 top-0 z-20 text-white">
+      <div class="max-w-[1800px] mx-auto px-8 max-[479px]:px-4 pt-[max(1rem,env(safe-area-inset-top))] flex items-center justify-between gap-4">
+        <a href="/" class="inline-flex items-center gap-3 min-h-11 no-underline">
+          <img src="/img/logo-back-green.svg" alt="" class="size-9 rounded-full" />
+          <span class="text-lg font-medium tracking-[-0.02em]">Chanvre Québec</span>
+        </a>
+        <nav class="max-[767px]:hidden flex items-center gap-1 rounded-[32px] bg-white/16 backdrop-blur-[16px] p-1" aria-label="Principal">
+          {nav.map(([href, label]) => (
+            <a href={href} class:list={['min-h-11 inline-flex items-center px-4 rounded-[32px] no-underline transition-colors hover:bg-white/20', path.startsWith(href) && 'bg-accent text-ink hover:bg-accent']}>{label}</a>
+          ))}
+        </nav>
+        <details class="min-[768px]:hidden relative">
+          <summary class="list-none [&::-webkit-details-marker]:hidden inline-flex items-center justify-center size-11 rounded-full bg-white/16 backdrop-blur-[16px] cursor-pointer" aria-label="Menu">
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2" /></svg>
+          </summary>
+          <div class="absolute right-0 mt-2 w-[min(80vw,300px)] rounded-[16px] bg-paper text-ink p-2 shadow-xl flex flex-col">
+            {[...nav, ...essentials.slice(1)].map(([href, label]) => (
+              <a href={href} class="min-h-11 flex items-center px-4 rounded-[12px] no-underline hover:bg-card">{label}</a>
+            ))}
+          </div>
+        </details>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="bg-ink text-paper mt-24">
+      <div class="max-w-[1800px] mx-auto px-8 max-[479px]:px-4 pt-16 pb-[max(4rem,env(safe-area-inset-bottom))] grid gap-12 grid-cols-4 max-[991px]:grid-cols-2 max-[479px]:grid-cols-1">
+        <div class="col-span-2 max-[479px]:col-span-1 flex flex-col gap-6">
+          <p class="display text-5xl max-[479px]:text-4xl m-0">{content._t.mission['mission-2']}</p>
+          <a href="mailto:allo@chanvrequebec.com" class="self-start inline-flex items-center min-h-11 rounded-[32px] bg-accent text-ink px-5 no-underline">allo@chanvrequebec.com</a>
+        </div>
+        <div>
+          <p class="label text-paper/60 mb-4">{f['footer-1']}</p>
+          <ul class="flex flex-col">{essentials.map(([href, label]) => <li><a href={href} class="min-h-11 min-w-11 inline-flex items-center no-underline hover:underline">{label}</a></li>)}</ul>
+        </div>
+        <div>
+          <p class="label text-paper/60 mb-4">Chanvre Québec</p>
+          <ul class="flex flex-col">
+            <li><a href="/lesmarques" class="min-h-11 min-w-11 inline-flex items-center no-underline hover:underline">{f['footer-12']}</a></li>
+            <li><a href="/apropos" class="min-h-11 min-w-11 inline-flex items-center no-underline hover:underline">{f['footer-8']}</a></li>
+            <li><a href="/lesmarques/votremarque" class="min-h-11 min-w-11 inline-flex items-center no-underline hover:underline">Afficher votre marque</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
