@@ -7,6 +7,7 @@ export type Block = {
   num?: string; links?: { href: string; label: string }[]; href?: string;
 };
 interface Props { blocks: Block[] }
+import { img, poster } from '../media';
 const { blocks } = Astro.props;
 const ext = (h: string) => /^https?:/.test(h);
 const local = (h: string) => (ext(h) || h.startsWith('/') ? h : `/${h}`);
@@ -31,9 +32,9 @@ const local = (h: string) => (ext(h) || h.startsWith('/') ? h : `/${h}`);
       );
     }
     if (b.iframe) return <div class={`reveal ${span} aspect-video rounded-[16px] overflow-hidden bg-ink`}><iframe src={b.iframe} title="Vidéo" class="size-full" loading="lazy" allowfullscreen /></div>;
-    if (b.video) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><video src={b.video} autoplay loop muted playsinline preload="metadata" class="size-full object-cover" /></div>;
+    if (b.video) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><video src={b.video} poster={poster(b.video)} loop muted playsinline preload="none" data-autoplay class="size-full object-cover" /></div>;
     const hasText = b.items.length > 0;
-    if (!hasText && b.photo) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><img src={b.photo} alt="" loading="lazy" class="size-full object-cover" /></div>;
+    if (!hasText && b.photo) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><img {...img(b.photo, b.wide ? '(max-width: 479px) 100vw, 50vw' : undefined)} alt="" loading="lazy" class="size-full object-cover" /></div>;
     const accent = !!b.links?.length;
     const dark = !!b.photo;
     const [head, ...rest] = b.items;
@@ -48,16 +49,16 @@ const local = (h: string) => (ext(h) || h.startsWith('/') ? h : `/${h}`);
           b.href && 'group',
         ]}
       >
-        {dark && <img src={b.photo} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-[1.03]" />}
+        {dark && <img {...img(b.photo!)} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-[1.03]" />}
         {dark && <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />}
         <div class="relative flex flex-col gap-4 prose-cq">
           {head && (head.t === 'p'
-            ? <p class="m-0 text-base max-[479px]:text-sm" set:html={head.html} />
+            ? <p class="m-0 text-base" set:html={head.html} />
             : <h2 class:list={['display m-0', rest.length ? 'text-[40px] max-[479px]:text-[32px]' : 'text-5xl max-[767px]:text-[40px] max-[479px]:text-4xl']} set:html={head.html} />)}
           {rest.map((i) => i.t === 'p' || i.t === 'blockquote'
-            ? <p class="m-0 text-base leading-[150%] max-[479px]:text-sm" set:html={i.html} />
+            ? <p class="m-0 text-base leading-[150%]" set:html={i.html} />
             : <h3 class="m-0 text-xl font-medium" set:html={i.html} />)}
-          {b.img && <img src={b.img} alt="" loading="lazy" class="max-h-48 w-auto self-start" />}
+          {b.img && <img {...img(b.img, '200px')} alt="" loading="lazy" class="max-h-48 w-auto self-start" />}
           {b.links?.map((l) => (
             <a href={local(l.href)} {...(ext(l.href) ? { target: '_blank', rel: 'noopener' } : {})}
               class="self-start inline-flex items-center gap-2 min-h-11 rounded-[32px] bg-ink text-paper px-5 no-underline hover:bg-sage transition-colors">

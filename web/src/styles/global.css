@@ -29,3 +29,5 @@
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 .prose-cq strong { font-weight: 600; }
 @layer components { .prose-cq p a { text-decoration: underline; text-underline-offset: 3px; } }
+@keyframes rise { from { opacity: 0; transform: translateY(32px); } }
+@keyframes fade { from { opacity: 0; } }

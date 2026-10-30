@@ -4,8 +4,8 @@ import PageHead from '../../components/PageHead.astro';
 import Bento, { type Block } from '../../components/Bento.astro';
 import content from '../../content/pages.json';
 const blocks: Block[] = [
-  ...content._brands.map((b) => ({
-    items: [{ t: 'h2', html: b.title! }, { t: 'p', html: `<strong>${b.group}</strong> · ${b.description}` }],
+  ...content._brands.filter((b) => b.routerName !== 'lesmarques/votremarque').map((b) => ({
+    items: [{ t: 'h2', html: b.title! }, { t: 'p', html: `<strong>${({ FeedStock: 'Animal', Soins: 'Soins corporels' } as Record<string, string>)[b.group!] ?? b.group}</strong> · ${b.description}` }],
     wide: false, photo: b.img!, href: `/${b.routerName}`,
   })),
   { items: [{ t: 'h2', html: 'Afficher votre marque' }, { t: 'p', html: 'Vous fabriquez du chanvre au Québec? Votre marque a sa place ici.' }], wide: true, links: [{ href: '/lesmarques/votremarque', label: 'En savoir plus' }] },
