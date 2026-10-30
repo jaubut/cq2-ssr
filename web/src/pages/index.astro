@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero';
+import Bento, { type Block } from '../components/Bento.astro';
+import content from '../content/pages.json';
+const t = content._t;
+const card = (h: string, p: string, href: string, extra: Partial<Block> = {}): Block =>
+  ({ items: [{ t: 'h2', html: h }, { t: 'p', html: p }], wide: false, href, ...extra });
+const blocks: Block[] = [
+  { ...card(t.intro['intro-1'], t.intro['intro-2'], '/lechanvre'), wide: true },
+  card(t.mission['mission-1'], t.mission['mission-2'], '/apropos', { photo: '/lechanvre/bb2.jpg' }),
+  { items: [{ t: 'h2', html: t.cq['cq-2'] }], wide: false, links: [{ href: '/apropos', label: t.cq['cq-3'] }] },
+  { items: [{ t: 'h4', html: t.index['index-1'] }], wide: true, num: '5' },
+  card('Construction', t.const['const-1'], '/construction', { photo: '/artchanvre/antho.png' }),
+  card('Textile', t.text['text-1'], '/textile', { img: '/textile/textile.png' }),
+  card(t.soin['soin-1'], t.soin['soin-2'], '/soinscorporels', { img: '/soinscorporel/index.png' }),
+  card(t.ali['ali-1'], t.ali['ali-2'], '/alimentation', { img: '/index/photo-alimentation.png' }),
+  { ...card('CBD', content.cbd.blocks[0]?.items[0]?.html ?? 'Une plante médicinale', '/cbd', { photo: content.cbd.blocks.find((b) => b.photo)?.photo ?? '' }), wide: true },
+  { items: [], wide: true, num: String(content._brands.length), links: [{ href: '/lesmarques', label: t.index['index-2'] }] },
+  ...content._brands.slice(0, 4).map((b) => card(b.title ?? '', b.description ?? '', `/${b.routerName}`, { photo: b.img ?? '' })),
+];
+---
+<Base title="Chanvre Québec">
+  <Hero
+    kicker={`${t.cq['cq-1']} — ${t.cq['cq-2']}`}
+    words={['Faire', 'découvrir', 'le', '__line__', 'chanvre', 'd’ici.']}
+    image="/index/hemp-leaf.jpg"
+    cta={{ href: '/lechanvre', label: t.footer['footer-2'] }}
+  />
+  <section class="max-w-[1800px] mx-auto px-8 max-[479px]:px-4 pt-[120px] max-[991px]:pt-16 max-[479px]:pt-12">
+    <Bento blocks={blocks} />
+  </section>
+</Base>

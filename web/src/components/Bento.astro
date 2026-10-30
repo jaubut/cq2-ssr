@@ -1,0 +1,74 @@
+---
+// Bento grid adapted from BYQ terra-tory-bento-1 (4→2→1 columns, card/stat styles, dashed accent circle).
+// Renders the legacy Nuxt "Bloc" sequence extracted into content/pages.json.
+export type Item = { t: string; html: string };
+export type Block = {
+  items: Item[]; wide: boolean; photo?: string; img?: string; video?: string; iframe?: string;
+  num?: string; links?: { href: string; label: string }[]; href?: string;
+};
+interface Props { blocks: Block[] }
+import { img, poster } from '../media';
+const { blocks } = Astro.props;
+const ext = (h: string) => /^https?:/.test(h);
+const local = (h: string) => (ext(h) || h.startsWith('/') ? h : `/${h}`);
+---
+<div class="grid grid-cols-4 gap-4 max-[991px]:grid-cols-2 max-[479px]:grid-cols-1">
+  {blocks.map((b) => {
+    const span = b.wide ? 'col-span-2 max-[479px]:col-span-1' : '';
+    if (b.num !== undefined) {
+      const label = b.items[0]?.html ?? b.links?.[0]?.label ?? '';
+      return (
+        <div class="reveal col-span-full flex flex-col gap-6 pt-16 pb-4 max-[479px]:pt-10">
+          <div class="h-0 w-full border-b border-dashed border-line" />
+          <div class="flex items-end gap-4">
+            {b.num && <span class="display text-[96px] max-[479px]:text-[64px] text-clay">{b.num}</span>}
+            {b.links?.[0] ? (
+              <a href={local(b.links[0].href)} class="inline-flex items-end min-h-11 display text-5xl max-[767px]:text-[40px] max-[479px]:text-4xl underline-offset-4 hover:underline" set:html={label} />
+            ) : (
+              <h2 class="display m-0 text-5xl max-[767px]:text-[40px] max-[479px]:text-4xl" set:html={label} />
+            )}
+          </div>
+        </div>
+      );
+    }
+    if (b.iframe) return <div class={`reveal ${span} aspect-video rounded-[16px] overflow-hidden bg-ink`}><iframe src={b.iframe} title="Vidéo" class="size-full" loading="lazy" allowfullscreen /></div>;
+    if (b.video) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><video src={b.video} poster={poster(b.video)} loop muted playsinline preload="none" data-autoplay class="size-full object-cover" /></div>;
+    const hasText = b.items.length > 0;
+    if (!hasText && b.photo) return <div class={`reveal ${span} h-[304px] max-[479px]:h-[260px] rounded-[16px] overflow-hidden`}><img {...img(b.photo, b.wide ? '(max-width: 479px) 100vw, 50vw' : undefined)} alt="" loading="lazy" class="size-full object-cover" /></div>;
+    const accent = !!b.links?.length;
+    const dark = !!b.photo;
+    const [head, ...rest] = b.items;
+    const Tag = b.href ? 'a' : 'div';
+    return (
+      <Tag
+        href={b.href}
+        class:list={[
+          'reveal relative overflow-hidden rounded-[16px] p-8 max-[479px]:p-6 flex flex-col justify-end gap-6 min-h-[304px] max-[479px]:min-h-0 no-underline',
+          span,
+          dark ? 'text-white bg-ink' : accent ? 'bg-accent' : 'bg-card',
+          b.href && 'group',
+        ]}
+      >
+        {dark && <img {...img(b.photo!)} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-[1.03]" />}
+        {dark && <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />}
+        <div class="relative flex flex-col gap-4 prose-cq">
+          {head && (head.t === 'p'
+            ? <p class="m-0 text-base" set:html={head.html} />
+            : <h2 class:list={['display m-0', rest.length ? 'text-[40px] max-[479px]:text-[32px]' : 'text-5xl max-[767px]:text-[40px] max-[479px]:text-4xl']} set:html={head.html} />)}
+          {rest.map((i) => i.t === 'p' || i.t === 'blockquote'
+            ? <p class="m-0 text-base leading-[150%]" set:html={i.html} />
+            : <h3 class="m-0 text-xl font-medium" set:html={i.html} />)}
+          {b.img && <img {...img(b.img, '200px')} alt="" loading="lazy" class="max-h-48 w-auto self-start" />}
+          {b.links?.map((l) => (
+            <a href={local(l.href)} {...(ext(l.href) ? { target: '_blank', rel: 'noopener' } : {})}
+              class="self-start inline-flex items-center gap-2 min-h-11 rounded-[32px] bg-ink text-paper px-5 no-underline hover:bg-sage transition-colors">
+              {l.label}
+              <svg width="7" height="10" viewBox="0 0 7 10" fill="none" aria-hidden="true"><path d="M1 9L5 5L1 1" stroke="currentColor" stroke-width="2" /></svg>
+            </a>
+          ))}
+        </div>
+        {accent && <div class="absolute pointer-events-none rounded-full border border-dashed border-ink/60 size-[400px] -bottom-[172px] -right-[122px] max-[479px]:size-[156px] max-[479px]:-bottom-[59px] max-[479px]:-right-[66px]" />}
+      </Tag>
+    );
+  })}
+</div>

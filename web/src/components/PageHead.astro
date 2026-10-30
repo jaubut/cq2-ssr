@@ -1,0 +1,15 @@
+---
+interface Props { title: string; lede?: string | undefined; image?: string | undefined }
+import { img } from '../media';
+const { title, lede, image } = Astro.props;
+---
+<section class="relative overflow-hidden bg-sage text-white">
+  {image && <img {...img(image, '100vw')} alt="" class="absolute inset-0 size-full object-cover opacity-60" />}
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/70 to-ink/10" />
+  <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-ink/50 to-transparent" />
+  <div class="absolute rounded-full pointer-events-none border border-dashed border-white/30 size-[640px] -top-[360px] -left-[220px] max-[479px]:size-[256px] max-[479px]:-top-[90px] max-[479px]:-left-[120px]" />
+  <div class="relative max-w-[1800px] mx-auto px-8 max-[479px]:px-4 pt-40 pb-16 max-[479px]:pt-32 max-[479px]:pb-10 flex flex-col gap-6">
+    <h1 class="display m-0 text-[96px] max-[991px]:text-[72px] max-[479px]:text-[12vw] max-w-[1100px]" set:html={title} />
+    {lede && <p class="m-0 text-xl max-[479px]:text-base max-w-[640px] text-white/85" set:html={lede} />}
+  </div>
+</section>

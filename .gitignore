@@ -11,3 +11,7 @@ npm-debug.log
 dist
 
 sw.*
+# secrets (were committed before 2026-10-30 — rotate, they remain in history)
+.env
+.env.*
+.contentful.json
