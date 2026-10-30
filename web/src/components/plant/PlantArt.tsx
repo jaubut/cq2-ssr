@@ -18,8 +18,8 @@ export default function PlantArt() {
   return (
     <svg className="plant" viewBox="0 0 400 1600" width="400" height="1600" overflow="visible" aria-hidden="true" focusable="false">
       <g data-layer="soil">
-        <rect x="-3000" y="1450" width="6400" height="400" fill="#2b2418" />
-        <path d="M-3000 1450 H3400" stroke="#5a4a32" strokeWidth="4" />
+        <rect x="-1200" y="1450" width="2800" height="2400" fill="#2b2418" />
+        <path d="M-1200 1450 H1600" stroke="#5a4a32" strokeWidth="4" />
       </g>
       <g data-layer="roots" fill="none" stroke="#d9c7a7" strokeLinecap="round">
         <path d="M200 1450 C198 1500 204 1540 200 1590" strokeWidth="7" />

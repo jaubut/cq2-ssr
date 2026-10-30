@@ -14,7 +14,7 @@ import { BEATS } from './beats';
       <text class="t-ring" x="60" y="140" text-anchor="middle">écorce</text>
     </svg>
   </div>
-  <ol class="steps">
+  <ol class="steps" role="list">
     {BEATS.map((b, i) => (
       <li data-beat={i}>
         <article>
@@ -31,7 +31,7 @@ import { BEATS } from './beats';
 </section>
 
 <style>
-  .story { --scene-bg: linear-gradient(#4f5d56 0%, #3b463f 70%, #15190d 100%); background: var(--scene-bg); color: var(--color-ink); }
+  .story { --scene-bg: linear-gradient(#4f5d56 0%, #3b463f 70%, #15190d 100%); background: var(--scene-bg); margin-bottom: -6rem; padding-bottom: 6rem; color: var(--color-ink); }
   /* ---------- static default (no JS, reduced motion) ---------- */
   .scene { position: relative; height: 80svh; overflow: hidden; padding-top: 64px; }
   .camera { height: 100%; }
@@ -52,17 +52,17 @@ import { BEATS } from './beats';
   /* ---------- live mode: JS present (html.js, set before paint) and motion allowed ---------- */
   @media (prefers-reduced-motion: no-preference) {
     :global(html.js) .story { display: grid; grid-template-areas: 'stage'; }
-    :global(html.js) .scene { grid-area: stage; position: sticky; top: 0; height: 100svh; align-self: start; padding: 0; pointer-events: none; z-index: 0; }
+    :global(html.js) .scene { grid-area: stage; position: sticky; top: 0; height: 100lvh; align-self: start; padding: 0; pointer-events: none; z-index: 0; }
     /* camera box = full plant fitted to the scene height, so scale(z) is unitless; beat-0 framing before JS runs */
     :global(html.js) .camera {
-      position: absolute; left: 0; top: 0; width: 25svh; height: 100svh; transform-origin: 0 0;
-      transform: translate3d(calc(50vw - 40svh), -252svh, 0) scale(3.2);
+      position: absolute; left: 0; top: 0; width: 25lvh; height: 100lvh; transform-origin: 0 0;
+      transform: translate3d(calc(50vw - 40lvh), -252lvh, 0) scale(3.2);
     }
     :global(html.js) .steps { grid-area: stage; z-index: 1; padding: 0; gap: 0; max-width: none; margin: 0; }
     :global(html.js) .steps li { min-height: 100svh; display: flex; align-items: flex-end; padding: 0 16px max(16px, env(safe-area-inset-bottom)); }
     :global(html.js) article { width: 100%; max-width: 440px; margin-inline: auto; }
     :global(html.js) .hint { display: block; font-size: 12px; letter-spacing: .02em; text-transform: uppercase; color: var(--color-sage); }
-    :global(html.js) .cutaway { display: block; position: absolute; top: 76px; right: 16px; opacity: 0; }
+    :global(html.js) .cutaway { display: block; position: absolute; top: calc(env(safe-area-inset-top) + 76px); right: 16px; opacity: 0; }
     :global(html.js) .story:is([data-beat='2'], [data-beat='3']) .cutaway { opacity: 1; }
     :global(html.js .plant[data-lit] [data-layer]) { opacity: .22; }
     :global(html.js .plant[data-lit~='soil'] [data-layer='soil']),
@@ -72,8 +72,8 @@ import { BEATS } from './beats';
     :global(html.js .plant[data-lit~='leaves'] [data-layer='leaves']),
     :global(html.js .plant[data-lit~='flowers'] [data-layer='flowers']),
     :global(html.js .plant[data-lit~='seeds'] [data-layer='seeds']) { opacity: 1; }
-    @media (min-width: 992px) {
-      :global(html.js) .camera { transform: translate3d(calc(30vw - 40svh), -234svh, 0) scale(3.2); }
+    @media (min-width: 992px), (orientation: landscape) and (min-width: 640px) {
+      :global(html.js) .camera { transform: translate3d(calc(30vw - 40lvh), -234lvh, 0) scale(3.2); }
       :global(html.js) .steps li { align-items: center; justify-content: flex-end; padding: 0 6vw; }
       :global(html.js) article { margin: 0; }
       :global(html.js) .cutaway { top: 50%; right: auto; left: calc(30% + 120px); transform: translateY(-50%) scale(1.4); }
@@ -98,7 +98,7 @@ import { BEATS } from './beats';
   const cam = story?.querySelector<HTMLElement>('.camera');
   const art = story?.querySelector<SVGSVGElement>('svg.plant');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const wide = matchMedia('(min-width: 992px)');
+  const wide = matchMedia('(min-width: 992px), (orientation: landscape) and (min-width: 640px)');
 
   if (story && scene && cam && art) {
     const articles = [...story.querySelectorAll<HTMLElement>('.steps article')];
@@ -110,13 +110,10 @@ import { BEATS } from './beats';
     // All layout reads happen here (init / resize / load), never per frame.
     const measure = () => {
       W = scene.clientWidth; H = scene.clientHeight;
-      const line = H * (wide.matches ? 0.5 : 0.78); // "card line" the cards are anchored to
       [px, py] = wide.matches ? [W * 0.3, H * 0.5] : [W * 0.5, H * 0.32];
       const max = document.documentElement.scrollHeight - innerHeight;
-      anchors = articles.map((a) => {
-        const r = a.getBoundingClientRect();
-        return Math.min(max, Math.max(0, r.top + scrollY + r.height / 2 - line));
-      });
+      // Beat k is "on" when its step fills the viewport: card bottom at the step bottom (mobile), centred (wide).
+      anchors = articles.map((a) => Math.min(max, Math.max(0, a.parentElement!.getBoundingClientRect().top + scrollY)));
     };
 
     const frame = () => {
@@ -147,7 +144,8 @@ import { BEATS } from './beats';
     };
 
     addEventListener('scroll', () => { if (live()) tick(); }, { passive: true });
-    addEventListener('resize', () => { if (live()) relayout(); });
+    let lastW = innerWidth;
+    addEventListener('resize', () => { if (live() && innerWidth !== lastW) { lastW = innerWidth; relayout(); } });
     addEventListener('load', () => { if (live()) relayout(); });
     addEventListener('pageshow', () => { if (live()) relayout(); });
     reduce.addEventListener('change', setLive);
