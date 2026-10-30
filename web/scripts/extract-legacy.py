@@ -64,7 +64,7 @@ def page(path):
         b['wide'] = 'span-2' in b['cls']; del b['cls']
         b['items'] = [i for i in b['items'] if i['html']]
     title = re.search(r"title: '([^']+)'", src); desc = re.search(r"description: '([^']+)'", src)
-    return {'title': (title[1] if title else '').replace('Apropos', 'À propos'), 'description': desc[1] if desc else '',
+    return {'title': (title[1] if title else '').replace('Apropos', 'À propos'), **({'title': 'Bon vivant'} if path.stem == 'bonvivant' else {}), 'description': desc[1] if desc else '',
             'blocks': [b for b in p.blocks if b['items'] or b.get('photo') or b.get('video') or b.get('img') or b.get('iframe') or b.get('links')]}
 
 out = {}
